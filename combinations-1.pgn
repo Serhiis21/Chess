@@ -1,0 +1,1033 @@
+[Event "Prague"]
+[Site "?"]
+[Date "1938.??.??"]
+[Round "?"]
+[White "Fazekas, Stafan"]
+[Black "Spielmann, Rudolf"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "6k1/pp3pp1/1b4p1/8/1P6/P2b1q2/1B1QrP1P/2R3K1 w - - 0 0"]
+[PlyCount "7"]
+
+{Black threatens mate with 1...Qxf2+ 2.Kh1 Qxh2 mate} 1. Rc8+ Kh7 2. Rh8+ $1
+Kxh8 3. Qh6+ $1 Kg8 4. Qxg7# 1-0
+
+[Event "Leipzig"]
+[Site "?"]
+[Date "1963.??.??"]
+[Round "?"]
+[White "Maedler, Juergen"]
+[Black "Uhlmann, Wolfgang"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "4r1k1/pbR2p1p/1p1p2pQ/8/6qP/6N1/P4PP1/6K1 b - - 0 0"]
+[PlyCount "7"]
+
+1... Re1+ 2. Kh2 (2. Nf1 Qxg2#) 2... Rh1+ $1 3. Kxh1 (3. Nxh1 Qxg2#) 3... Qh3+
+4. Kg1 Qxg2# 0-1
+
+[Event "Moscow"]
+[Site "?"]
+[Date "1914.??.??"]
+[Round "?"]
+[White "Bernstein, Ossip"]
+[Black "Capablanca, Jose"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "3r2k1/p4ppp/1q6/2rn4/8/2N1P3/P1R1QPPP/2R3K1 b - - 0 0"]
+[PlyCount "5"]
+
+1... Nxc3 (1... Rxc3 2. Rxc3 Nxc3 3. Rxc3 Qb2) 2. Rxc3 Rxc3 3. Rxc3 Qb2 $1 (
+3... Qb1+ 4. Qf1 Qxa2 5. g3 $11) (3... Qb2 4. Qxb2 Rd1#) 0-1
+
+[Event "Baku"]
+[Site "?"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Spassky, Boris"]
+[Black "Vladimirov, Boris"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r2Rnk1r/1p2q1b1/7p/4P1pQ/5pb1/1BP5/PP3BPP/2K4R w - - 0 2"]
+[PlyCount "3"]
+
+2. Qxe8+ $1 (2. Rxe8+ Rxe8 (2... Qxe8 3. Bc5+ Qe7 4. Qf7#) 3. Qxg4 Bxe5 4. Rd1
+{Spassky-Vladimirov, Baku 1961}) 2... Qxe8 3. Bc5# 1-0
+
+[Event "Vienna"]
+[Site "?"]
+[Date "1907.??.??"]
+[Round "?"]
+[White "Duras, Oldrich"]
+[Black "Wolf, Heinrich"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "7k/p1p3pp/2r2q2/2P5/3Q2R1/3P3P/PP4PK/8 w - - 0 0"]
+[PlyCount "3"]
+
+1. Rf4 Qe7 (1... Qxf4+ 2. Qxf4 h6 3. Qf8+) 2. Qd7 $1 (2. Qd7 Qxd7 (2... Re6 3.
+Qc8+ Qe8 4. Rf8+ Qxf8 5. Qxf8#) 3. Rf8#) 1-0
+
+[Event "Tblisi"]
+[Site "?"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Tal, Mikhail"]
+[Black "Krogius, Nikolai"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5q1k/7r/5p1P/4p3/4P1Q1/5R2/6P1/6K1 w - - 0 0"]
+[PlyCount "5"]
+
+1. Rxf6 $1 {Black resigned after Rxf6} (1. Rc3 f5 2. exf5 Rd7 3. f6) 1... Qxf6
+(1... Qe8 2. Qf5) (1... Rf7 2. Rxf7 Qxf7 3. Qf5) (1... Qb8 2. Qe6) (1... Rxh6
+2. Rxf8+ Kh7 3. Qg8#) 2. Qc8+ Qf8 (2... Qd8 3. Qxd8#) 3. Qxf8# 1-0
+
+[Event "Belgrade"]
+[Site "?"]
+[Date "1962.??.??"]
+[Round "?"]
+[White "Maric, Rudolf"]
+[Black "Gligoric, Svetozar"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5rk1/1B3p1p/p2p1p2/q4R2/8/2r5/P1PQ2PP/1R5K b - - 0 0"]
+[PlyCount "7"]
+
+1... Rb3 {White resigned here} 2. Qxa5 (2. axb3 Qxd2) (2. Qc1 Rxb1 3. Qxb1 Qxf5
+) (2. Rxb3 Qxd2) (2. Rbf1 Qxd2) 2... Rxb1+ 3. Qe1 Rxe1+ 4. Rf1 Rxf1# 0-1
+
+[Event "Minorca"]
+[Site "?"]
+[Date "1973.??.??"]
+[Round "?"]
+[White "Zatulovskaya, Tatiana"]
+[Black "Lazarevic, Milunka"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "6k1/pB3p2/3Q1Ppp/8/2r4P/2q5/5PP1/3R2K1 w - - 0 0"]
+[PlyCount "3"]
+
+1. Qf8+ $1 Kxf8 (1... Kh7 2. Qg7#) 2. Rd8# 1-0
+
+[Event "Leningrad"]
+[Site "?"]
+[Date "1947.??.??"]
+[Round "?"]
+[White "Keres, Paul"]
+[Black "Levenfish, Grigory"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "7k/p2r1ppp/1pQ2bq1/3B4/4P3/2BR2Pb/PP3P1P/6K1 w - - 0 1"]
+[PlyCount "3"]
+
+1. Be6 $1 {Black resigned here} (1. Qc8+ Bd8) (1. Bb3 h6 2. Rxd7 Bxd7 3. Qxd7)
+1... Rxd3 $4 (1... Bxe6 2. Qc8+ Bd8 (2... Rd8 3. Qxd8+ Bxd8 4. Rxd8#) 3. Qxd8+
+Rxd8 4. Rxd8#) (1... fxe6 2. Qc8+ Rd8 3. Qxd8+ Bxd8 4. Rxd8+ Qe8 5. Rxe8#) (
+1... h5 2. Bxd7 Bxd7 3. Rxd7) (1... h6 2. Bxd7 Bxd7 3. Rxd7) 2. Qe8# 1-0
+
+[Event "Moscow"]
+[Site "?"]
+[Date "1949.??.??"]
+[Round "?"]
+[White "Keres, Paul"]
+[Black "Levenfish, Grigory"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "1r5k/4nppp/p4qb1/P7/1pR5/1B6/1P1QR1PP/6K1 w - - 0 0"]
+[PlyCount "7"]
+
+1. Qxb4 $1 {Black resigned here} Rxb4 (1... Re8 2. Qxe7 $1 Qxe7 (2... Rxe7 3.
+Rc8+ Re8 4. Rcxe8#) 3. Rxe7 Rxe7 4. Rc8+ Re8 5. Rxe8#) (1... Rg8 2. Qxe7) 2.
+Rc8+ $1 Ng8 (2... Nxc8 3. Re8#) 3. Rxg8+ $1 Kxg8 4. Re8# 1-0
+
+[Event "USSR"]
+[Site "?"]
+[Date "1946.??.??"]
+[Round "?"]
+[White "Rovner, Dmitry"]
+[Black "Kamyshov, Mikhail"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "1r1r2k1/2q2ppp/p3b3/4p3/1p2P3/5B2/PPPR1QPP/3R3K w - - 0 0"]
+[PlyCount "11"]
+
+1. Qa7 $1 Qa5 (1... Qxa7 2. Rxd8+ Rxd8 3. Rxd8#) (1... Rxd2 2. Qxc7 Rxd1+ 3.
+Bxd1 Re8 4. Qxe5) 2. Qxa6 $1 Qc7 (2... Qxa6 3. Rxd8+ Rxd8 4. Rxd8#) 3. Qa7 $1 (
+3. Qb7 Rxd2 4. Qxc7 Rxd1+ 5. Bxd1 Ra8 6. Qxe5) 3... Qc8 4. Qxb8 $1 Qxb8 (4...
+Rf8 5. Qb6) 5. Rxd8+ Qxd8 6. Rxd8# 1-0
+
+[Event "Leningrad"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Tseshkovsky, Vitaly"]
+[Black "Lerner, Konstantin"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "6k1/r3p2p/qp2PppB/3p4/nQ6/7P/5PP1/R5K1 w - - 0 0"]
+[PlyCount "7"]
+
+1. Rc1 {threatening 2.Qxa4 Qxa4 3.Rc8 mate} Qb7 (1... b5 2. Qxb5 Qxb5 3. Rc8+
+Qe8 4. Rxe8#) (1... Nc5 2. Rxc5 bxc5 3. Qb8+ Qc8 4. Qxc8#) 2. Qxe7 $1 Qxe7 (
+2... Qb8 3. Qxa7 Qxa7 4. Rc8#) 3. Rc8+ Qf8 4. Rxf8# 1-0
+
+[Event "Tallinn"]
+[Site "?"]
+[Date "1965.??.??"]
+[Round "?"]
+[White "Mikenas, Vladas"]
+[Black "Bronstein, David"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r3r1k1/1p1b1pp1/1p5p/3Pq3/1R6/P2Q1B2/1P4PP/R6K b - - 0 0"]
+[PlyCount "9"]
+
+1... Rxa3 $1 {White resigned here.} (1... Qe1+ 2. Qf1) 2. bxa3 (2. Rb1 Rxd3)
+2... Qxa1+ 3. Rb1 (3. Qd1 Re1+ (3... Qxd1+ 4. Bxd1 Re1#) 4. Qxe1 Qxe1#) (3. Bd1
+Re1+ 4. Qf1 Rxf1#) 3... Re1+ 4. Rxe1 Qxe1+ 5. Qf1 Qxf1# 0-1
+
+[Event "Madrid"]
+[Site "?"]
+[Date "1973.??.??"]
+[Round "?"]
+[White "Hort, Vlastimil"]
+[Black "Portisch, Lajos"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5rk1/r1q2p1p/2b1pQ2/p1Pp1p2/1R6/3BP3/P4PPP/1R4K1 w - - 0 0"]
+[PlyCount "11"]
+
+1. Rg4+ $1 fxg4 2. Qg5+ Kh8 3. Qh6 {Black resigned here} Qxh2+ (3... f6 4.
+Qxf8#) (3... d4 4. Qxh7#) 4. Kxh2 g3+ 5. fxg3 Rb8 6. Qxh7# 1-0
+
+[Event "Carlsbad"]
+[Site "?"]
+[Date "1929.??.??"]
+[Round "?"]
+[White "Vidmar, Milan"]
+[Black "Euwe, Max"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "6k1/5pb1/1p1N3p/p5p1/5q2/Q6P/PPr5/3RR2K w - - 0 0"]
+[PlyCount "9"]
+
+{Black threatens 1...Qh2 mate} 1. Re8+ Bf8 (1... Kh7 2. Qd3+ f5 3. Qxc2) 2.
+Rxf8+ $1 Kxf8 (2... Kh7 3. Rxf7+) (2... Kg7 3. Ne8+ Kg6 4. Rd6+ Qxd6 5. Qxd6+)
+3. Nf5+ Kg8 (3... Qb4 4. Rd8#) 4. Qf8+ $1 {Black resigned here} Kxf8 5. Rd8#
+1-0
+
+[Event "Kislovodsk"]
+[Site "?"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Kuznetsov, Andrey"]
+[Black "Spassky, Boris"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "4r3/pp5p/2p1b1pk/2Q5/1P4B1/6q1/PBPP4/RN3K2 b - - 0 0"]
+[PlyCount "3"]
+
+1... Bc4+ $1 {White resigned here} 2. Qxc4 (2. Be2 Bxe2#) (2. d3 Re1#) 2...
+Re1# 0-1
+
+[Event "Teesside"]
+[Site "?"]
+[Date "1973.??.??"]
+[Round "?"]
+[White "Dieks, Roy"]
+[Black "Marjanovic, Slavoljub"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "3RQ3/pk2p3/5p2/2p2p2/1nP2q2/8/PP3PP1/6K1 w - - 0 0"]
+[PlyCount "5"]
+
+1. Qb5+ (1. Rd7+ Kb6 2. Qd8+ Kc6 3. Qc8+ Kb6 4. Rb7+ {Dieks - Marjanovic,
+Teesside 1973} (4. Qb7+ Ka5 5. Qb5#)) 1... Kc7 2. Rd7+ Kc8 3. Qb7# 1-0
+
+[Event "Hastings"]
+[Site "?"]
+[Date "1965.??.??"]
+[Round "?"]
+[White "Spassky, Boris"]
+[Black "Lee, Peter"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r1b1k2r/pn1p1p2/1p5p/2p1N3/2P4p/q1P1P3/P1Q2PP1/3RKB1R w Kkq - 0 0"]
+[PlyCount "13"]
+
+1. Nxf7 $1 Kxf7 (1... Rf8 2. Nxh6) 2. Qf5+ Kg7 (2... Ke7 3. Qe5+ Kd8 4. Qxh8+
+Kc7 5. Rxh4) (2... Ke8 3. Qe5+) (2... Kg8 3. Qg6+ Kf8 4. Qf6+ Ke8 5. Qxh8+) 3.
+Qe5+ Kg8 (3... Kh7 4. Rxh4 d6 5. Bd3+ Kg8 6. Qe8+ Kg7 7. Qg6+ Kf8 8. Rf4+ Bf5
+9. Rxf5+ Ke7 10. Rf7+ Kd8 11. Qf6+ Kc8 12. Qxh8+ Nd8 13. Bf5+ Kb8 14. Qxd8#) 4.
+Rxh4 d6 5. Qg3+ Kf8 6. Rf4+ Ke8 7. Qg7 1-0
+
+[Event "Kharkov"]
+[Site "?"]
+[Date "1963.??.??"]
+[Round "?"]
+[White "Spassky, Boris"]
+[Black "Nikolaevsky, Yuri"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r2q1r2/5p1k/pp3R1p/3bQ3/PnBP4/8/1P4PP/5RK1 w - - 0 0"]
+[PlyCount "13"]
+
+1. Qf5+ Kg7 (1... Kg8 2. Rxh6 Re8 3. Qh7+ Kf8 4. Rxf7+ Bxf7 5. Qxf7#) (1... Kh8
+2. Rxh6+ Kg7 3. Qh7#) 2. Qg4+ Kh7 (2... Kh8 3. Rxh6#) 3. Rxh6+ $1 {Black
+rsigned here} Kxh6 4. Rf5 Qh4 (4... Bxc4 5. Rh5#) 5. Qxh4+ Kg6 6. Qg4+ Kh7 7.
+Rh5# 1-0
+
+[Event "Clacton"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Horner, Jeff"]
+[Black "Law, Andrew"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "6rk/pq5p/1p6/2p1Rp2/5Q1P/2Pr1P2/PP5K/4R3 b - - 0 1"]
+[PlyCount "13"]
+
+1... Rxf3 2. Qd2 (2. Rxf5 Rh3+ 3. Kxh3 Qg2#) (2. Qh6 Rh3+ 3. Kxh3 Qg2#) (2. Rg1
+Rxf4) 2... Rh3+ $1 (2... Rf4 {White resigned here} 3. R5e4) 3. Kxh3 Qf3+ 4. Kh2
+Qg3+ 5. Kh1 Qh3+ 6. Qh2 Qf3+ 7. Qg2 Qxg2# 0-1
+
+[Event "Siegen"]
+[Site "?"]
+[Date "1970.??.??"]
+[Round "?"]
+[White "Fischer, Robert"]
+[Black "Hook, William"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "4q2r/p1r1kp2/1p2pR1p/2n1P2P/8/P1P1BQ2/2P2P2/3RK3 w - - 0 0"]
+[PlyCount "9"]
+
+1. Bxc5+ bxc5 (1... Rxc5 2. Rxe6+ Kf8 3. Qf6 Rxe5+ 4. Rxe5 Qxe5+ 5. Qxe5 f6 6.
+Qc7 Rg8 7. Rd8#) 2. Rxe6+ $1 {Black resigned here} Kf8 (2... fxe6 3. Qf6#) (
+2... Kxe6 3. Qf6#) 3. Qf6 Rh7 (3... Rg8 4. Rxe8+ Kxe8 5. Rd8#) (3... Qxe6 4.
+Qxh8+ Ke7 5. Qd8#) 4. Rxe8+ Kxe8 5. Rd8# 1-0
+
+[Event "Wijk aan Zee"]
+[Site "?"]
+[Date "1970.??.??"]
+[Round "?"]
+[White "Honfi, Karoly"]
+[Black "Maeder, Karl"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r4bk1/5R1p/p5p1/1p1pQ3/7q/8/PPP3PP/5R1K w - - 0 0"]
+[PlyCount "9"]
+
+1. Rg7+ $1 {Black resigned here} Bxg7 (1... Kh8 2. Rxg6+ Qf6 3. Qxf6+ Bg7 4.
+Qxg7#) 2. Qxd5+ Kh8 3. Qxa8+ Qd8 (3... Bf8 4. Qxf8#) 4. Qxd8+ Bf8 5. Qxf8# 1-0
+
+[Event "Sofia"]
+[Site "?"]
+[Date "1972.??.??"]
+[Round "?"]
+[White "Angelov, Angel"]
+[Black "Ajanski, Jordan"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "4bk2/2R1R1pp/1r1p1p2/p3p3/P3P1q1/1P1Q2P1/5P2/6K1 w - - 0 0"]
+[PlyCount "5"]
+
+1. Rxe8+ $1 Kxe8 2. Qd5 {threatening 3.Qg8 mate} Kd8 (2... Kf8 3. Qf7#) 3. Ra7
+{threatening 4.Qg8 mate} 1-0
+
+[Event "Clacton"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Bellon, Juan"]
+[Black "Penrose, Jonathan"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "3qr3/p5k1/2R2p2/3p2nP/Np1P4/1P2r3/P1P5/2K2QR1 w - - 0 1"]
+[PlyCount "17"]
+
+1. Rxg5+ $1 fxg5 2. Rg6+ {Black resigns here} Kh8 (2... Kh7 3. Qf7+ Kh8 4. Rh6#
+) 3. Qf7 {threatening 4.Rh6 mate} Re1+ 4. Kb2 Rb1+ 5. Kxb1 Re1+ 6. Kb2 Rb1+ 7.
+Kxb1 Qf8 8. Qxf8+ Kh7 9. Qg7# 1-0
+
+[Event "New York"]
+[Site "?"]
+[Date "1967.??.??"]
+[Round "?"]
+[White "Sherwin, James"]
+[Black "Denker, Arnold"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r1bq1r2/pp2p1kp/2p3p1/6Q1/2BP2n1/2P2N2/PP3PP1/R3K2R w KQ - 0 0"]
+[PlyCount "15"]
+
+1. Ne5 Rf5 (1... Nxe5 2. dxe5 h5 3. Rxh5 Rh8 4. Rxh8 Qxh8 5. Qxe7+ Kh6 6. O-O-O
+Bg4 7. Qh4+ Kg7 8. Qxg4) (1... b5 2. Rxh7+ Kxh7 3. Qxg6+ Kh8 4. O-O-O bxc4 5.
+Rh1+ Nh2 6. Rxh2+ Bh3 7. Rxh3#) 2. Rxh7+ $1 Kxh7 (2... Kf8 3. Nxg6+ Ke8 4.
+Rxe7+ Qxe7+ 5. Qxe7#) 3. Qxg6+ Kh8 4. O-O-O $1 {Black resigned here} e6 (4...
+Nxf2 5. Qh6#) (4... Qf8 5. Rh1+ Rh5 6. Rxh5+ Qh6+ 7. Rxh6+ Nxh6 8. Qxh6#) 5.
+Rh1+ Nh2 6. Rxh2+ Qh4 7. Rxh4+ Rh5 8. Rxh5# 1-0
+
+[Event "Praid de Rocha"]
+[Site "?"]
+[Date "1969.??.??"]
+[Round "?"]
+[White "Levy, David"]
+[Black "Fedder, Steen"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "6k1/5rp1/4Nb1p/2p5/4Q3/1r5P/q5P1/3R1R1K w - - 0 0"]
+[PlyCount "7"]
+
+1. Rxf6 $1 Rxf6 (1... gxf6 2. Rd8+ Rf8 3. Rxf8#) (1... Rb8 2. Rxf7 Kxf7 3. Rd7+
+Kf6 4. Qf4+ Kxe6 5. Qd6+ Kf5 6. g4+ Ke4 7. Re7+ Qe6 8. Rxe6+ Kf3 9. Qd3+ Kf2
+10. Kh2 c4 11. Qf5#) 2. Rd8+ Kf7 (2... Rf8 3. Rxf8#) 3. Ng5+ $1 hxg5 4. Qe8#
+1-0
+
+[Event "Daugavpils"]
+[Site "?"]
+[Date "1972.??.??"]
+[Round "?"]
+[White "Domuls, Eduard"]
+[Black "Shtayerman"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "rk6/1pp1q3/5p2/4bQp1/3N4/2P3P1/6PP/5RK1 w - - 0 0"]
+[PlyCount "9"]
+
+1. Nc6+ $1 bxc6 2. Rb1+ Ka7 3. Qf2+ Ka6 (3... c5 4. Qa2#) 4. Qa2+ Qa3 5. Qxa3#
+1-0
+
+[Event "Moscow"]
+[Site "?"]
+[Date "1967.??.??"]
+[Round "?"]
+[White "Bronstein, David"]
+[Black "Gligoric, Svetozar"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5bk1/2R3pp/p4p2/4rP2/1p1qn1Q1/1P5P/P4PP1/2R3K1 w - - 0 0"]
+[PlyCount "15"]
+
+1. Rxg7+ $1 Bxg7 (1... Kh8 2. Rg8#) 2. Rc8+ Kf7 3. Qh5+ Ke7 4. Qe8+ Kd6 5. Rc6+
+(5. Qd8# $1) 5... Kd5 6. Qd7+ {Black resigned here} Nd6 7. Rxd6+ Ke4 (7... Kc5
+8. Qc6#) 8. Rxd4# 1-0
+
+[Event "Los Angeles"]
+[Site "?"]
+[Date "1933.??.??"]
+[Round "?"]
+[White "Capablanca, Jose"]
+[Black "Steiner, Herman"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r2q2r1/pp2n1kp/2p1pp2/4p2Q/4P2N/2PP4/P1P3PP/R4RK1 w - - 0 0"]
+[PlyCount "17"]
+
+{From a pre-arranged game, as this was a living-game exhibition} 1. Rxf6 $1
+Kxf6 (1... Ng6 2. Rxg6+ hxg6 3. Qxg6+ Kf8 4. Qh7 Rg4 5. Rf1+ Rf4 6. Ng6+ Ke8 7.
+Nxf4 exf4 8. Rxf4) 2. Rf1+ Nf5 (2... Kg7 3. Rf7+ Kh8 4. Qxh7#) 3. Nxf5 exf5 4.
+Rxf5+ Ke7 (4... Ke6 5. Qf7+ Kd6 6. Rf6+) 5. Qf7+ Kd6 6. Rf6+ Kc5 7. Qxb7 {
+threatening 8.Qxc6 mate} Qb6 8. Rxc6+ $1 Qxc6 9. Qb4# 1-0
+
+[Event "Clacton"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Wise, David"]
+[Black "Hardy, Otto"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r1b2r1k/1pq1Npbp/p4np1/6B1/2N5/4Q3/PPP2PP1/2KR3R w - - 0 0"]
+[PlyCount "19"]
+
+1. Bxf6 Bxf6 2. Rxh7+ $1 Kxh7 3. Rh1+ Bh4 (3... Kg7 4. Qh6#) 4. Rxh4+ Kg7 5.
+Nd5 {threatening the queen and 6.Qh6 mate} f6 6. Qh6+ Kf7 7. Qh7+ Ke6 8. Nxc7+
+Kf5 9. Qh6 Rd8 10. Qf4# 1-0
+
+[Event "El Paso"]
+[Site "?"]
+[Date "1973.??.??"]
+[Round "?"]
+[White "Mednis, Edmar"]
+[Black "Kavalek, Lubomir"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "2q5/p7/2Rp2pk/3Pp2p/QP1rPp2/5P1P/2r3PK/R7 b - - 0 1"]
+[PlyCount "9"]
+
+1... Rxg2+ $1 2. Kxg2 (2. Kh1 Qxh3#) 2... Rd2+ 3. Kf1 (3. Kg1 Qxh3 4. Rxd6 Qg2#
+) 3... Qxh3+ 4. Ke1 (4. Kg1 Qg2#) 4... Qg2 {White resigned here} 5. Rxd6 Qf2#
+0-1
+
+[Event "Wijk aan Zee"]
+[Site "?"]
+[Date "1975.??.??"]
+[Round "?"]
+[White "Ree, Hans"]
+[Black "Gligoric, Svetozar"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "4r1k1/6rp/p6R/P1rP3q/2P5/5pPP/1B3n2/5RKQ b - - 0 1"]
+[PlyCount "9"]
+
+1... Rxg3+ $1 2. Kxf2 (2. Kh2 Rxh3+ 3. Kg1 Qg5+ 4. Kxf2 Re2#) 2... Re2+ $1 3.
+Kxg3 Qg5+ 4. Kxf3 Re3+ 5. Kf2 Qg3# 0-1
+
+[Event "Moscow"]
+[Site "?"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Polugaevsky, Lev"]
+[Black "Szilagyi, Gyorgy"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r2r4/1p1R3p/5pk1/b1B1Pp2/p4P2/P7/1P5P/1K1R4 w - - 0 1"]
+[PlyCount "9"]
+
+1. Rg1+ Kh6 2. Bf8+ $1 Rxf8 (2... Kh5 3. Rxh7#) 3. Rd3 {threatening 4.Rh3 mate.
+Black resigned here.} Be1 4. Rh3+ Bh4 5. Rxh4# 1-0
+
+[Event "Latvia"]
+[Site "?"]
+[Date "1973.??.??"]
+[Round "?"]
+[White "Chembaev, Evgeny"]
+[Black "Shmit, Anatoly"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "3r1rk1/p3nppp/1p3q2/5B2/3R4/P1PP1Q2/5P1P/6RK w - - 0 0"]
+[PlyCount "5"]
+
+1. Bxh7+ $1 Kxh7 (1... Kh8 2. Qxf6 Ng6 (2... gxf6 3. Rh4 Ng6 4. Bxg6+ Kg7 5.
+Be4#) 3. Rh4 Rd5 4. Rxg6 gxf6 5. Bg8+ Rh5 6. Rxh5#) 2. Qxf6 {threatening 3.
+Qxg7 mate} gxf6 3. Rh4# 1-0
+
+[Event "Havana"]
+[Site "?"]
+[Date "1971.??.??"]
+[Round "?"]
+[White "Velimirovic, Dragoljub"]
+[Black "Gipslis, Aivars"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5rk1/pp5p/1n1qpb2/1B2nppQ/1P3N2/P6P/6R1/4K1R1 w - - 0 0"]
+[PlyCount "5"]
+
+1. Rxg5+ $1 Kh8 (1... Ng6 2. Nxg6 Bg7 3. Nxf8 Qe5+ 4. Kf2 Qd4+ 5. Ke2 Qe5+ 6.
+Kf1 Qf4+ 7. Kg2 Qd4 8. Qe8 Qe4+ 9. Kh2 Qe5+ 10. Kh1 Qe4+ 11. R5g2 h6 12. Nxe6+
+Kh7 13. Qg6+ Kg8 14. Qxg7#) (1... Bxg5 2. Qxg5+ Ng6 (2... Kh8 3. Qg7#) (2...
+Kf7 3. Qg7#) 3. Nxg6 Rf7 (3... hxg6 4. Qxg6+ Kh8 5. Qg7#) 4. Ne5+ Kf8 5. Qg8+
+Ke7 6. Qxf7+ Kd8 7. Rg8+ Qf8 8. Rxf8#) 2. Qxh7+ $1 {Black resigned here} Kxh7
+3. Rh5# 1-0
+
+[Event "Palma de Mallorca"]
+[Site "?"]
+[Date "1966.??.??"]
+[Round "?"]
+[White "Shamkovich, Leonid"]
+[Black "O'Kelly, Alberic"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "2b2r1k/r5bp/p4R2/1p2p1B1/1q1pP3/1B5Q/PP3P1K/7R w - - 0 0"]
+[PlyCount "7"]
+
+1. Qxh7+ $1 Kxh7 2. Kg1+ Bh6 (2... Bh3 3. Rxh3+ Bh6 4. Rhxh6+ Kg7 5. Rfg6#) 3.
+Rhxh6+ {Black resigned here} Kg7 4. Rfg6# 1-0
+
+[Event "Hastings"]
+[Site "?"]
+[Date "1970.??.??"]
+[Round "?"]
+[White "Markland, Peter"]
+[Black "Hort, Vlastimil"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "1rb2r2/1p1n1pk1/2p1n1p1/p3P2p/2qP3R/2N3NP/PP1Q2B1/5RK1 w - - 0 0"]
+[PlyCount "15"]
+
+1. Bd5 $1 Qxf1+ (1... cxd5 2. Nxh5+ $1 gxh5 3. Qg2+ Kh6 4. Rf5 Ng7 5. Qxg7+ $1
+Kxg7 6. Rg5+ Kh6 7. Rhxh5#) 2. Kxf1 cxd5 3. Nxd5 (3. Nf5+ $1 gxf5 4. Rxh5 f6 5.
+Nxd5 b6 6. Qg2+ Kf7 7. Rh7+ Ke8 8. Re7+ Kd8 9. Rxe6) 3... b6 (3... Rh8 4. Nf4)
+4. Nf4 (4. Rxh5 $1 gxh5 5. Nf5+ Kg8 6. Nde7+ Kh7 7. Qh6#) 4... Nxf4 5. Qxf4
+Ba6+ 6. Kg1 Bd3 (6... Rfe8 7. Nxh5+ gxh5 8. Qg5+ Kf8 9. Rxh5 f6 10. exf6) 7.
+Qg5 Kh8 8. Qh6+ 1-0
+
+[Event "St. Louis simul"]
+[Site "?"]
+[Date "1909.12.09"]
+[Round "?"]
+[White "Capablanca, Jose"]
+[Black "Wohlbrecht, George"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "4rrk1/pR1R3p/2n3pq/5p2/8/2N3Q1/PP4P1/6K1 w - - 0 0"]
+[PlyCount "9"]
+
+1. Qg5 $6 {and Black prematurely resigned here} (1. Qh3 Qxh3 (1... Qc1+ 2. Kh2
+Rf7 3. Nd5 Rxd7 4. Rxd7 h5 5. Nf6+ Kf8 6. Qa3+ Re7 7. Nd5 Qg5 8. Nxe7 Nxe7 9.
+Qc3) 2. gxh3 Re1+ 3. Kf2 Rfe8 4. Rg7+ Kh8 5. Rxh7+ Kg8 6. Rhg7+ Kh8 7. Nd5) (1.
+Rxh7 $1 Qxh7 2. Rxh7 Kxh7 3. Qc7+ Ne7 4. Nb5 a6 5. Nd6) 1... Re1+ $1 (1... Qxg5
+$4 2. Rg7+ Kh8 3. Rxh7+ Kg8 4. Rbg7#) 2. Kf2 Rh1 3. Rxh7 (3. Qxh6 Rxh6 4. Nd5
+a5 5. Rg7+ Kh8 6. Rgc7 Nd8 7. Ra7) 3... Qxh7 4. Rxh7 Kxh7 5. Qf4 1-0
+
+[Event "London"]
+[Site "?"]
+[Date "1922.??.??"]
+[Round "?"]
+[White "Alekhine, Alexander"]
+[Black "Yates, Fred"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r5rk/2RN1Rp1/b3p2p/3p1p1P/p2P1K2/Pp2PPP1/1P6/8 w - - 0 0"]
+[PlyCount "9"]
+
+1. Nf6 $1 Rgf8 (1... gxf6 2. Rh7#) 2. Rxg7 {threatening 3.Rh7 mate} Rxf6 3. Ke5
+{Black resigned here} (3. Rh7+ Kg8 4. Rcg7+ Kf8 5. Ke5) 3... Rff8 4. Rh7+ Kg8
+5. Rcg7# 1-0
+
+[Event "London"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Hartston, William"]
+[Black "Whiteley, Andrew"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "2r1kr2/pR2n3/3q4/P7/3p1p2/P1pQ2P1/2P4P/4R1K1 w - - 0 1"]
+[PlyCount "13"]
+
+1. Qh7 (1. Qg6+ $1 Rf7 (1... Qxg6 2. Rexe7+ Kd8 3. Rbd7#) 2. Qxd6 Kf8 3. Rexe7
+fxg3 4. Rxf7+ Kg8 5. Qxg3+ Kh8 6. Rh7#) 1... Rf7 2. Qg8+ Rf8 3. Qh7 (3. Qg6+ $1
+Rf7 4. Qxd6 Kf8 5. Rexe7 Kg8 6. Rxf7 fxg3 7. Qxg3+ Kh8 8. Rh7#) 3... Rf7 4.
+Qg8+ Rf8 5. Qg6+ Qxg6 (5... Rf7 6. Qxd6) 6. Rexe7+ Kd8 7. Rbd7# 1-0
+
+[Event "Solingen"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Polugaevsky, Lev"]
+[Black "Eising, Johannes"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "1r5k/3Q4/p2p2rp/2pPp3/2P1Pp2/P4R2/1q4PP/6RK b - - 0 0"]
+[PlyCount "7"]
+
+1... Qxg2+ $1 {Black resigned here} 2. Rxg2 Rb1+ 3. Rf1 (3. Rg1 Rgxg1#) 3...
+Rxf1+ 4. Rg1 Rfxg1# 0-1
+
+[Event "Riga"]
+[Site "?"]
+[Date "1965.??.??"]
+[Round "?"]
+[White "Kapengut, Albert"]
+[Black "Tal, Mikhail"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5r1k/1p4pp/p2Q4/8/3R3P/4br2/PP4KP/8 b - - 0 0"]
+[PlyCount "9"]
+
+1... Rf2+ 2. Kg3 (2. Kh1 Rf1+ 3. Kg2 Rg1+ 4. Kh3 Rf3+ 5. Qg3 Rfxg3+ 6. hxg3
+Bxd4) (2. Kh3 Bxd4) (2. Kg1 Rxb2+ 3. Kh1 Rf1#) 2... R2f6 {White resigned here}
+(2... h5 {threatening 3...R8f3 mate} 3. Qd5 R8f3+ 4. Qxf3 Rxf3+ 5. Kxf3 Bxd4)
+3. Qd5 Bxd4 4. Qxd4 Rg6+ 5. Kh3 Rf3# 0-1
+
+[Event "London"]
+[Site "?"]
+[Date "1842.??.??"]
+[Round "?"]
+[White "Cochrane, John"]
+[Black "Staunton, Howard"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "6k1/6pp/p2bN3/3p2n1/2r4q/P2QP2P/1B3PP1/5RK1 b - - 0 0"]
+[PlyCount "5"]
+
+1... Nxh3+ $1 2. gxh3 (2. Kh1 Nxf2+ 3. Kg1 Bh2#) 2... Rg4+ $1 3. hxg4 (3. Kh1
+Qxh3#) 3... Qh2# 0-1
+
+[Event "Clacton"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Webb, Roger"]
+[Black "Clarke, Peter"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "3rrk2/1bq2p1p/npp1pp1N/p6Q/2PP4/6PB/PP3P1P/R3R1K1 w - - 0 0"]
+[PlyCount "9"]
+
+1. Nf5 $1 exf5 (1... Re7 2. Qxh7 Ke8 3. Ng7+ Kd7 4. Nxe6 fxe6 5. Bxe6+ Kd6 6.
+Qe4 Ree8 7. c5+ bxc5 8. Qf4+ Ke7 9. Bc4+) 2. Qh6+ Kg8 3. Bxf5 {threatening 4.
+Qxh7+ Kf8 5.Qh8 mate} Bc8 4. Qxh7+ Kf8 5. Qh8# 1-0
+
+[Event "Moscow"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Shamkovich, Leonid"]
+[Black "Averbakh, Yuri"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "2rq1bk1/ppN2p1p/5np1/3pR3/5Qb1/1P1B4/PBPP1PPP/6K1 w - - 0 0"]
+[PlyCount "5"]
+
+1. Nxd5 $1 Nxd5 (1... Bg7 2. Ne7+ Kh8 3. Re1 Bf5 4. Bxf5 Nh5 5. Qh6 Bxb2 6.
+Bxg6 fxg6 7. Nxg6+ Kg8 8. Ne7+ Kh8 9. Nxc8) 2. Rxd5 $1 {Black resigned here}
+Qxd5 (2... Qh4 3. g3 Qh5 4. Qf6) 3. Qf6 {threatening 4.Qh8 mate} 1-0
+
+[Event "Clacton"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Botterill, George"]
+[Black "Thomas, Richard"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "2b1qrk1/1ppp1p1p/p3nBnQ/8/P3P3/1N1R4/1PP2bPP/2K2B1R w - - 0 0"]
+[PlyCount "9"]
+
+1. Rh3 Bh4 (1... Nh4 2. Rxh4 Bxh4 3. Qxh4) 2. Rxh4 $1 {threatening 3.Qxh7 mate}
+Nxh4 3. Qxh4 {Black resigned here} Ng7 (3... h5 4. Qxh5 Ng7 5. Qg5 d5 6. Qxg7#)
+4. Qg4 d5 5. Qxg7# 1-0
+
+[Event "Wijk aan Zee"]
+[Site "?"]
+[Date "1971.??.??"]
+[Round "?"]
+[White "van den Berg, Carel"]
+[Black "Korchnoi, Viktor"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r4rk1/pb1q3p/3pRnp1/1p1P4/2p2B1P/2P3P1/PN1Q1P2/5RK1 b - - 0 0"]
+[PlyCount "11"]
+
+1... Nxd5 $1 2. Rxd6 (2. Rfe1 Nxf4 3. gxf4 Qc6 4. R1e4) 2... Qh3 {White
+resigned here} 3. Rxd5 (3. f3 Nxf4 4. gxf4 Bxf3 5. Rxf3 Qxf3 6. Qd5+ Qxd5 7.
+Rxd5 a6) 3... Rad8 $1 (3... Bxd5 $4 4. Qxd5+ Rf7 5. Qxa8+) 4. f3 (4. Rxd8 Qg2#)
+4... Bxd5 5. Qe3 Rfe8 6. Qf2 a5 0-1
+
+[Event "Venice"]
+[Site "?"]
+[Date "1953.??.??"]
+[Round "?"]
+[White "Schmid, Lothar"]
+[Black "Bhend, Edwin"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "2b2r1k/2p3pp/2Nb4/pP5q/2PP4/P4pP1/5P1P/R1BQ2K1 b - - 0 1"]
+[PlyCount "13"]
+
+1... Bxg3 $1 (1... Qh3 $2 2. Qf1) 2. hxg3 (2. fxg3 f2+ 3. Kg2 Bh3+ 4. Kh1 Qxd1#
+) 2... Bh3 3. Bg5 Bg2 {threatening 4...Qh1 mate} 4. Bh4 Qg4 5. Ne5 Qh3 {White
+ressinged here} 6. Ng6+ hxg6 7. b6 Qh1# 0-1
+
+[Event "Tallinn"]
+[Site "?"]
+[Date "1969.??.??"]
+[Round "?"]
+[White "Stein, Leonid"]
+[Black "Book, Eero"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "1nk1qb1r/p2np2p/1p2p1p1/N1p5/4PB2/1Q4PP/PPP2P2/3R1BK1 w - - 0 0"]
+[PlyCount "11"]
+
+1. Qxe6 $1 {Black resigned here} bxa5 (1... c4 2. Rd4 bxa5 3. Qxc4+ Nc5 4.
+Qxc5+ Kb7 5. Qc7+ Ka8 6. Rd7 Nxd7 7. Qc6#) 2. Ba6+ Kd8 (2... Nxa6 3. Qxa6+ Kd8
+4. Qxa5+ Kc8 5. Qc7#) 3. Bxb8 Bh6 4. Qc6 e6 5. Bd6 Qe7 6. Qc8# 1-0
+
+[Event "Paignton"]
+[Site "?"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Williams, Howard"]
+[Black "Mestel, Jonathan"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r2r2k1/ppq2ppp/8/5b2/1n6/2N1Q3/PP3PPP/2KR1BNR w - - 0 0"]
+[PlyCount "6"]
+
+1. Rxd8+ Rxd8 2. Qxa7 (2. b3 Nd5) 2... Nxa2+ $1 3. Qxa2 Qf4# 0-1
+
+[Event "Maribor"]
+[Site "?"]
+[Date "1934.??.??"]
+[Round "?"]
+[White "Pirc, Vasja"]
+[Black "Spielmann, Rudolf"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "b4k2/n2nq2p/p2N1pp1/1p2p3/1P5N/PB1QP3/1B3PPP/6K1 w - - 0 0"]
+[PlyCount "11"]
+
+1. Nxg6+ $1 hxg6 (1... Kg7 2. Nf5+ Kxg6 3. e4 {threatening 4.Qg3+} Qe6 4. Bxe6
+Nf8 5. Qg3+ Kh5 6. h3 Nxe6 7. Qg4#) 2. Qxg6 {threatening 3.Qg8 mate.  Black
+resigned here.} Bd5 (2... Qxd6 3. Qf7#) 3. Bxd5 Qe8 4. Qxe8+ Kg7 5. Nf5+ Kh7 6.
+Qh5# 1-0
+
+[Event "Antwerp"]
+[Site "?"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Schweber, Samuel"]
+[Black "Spassky, Boris"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "3r3k/pp4pp/2b5/2p5/P3qB2/R5P1/7P/5QK1 b - - 0 0"]
+[PlyCount "7"]
+
+1... Rd1 $1 {threatening 2...Qg2 mate.  White resigned here.} 2. Ra2 (2. Qxd1
+Qg2#) (2. Kf2 Rxf1+ 3. Kxf1 Qb1+ 4. Kf2 Qb2+) 2... Qh1+ 3. Kf2 Qxf1+ 4. Ke3
+Qf3# 0-1
+
+[Event "The Hague"]
+[Site "?"]
+[Date "1966.??.??"]
+[Round "?"]
+[White "Gligoric, Svetozar"]
+[Black "Tringov, Georgi"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "8/1p3q2/p3p2Q/3b1kPp/3Bp3/7P/PP4P1/6K1 w - - 0 0"]
+[PlyCount "9"]
+
+1. g6 $1 Qxg6 (1... Qe7 2. Qxh5+ Qg5 3. g4+ Kf4 4. Be3+ Kxe3 5. Qxg5+) (1...
+Qf6 2. Bxf6) (1... Qg8 2. Qxh5+ Kf4 3. Qg4#) 2. Qf8+ Kg5 3. Be3+ {Black
+resigned here} Kh4 4. Qf4+ Qg4 5. Bf2# 1-0
+
+[Event "Flushing"]
+[Site "?"]
+[Date "1972.??.??"]
+[Round "?"]
+[White "Wade, Robert"]
+[Black "Kuijpers, Franciscus"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5r1k/p5b1/4Q1Pp/4pp2/8/1B6/PP3qP1/1K5R w - - 0 0"]
+[PlyCount "9"]
+
+1. Rxh6+ $1 Bxh6 2. Qxe5+ Bg7 (2... Rf6 3. Qxf6+ Bg7 4. Qd8+ Bf8 5. Qxf8#) 3.
+Qh2+ Qh4 4. Qxh4+ Bh6 5. Qxh6# 1-0
+
+[Event "Mar del Plata"]
+[Site "?"]
+[Date "1969.??.??"]
+[Round "?"]
+[White "Mecking, Henrique"]
+[Black "Canobra, Juvenal"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "7k/pp4b1/3p3p/6p1/4B3/q1P1QPP1/P1P4P/1K5R w - - 0 0"]
+[PlyCount "15"]
+
+1. Bd3 $1 Bxc3 {threatening 2...Qb2 mate} (1... Be5 2. Qe4 Kg7 3. f4 gxf4 4.
+gxf4 Bxc3 5. Qe7+ Kg8 6. Rg1+ Bg7 7. Qxg7#) 2. Qe8+ Kg7 3. Qe7+ Kg8 (3... Kh8
+4. Qf8#) 4. Bc4+ {Black resigned here} d5 (4... Kh8 5. Qf8+ Kh7 6. Bd3#) 5.
+Bxd5+ Kh8 6. Qe8+ Kg7 7. Qf7+ Kh8 8. Qg8# 1-0
+
+[Event "Siegen"]
+[Site "?"]
+[Date "1970.??.??"]
+[Round "?"]
+[White "Vizantiadis, Lazaros"]
+[Black "Spassky, Boris"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5r2/1p1bq1k1/p1pb2p1/3Pp2p/P1B1P3/5N2/1P3rPP/R1Q3RK b - - 0 0"]
+[PlyCount "9"]
+
+1... R8xf3 $1 {White resigned here} 2. gxf3 (2. Qd1 Rf4 3. Qd3 Rxb2) 2... Rxh2+
+$1 3. Kxh2 Qh4+ 4. Kg2 Bh3+ 5. Kh1 (5. Kh2 Bf1#) 5... Bf1# 0-1
+
+[Event "Budapest"]
+[Site "?"]
+[Date "1967.??.??"]
+[Round "?"]
+[White "Adorjan, Andras"]
+[Black "Kurajica, Bojan"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r4k1r/2qnRppp/3p1n2/3P1N2/p1P5/6P1/3B1PBP/4Q1K1 w - - 0 0"]
+[PlyCount "7"]
+
+1. Rxf7+ $1 {Black resigned here} Kxf7 (1... Kg8 2. Rxg7+ Kf8 3. Qe7#) 2. Qe6+
+(2. Qe7+ Kg6 (2... Kg8 3. Qxg7#) 3. Qxg7+ Kxf5 4. Qg5#) 2... Kg6 (2... Kf8 3.
+Qe7+ Kg8 4. Qxg7#) 3. Ne7+ Kh5 4. Qh3# 1-0
+
+[Event "Moscow"]
+[Site "?"]
+[Date "1951.??.??"]
+[Round "?"]
+[White "Geller, Efim"]
+[Black "Novotelnov, Nikolai"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5nk1/2b1q1p1/2p5/3pP1pQ/1r1P2P1/3B1R2/5PP1/6K1 w - - 0 0"]
+[PlyCount "13"]
+
+1. Rxf8+ $1 Kxf8 (1... Qxf8 2. Bh7+ Kh8 3. Bg6+ Kg8 4. Qh7#) 2. Qh8+ Kf7 3.
+Bg6+ $1 {Black resigned here} Ke6 (3... Kxg6 4. Qh5#) 4. Qg8+ Kd7 (4... Qf7 5.
+Qxf7#) 5. Bf5+ Qe6 6. Qxe6+ Kd8 7. Qd7# 1-0
+
+[Event "Kapfenberg"]
+[Site "?"]
+[Date "1970.??.??"]
+[Round "?"]
+[White "Geller, Efim"]
+[Black "Liebert, Heinz"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "2b5/2qrrp1k/5Rp1/2p4p/1pB1PR1P/1P1P2P1/1Q5K/8 w - - 0 1"]
+[PlyCount "11"]
+
+1. R4f5 $1 gxf5 (1... Bb7 2. Qd2 Kg7 3. Rxh5 Kxf6 4. Qg5+ Kg7 5. Qh6+ Kg8 6.
+Qh8#) 2. Rh6+ $1 Kxh6 (2... Kg8 3. Rh8#) 3. Qh8+ Kg6 4. exf5+ {Black resigned
+here} Kxf5 5. Qxh5+ Kf6 6. Qg5# 1-0
+
+[Event "Utrecht"]
+[Site "?"]
+[Date "1936.??.??"]
+[Round "?"]
+[White "van Steenis, Hendrick"]
+[Black "Spielmann, Rudolf"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "Q7/p2q3R/2p1kPp1/1p3bP1/2p5/P1P5/7P/6K1 b - - 0 0"]
+[PlyCount "27"]
+
+1... Qd1+ 2. Kf2 (2. Kg2 Be4+ 3. Kf2 Qd2+ 4. Kf1 Bd3+ 5. Kg1 Qe1+ 6. Kg2 Be4+
+7. Kh3 Qe3+ 8. Kh4 Qf2+ 9. Kg4 Bf5#) 2... Qd2+ 3. Kf3 (3. Kg3 Qe3+ 4. Kg2 Be4+
+5. Kf1 Qc1+ 6. Ke2 Bd3+ 7. Kf3 Qf1+ 8. Kg3 Qe1+ 9. Kh3 Bf5+ 10. Kg2 Be4+ 11.
+Kh3 Qe3+ 12. Kh4 Qf2+ 13. Kg4 Bf5#) 3... Qxc3+ 4. Kf2 (4. Ke2 Bg4+ 5. Kf2 Qf3+
+6. Kg1 Qe3+ 7. Kg2 Bf3+ 8. Kh3 Be4+ 9. Kh4 Qf2+ 10. Kg4 Bf5#) 4... Qd4+ 5. Kf3
+Be4+ 6. Ke2 Bd3+ 7. Kf3 Qe4+ 8. Kf2 (8. Kg3 Qe1+ 9. Kh3 Bf5+ 10. Kg2 Be4+ 11.
+Kh3 Qe3+ 12. Kh4 Qf2+ 13. Kg4 Bf5#) 8... Qe2+ 9. Kg3 (9. Kg1 Qf1#) 9... Qe1+
+10. Kh3 Bf5+ 11. Kg2 Be4+ 12. Kh3 Qe3+ 13. Kh4 (13. Kg4 Bf5+ 14. Kh4 Qf2#)
+13... Qf2+ 14. Kh3 Bf5# 0-1
+
+[Event "Carlsbad"]
+[Site "?"]
+[Date "1923.??.??"]
+[Round "?"]
+[White "Alekhine, Alexander"]
+[Black "Yates, Fred"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "5r1k/4p2p/1p2Q1p1/p1pPb2q/4P1Nr/5P2/PP2R2P/5R1K b - - 0 0"]
+[PlyCount "37"]
+
+1... Rxg4 $1 2. fxg4 Rxf1+ 3. Kg2 Qxh2+ $1 4. Kxf1 Qh1+ 5. Kf2 Bd4+ 6. Kg3 Qg1+
+7. Kh3 Qf1+ 8. Rg2 Qh1+ 9. Kg3 Qe1+ 10. Kh3 g5 $1 {threatening 11...Qh4 mate}
+11. Rc2 Qd1 12. Rg2 (12. Rc3 Qf1+ 13. Kg3 Bf2+ 14. Kf3 Bg1+ 15. Kg3 Qf2+ 16.
+Kh3 Qh2#) 12... Qh1+ 13. Kg3 Qe1+ 14. Rf2 Qxf2+ 15. Kh3 Qf1+ 16. Kg3 Bf2+ 17.
+Kf3 Bg1+ {White resigned here} 18. Kg3 Qf2+ 19. Kh3 Qf3# 0-1
+
+[Event "El Paso"]
+[Site "?"]
+[Date "1973.??.??"]
+[Round "?"]
+[White "Martz, William"]
+[Black "Benko, Pal"]
+[Result "0-1"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "6k1/6p1/7p/1q1bp1P1/4n2Q/3rB3/6BP/4R2K b - - 0 0"]
+[PlyCount "15"]
+
+1... Rxe3 $1 2. Rxe3 Ng3+ $1 3. Kg1 (3. hxg3 Qf1+ 4. Kh2 Qxg2#) 3... Qb1+ {
+White resigned here} 4. Kf2 (4. Re1 Qxe1+ 5. Bf1 Qxf1#) (4. Bf1 Qxf1#) 4...
+Qc2+ 5. Ke1 (5. Re2 Qxe2+ 6. Kxg3 Qxg2#) 5... Qc1+ 6. Kf2 Qd2+ 7. Re2 (7. Kxg3
+Qxg2#) (7. Kg1 Qxe3#) 7... Qxe2+ 8. Kxg3 (8. Kg1 Qxg2#) 8... Qxg2# 0-1
+
+[Event "USSR"]
+[Site "?"]
+[Date "1965.??.??"]
+[Round "?"]
+[White "Kondrakov"]
+[Black "Glukhovsky"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r4rk1/6pp/p5n1/1p3b2/2q5/P1N1B1Q1/1PPR2PP/5RK1 b - - 0 0"]
+[PlyCount "5"]
+
+1... Qxf1+ $1 2. Kxf1 Bd3+ 3. Ke1 (3. Kg1 Rf1#) 3... Rf1# 1-0
+
+[Event "New York"]
+[Site "?"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Gonzalez"]
+[Black "Howard, Frank"]
+[Result "1-0"]
+[Annotator "Wall,Bill"]
+[SetUp "1"]
+[FEN "r1b1k2r/p4pbp/4p3/q5B1/1p2pP2/8/PPP1Q1PP/2KR3R w kq - 0 0"]
+[PlyCount "3"]
+
+1. Qb5+ $1 Qxb5 (1... Bd7 2. Qxa5) 2. Rd8# 1-0
+
