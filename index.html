@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess PGN Library PRO</title>
+<title>Chess PGN Viewer FINAL</title>
 
 <style>
 body {
@@ -32,20 +32,14 @@ body {
 .w { background: #f0d9b5; }
 .b { background: #b58863; }
 
-.panel { width: 300px; }
+.panel { width: 320px; }
 
-.move {
-  cursor: pointer;
-  padding: 2px;
-}
+.move-line { padding: 3px; }
+.move-line span { cursor: pointer; margin-left: 6px; }
 
-.move.active {
-  background: yellow;
-}
+.move-active { background: yellow; }
 
-.last {
-  outline: 2px solid red;
-}
+.last { outline: 2px solid red; }
 
 input, select, button {
   width: 100%;
@@ -62,7 +56,7 @@ input, select, button {
 
 <div class="panel">
 
-  <h3>🔎 Search Books</h3>
+  <h3>🔎 Search</h3>
   <input id="search" placeholder="filter books...">
 
   <h3>📚 Library</h3>
@@ -99,7 +93,6 @@ let index = 0;
 let auto = null;
 let lastMove = null;
 
-/* ===== ALL BOOKS ===== */
 const books = {
   "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
   "100 Endgame Studies": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_endgame_studies.pgn",
@@ -118,13 +111,11 @@ const books = {
   "Tal": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Tal.pgn"
 };
 
-/* ===== CACHE (важно для скорости) ===== */
 const cache = {};
 
-/* ===== INIT LIST ===== */
-function renderBooks(filter = "") {
+/* BOOK LIST */
+function renderBooks(filter="") {
   select.innerHTML = "";
-
   Object.keys(books)
     .filter(b => b.toLowerCase().includes(filter.toLowerCase()))
     .forEach(b => {
@@ -137,19 +128,18 @@ function renderBooks(filter = "") {
 
 renderBooks();
 
-/* ===== BOARD ===== */
+/* BOARD */
 function draw() {
   const b = game.board();
   boardEl.innerHTML = "";
 
-  for (let r = 0; r < 8; r++) {
-    for (let c = 0; c < 8; c++) {
+  for (let r=0;r<8;r++){
+    for (let c=0;c<8;c++){
+      const d=document.createElement("div");
+      d.className="cell "+((r+c)%2?"b":"w");
 
-      const d = document.createElement("div");
-      d.className = "cell " + ((r + c) % 2 ? "b" : "w");
-
-      const p = b[r][c];
-      d.textContent = p ? piece(p) : "";
+      const p=b[r][c];
+      d.textContent=p?piece(p):"";
 
       boardEl.appendChild(d);
     }
@@ -158,135 +148,126 @@ function draw() {
   drawLastMove();
 }
 
-/* PIECES */
-function piece(p) {
-  const m = {
-    wp:"♙", wr:"♖", wn:"♘", wb:"♗", wq:"♕", wk:"♔",
-    bp:"♟", br:"♜", bn:"♞", bb:"♝", bq:"♛", bk:"♚"
+function piece(p){
+  const m={
+    wp:"♙",wr:"♖",wn:"♘",wb:"♗",wq:"♕",wk:"♔",
+    bp:"♟",br:"♜",bn:"♞",bb:"♝",bq:"♛",bk:"♚"
   };
-  return m[p.color + p.type];
+  return m[p.color+p.type];
 }
 
-/* ===== LOAD PGN WITH CACHE ===== */
-async function loadPGN(url) {
-  status.innerText = "loading...";
-
+/* LOAD */
+async function loadPGN(url){
   let text;
 
-  if (cache[url]) {
-    text = cache[url];
-  } else {
-    const res = await fetch(url);
-    text = await res.text();
-    cache[url] = text;
+  if(cache[url]) text=cache[url];
+  else{
+    const res=await fetch(url);
+    text=await res.text();
+    cache[url]=text;
   }
 
-  game = new Chess();
+  game=new Chess();
   game.load_pgn(text);
 
-  history = game.history();
-  index = 0;
+  history=game.history();
+  index=0;
 
-  slider.max = history.length;
+  slider.max=history.length;
 
   renderMoves();
   rebuild(0);
 }
 
-/* ===== REBUILD SAFE ===== */
-function rebuild(to) {
-  game = new Chess();
-  lastMove = null;
+/* REBUILD */
+function rebuild(to){
+  game=new Chess();
+  lastMove=null;
 
-  for (let i = 0; i < to; i++) {
-    const m = game.move(history[i]);
-    if (i === to - 1) lastMove = m;
+  for(let i=0;i<to;i++){
+    const m=game.move(history[i]);
+    if(i===to-1) lastMove=m;
   }
 
-  index = to;
-
-  slider.value = index;
+  index=to;
+  slider.value=index;
 
   draw();
   highlight();
-  status.innerText = `${index}/${history.length}`;
+  status.innerText=index+"/"+history.length;
 }
 
-/* ===== MOVES ===== */
-function renderMoves() {
-  movesEl.innerHTML = "";
+/* MOVES — ПРАВИЛЬНЫЙ ФОРМАТ */
+function renderMoves(){
+  movesEl.innerHTML="";
 
-  history.forEach((m, i) => {
-    const d = document.createElement("div");
-    d.className = "move";
-    d.innerText = (i + 1) + ". " + m;
-    d.onclick = () => rebuild(i + 1);
-    movesEl.appendChild(d);
-  });
+  for(let i=0;i<history.length;i+=2){
+    const moveNum=(i/2)+1;
+
+    const white=history[i];
+    const black=history[i+1];
+
+    const div=document.createElement("div");
+    div.className="move-line";
+
+    div.innerHTML=`
+      <b>${moveNum}.</b>
+      <span onclick="rebuild(${i+1})">${white||""}</span>
+      <span onclick="rebuild(${i+2})">${black||""}</span>
+    `;
+
+    movesEl.appendChild(div);
+  }
 
   highlight();
 }
 
-function highlight() {
-  document.querySelectorAll(".move").forEach((el, i) => {
-    el.classList.toggle("active", i === index - 1);
+function highlight(){
+  document.querySelectorAll(".move-line span").forEach((el,i)=>{
+    el.classList.toggle("move-active", i===index-1);
   });
 }
 
-/* ===== LAST MOVE ===== */
-function drawLastMove() {
-  if (!lastMove) return;
+/* LAST MOVE */
+function drawLastMove(){
+  if(!lastMove) return;
 
-  const cells = document.querySelectorAll(".cell");
+  const cells=document.querySelectorAll(".cell");
 
-  const from = sq(lastMove.from);
-  const to = sq(lastMove.to);
+  const from=sq(lastMove.from);
+  const to=sq(lastMove.to);
 
-  if (cells[from]) cells[from].classList.add("last");
-  if (cells[to]) cells[to].classList.add("last");
+  if(cells[from]) cells[from].classList.add("last");
+  if(cells[to]) cells[to].classList.add("last");
 }
 
-function sq(s) {
-  return (8 - +s[1]) * 8 + (s.charCodeAt(0) - 97);
+function sq(s){
+  return (8-+s[1])*8+(s.charCodeAt(0)-97);
 }
 
-/* ===== CONTROLS ===== */
-function nextMove() {
-  if (index < history.length) rebuild(index + 1);
-}
+/* CONTROLS */
+function nextMove(){ if(index<history.length) rebuild(index+1); }
+function prevMove(){ if(index>0) rebuild(index-1); }
+function resetGame(){ rebuild(0); }
 
-function prevMove() {
-  if (index > 0) rebuild(index - 1);
-}
+function toggleAuto(){
+  if(auto){ clearInterval(auto); auto=null; return; }
 
-function resetGame() {
-  rebuild(0);
-}
-
-/* ===== AUTO ===== */
-function toggleAuto() {
-  if (auto) {
-    clearInterval(auto);
-    auto = null;
-    return;
-  }
-
-  auto = setInterval(() => {
-    if (index < history.length) nextMove();
+  auto=setInterval(()=>{
+    if(index<history.length) nextMove();
     else clearInterval(auto);
-  }, 400);
+  },400);
 }
 
-/* ===== SEARCH ===== */
-search.oninput = () => renderBooks(search.value);
+/* EVENTS */
+search.oninput=()=>renderBooks(search.value);
+select.onchange=()=>loadPGN(select.value);
+slider.oninput=()=>rebuild(+slider.value);
 
-/* ===== EVENTS ===== */
-select.onchange = () => loadPGN(select.value);
-
-window.nextMove = nextMove;
-window.prevMove = prevMove;
-window.resetGame = resetGame;
-window.toggleAuto = toggleAuto;
+window.nextMove=nextMove;
+window.prevMove=prevMove;
+window.resetGame=resetGame;
+window.toggleAuto=toggleAuto;
 
 loadPGN(select.value);
 
