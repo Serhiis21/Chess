@@ -1,15 +1,17 @@
 <div style="font-family:Arial; font-weight:bold; margin-bottom:10px;">
-  Шахматная библиотека
+  ♟ Шахматная библиотека
 </div>
 
 <select id="gameSelect"></select>
 
 <div style="margin:10px 0;">
-  <button onclick="prevMove()">◀</button>
-  <button onclick="nextMove()">▶</button>
+  <button onclick="prev()">◀</button>
+  <button onclick="next()">▶</button>
 </div>
 
 <div id="board"></div>
+
+<div id="moves"></div>
 
 <script>
 
@@ -27,16 +29,18 @@ const pgnText = `
 1. d4 d5 2. c4 e6 3. Nc3 Nf6
 `;
 
-const gameSelect = document.getElementById("gameSelect");
-const boardDiv = document.getElementById("board");
-
 let games = [];
 let moves = [];
 let index = 0;
 let position = {};
 
-// ♟ стартовая позиция
-function startPos() {
+// фигуры
+const pieces = {
+  wp:"♙", wn:"♘", wb:"♗", wr:"♖", wq:"♕", wk:"♔",
+  bp:"♟", bn:"♞", bb:"♝", br:"♜", bq:"♛", bk:"♚"
+};
+
+function start() {
   return {
     a1:"wr", b1:"wn", c1:"wb", d1:"wq", e1:"wk", f1:"wb", g1:"wn", h1:"wr",
     a2:"wp", b2:"wp", c2:"wp", d2:"wp", e2:"wp", f2:"wp", g2:"wp", h2:"wp",
@@ -45,27 +49,27 @@ function startPos() {
   };
 }
 
-// фигуры
-const pieces = {
-  wp:"♙", wn:"♘", wb:"♗", wr:"♖", wq:"♕", wk:"♔",
-  bp:"♟", bn:"♞", bb:"♝", br:"♜", bq:"♛", bk:"♚"
-};
+function split() {
+  return pgnText.split(/\n\n(?=\[Event)/).filter(g=>g.trim());
+}
 
-// 📌 упрощённое применение ходов (логика безопасная для Tilda)
-function applyMove(move) {
-  // ОЧЕНЬ упрощённо: просто двигаем "по очереди" без правил шахмат
+function parse(pgn) {
+  return pgn.replace(/\[.*?\]/g,"")
+    .replace(/\d+\./g,"")
+    .trim()
+    .split(/\s+/)
+    .filter(x=>x);
+}
+
+function apply(move) {
   const files = ["a","b","c","d","e","f","g","h"];
-
-  let fromFile = files[Math.floor(Math.random()*8)];
-  let toFile = files[Math.floor(Math.random()*8)];
-  let from = fromFile + (Math.random()>0.5 ? 2 : 7);
-  let to = toFile + (Math.random()>0.5 ? 4 : 5);
+  const from = files[Math.floor(Math.random()*8)] + (Math.random()>0.5?2:7);
+  const to = files[Math.floor(Math.random()*8)] + (Math.random()>0.5?4:5);
 
   position[to] = position[from];
   delete position[from];
 }
 
-// 🧩 рендер доски
 function draw() {
   const files = ["a","b","c","d","e","f","g","h"];
   let html = "<table style='border-collapse:collapse;'>";
@@ -87,21 +91,40 @@ function draw() {
   }
 
   html += "</table>";
-  boardDiv.innerHTML = html;
+  document.getElementById("board").innerHTML = html;
+
+  document.getElementById("moves").innerHTML =
+    moves.map((m,i)=> i===index ? "▶ "+m : m).join(" ");
 }
 
-// 📌 парсер PGN
-function parse(pgn) {
-  return pgn.replace(/\[.*?\]/g,"")
-    .replace(/\d+\./g,"")
-    .trim()
-    .split(/\s+/)
-    .filter(x=>x);
+function loadGame(i) {
+  position = start();
+  moves = parse(games[i]);
+  index = 0;
+  draw();
 }
 
-// 📚 загрузка игр
-function loadGames() {
-  games = pgnText.split(/\n\n(?=\[Event)/).filter(g=>g.trim());
+function next() {
+  if (index < moves.length) {
+    apply(moves[index]);
+    index++;
+    draw();
+  }
+}
+
+function prev() {
+  position = start();
+  index = 0;
+
+  for (let i = 0; i < index-1; i++) apply(moves[i]);
+
+  draw();
+}
+
+function init() {
+  games = split();
+
+  const sel = document.getElementById("gameSelect");
 
   games.forEach((g,i)=>{
     const w = g.match(/\[White "(.*?)"\]/)?.[1];
@@ -110,42 +133,14 @@ function loadGames() {
     const opt = document.createElement("option");
     opt.value = i;
     opt.textContent = `${i+1}. ${w} vs ${b}`;
-    gameSelect.appendChild(opt);
+    sel.appendChild(opt);
   });
+
+  sel.onchange = () => loadGame(sel.value);
 
   loadGame(0);
 }
 
-// ▶️ загрузка партии
-function loadGame(i) {
-  position = startPos();
-  moves = parse(games[i]);
-  index = 0;
-  draw();
-}
-
-// ▶️ следующий ход
-function nextMove() {
-  if (index >= moves.length) return;
-  applyMove(moves[index]);
-  index++;
-  draw();
-}
-
-// ◀️ назад
-function prevMove() {
-  position = startPos();
-  index = 0;
-
-  for (let i = 0; i < moves.length && i < index-1; i++) {
-    applyMove(moves[i]);
-  }
-
-  draw();
-}
-
-gameSelect.onchange = () => loadGame(gameSelect.value);
-
-loadGames();
+init();
 
 </script>
