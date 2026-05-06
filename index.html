@@ -2,9 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Working</title>
-
-<script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/chess.min.js"></script>
+<title>Chess Stable</title>
 
 <style>
 body { font-family: Arial; padding: 20px; }
@@ -14,58 +12,56 @@ body { font-family: Arial; padding: 20px; }
   height: 400px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  border: 2px solid #333;
+  border: 2px solid #222;
 }
 
-.square {
+.cell {
   width: 50px;
   height: 50px;
+  font-size: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
 }
 
-.white { background: #f0d9b5; }
-.black { background: #b58863; }
+.w { background: #f0d9b5; }
+.b { background: #b58863; }
 </style>
 
 </head>
 
 <body>
 
-<h2>♟ Chess Board (No CDN dependency)</h2>
+<h2>♟ Chess Board (Stable Version)</h2>
 
-<div id="board" class="board"></div>
+<div class="board" id="board"></div>
 
 <script>
 
-const boardEl = document.getElementById("board");
-
-/* стартовая позиция */
 const start = [
-  "♜","♞","♝","♛","♚","♝","♞","♜",
-  "♟","♟","♟","♟","♟","♟","♟","♟",
-  "","","","","","","","",
-  "","","","","","","","",
-  "","","","","","","","",
-  "","","","","","","","",
-  "♙","♙","♙","♙","♙","♙","♙","♙",
-  "♖","♘","♗","♕","♔","♗","♘","♖"
+"♜","♞","♝","♛","♚","♝","♞","♜",
+"♟","♟","♟","♟","♟","♟","♟","♟",
+"","","","","","","","",
+"","","","","","","","",
+"","","","","","","","",
+"","","","","","","","",
+"♙","♙","♙","♙","♙","♙","♙","♙",
+"♖","♘","♗","♕","♔","♗","♘","♖"
 ];
 
-function draw() {
-  boardEl.innerHTML = "";
+const board = document.getElementById("board");
 
-  for (let i = 0; i < 64; i++) {
-    const sq = document.createElement("div");
-    sq.className = "square " + ((Math.floor(i/8)+i)%2 ? "black" : "white");
-    sq.textContent = start[i];
-    boardEl.appendChild(sq);
-  }
+for (let i = 0; i < 64; i++) {
+  const cell = document.createElement("div");
+
+  const row = Math.floor(i / 8);
+  const col = i % 8;
+
+  cell.className = "cell " + ((row + col) % 2 ? "b" : "w");
+  cell.textContent = start[i];
+
+  board.appendChild(cell);
 }
-
-draw();
 
 </script>
 
