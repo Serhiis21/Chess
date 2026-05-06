@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess PGN Viewer FINAL</title>
+<title>Chess Viewer FIXED</title>
 
 <style>
 body { font-family: Arial; padding:20px; display:flex; gap:20px; }
@@ -28,13 +28,9 @@ body { font-family: Arial; padding:20px; display:flex; gap:20px; }
 .panel { width:320px; }
 
 .move-line { padding:3px; }
-.move-line span {
-  cursor:pointer;
-  margin-left:6px;
-}
+.move-line span { cursor:pointer; margin-left:6px; }
 
 .move-active { background:yellow; }
-
 .last { outline:2px solid red; }
 
 input, select, button {
@@ -142,8 +138,8 @@ async function loadBook(url){
   const res = await fetch(url);
   const text = await res.text();
 
-  /* SPLIT GAMES */
-  games = text.split(/\n\n(?=\[Event)/);
+  // ✔ ПРАВИЛЬНОЕ разбиение
+  games = text.split(/\n(?=\[Event)/);
 
   gameSelect.innerHTML = "";
 
@@ -151,8 +147,10 @@ async function loadBook(url){
     const opt = document.createElement("option");
     opt.value = i;
 
-    const match = g.match(/\[White "(.+)"\].*\[Black "(.+)"\]/s);
-    opt.textContent = match ? `${match[1]} vs ${match[2]}` : `Game ${i+1}`;
+    const w = g.match(/\[White "(.+)"\]/);
+    const b = g.match(/\[Black "(.+)"\]/);
+
+    opt.textContent = w && b ? `${w[1]} vs ${b[1]}` : `Game ${i+1}`;
 
     gameSelect.appendChild(opt);
   });
@@ -164,8 +162,16 @@ async function loadBook(url){
 function loadGame(i){
   stopAuto();
 
+  const pgn = games[i];
+
   game = new Chess();
-  game.load_pgn(games[i]);
+
+  const ok = game.load_pgn(pgn);
+
+  if(!ok){
+    alert("Ошибка PGN в партии " + (i+1));
+    return;
+  }
 
   history = game.history({ verbose:true });
   index = 0;
