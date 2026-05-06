@@ -2,12 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Library</title>
+<title>Chess Library FIXED</title>
 
 <style>
 body { font-family: Arial; padding: 20px; }
-
-h2 { margin-bottom: 10px; }
 
 .board {
   width: 400px;
@@ -30,7 +28,7 @@ h2 { margin-bottom: 10px; }
 .b { background: #b58863; }
 
 button { margin: 5px; }
-select { margin-top: 10px; }
+select { margin: 10px 0; }
 </style>
 </head>
 
@@ -38,11 +36,14 @@ select { margin-top: 10px; }
 
 <h2>♟ Chess Library</h2>
 
+<!-- ДОСКА -->
 <div class="board" id="board"></div>
 
+<!-- КНИГИ -->
 <h3>📚 Книги</h3>
 <select id="bookSelect"></select>
 
+<!-- КНОПКИ -->
 <div>
   <button onclick="prevMove()">⏮</button>
   <button onclick="nextMove()">▶</button>
@@ -54,7 +55,7 @@ select { margin-top: 10px; }
 <script>
 
 /* ================= BOARD ================= */
-const startPosition = [
+const start = [
 "♜","♞","♝","♛","♚","♝","♞","♜",
 "♟","♟","♟","♟","♟","♟","♟","♟",
 "","","","","","","","",
@@ -65,41 +66,41 @@ const startPosition = [
 "♖","♘","♗","♕","♔","♗","♘","♖"
 ];
 
-let boardEl = document.getElementById("board");
-let state = [...startPosition];
+const boardEl = document.getElementById("board");
+const status = document.getElementById("status");
+const select = document.getElementById("bookSelect");
 
-function drawBoard() {
+let state = [...start];
+let moves = [];
+let index = 0;
+
+/* рисуем доску */
+function draw() {
   boardEl.innerHTML = "";
 
   for (let i = 0; i < 64; i++) {
     const cell = document.createElement("div");
 
-    const row = Math.floor(i / 8);
-    const col = i % 8;
+    const r = Math.floor(i / 8);
+    const c = i % 8;
 
-    cell.className = "cell " + ((row + col) % 2 ? "b" : "w");
+    cell.className = "cell " + ((r + c) % 2 ? "b" : "w");
     cell.textContent = state[i];
 
     boardEl.appendChild(cell);
   }
 }
 
-drawBoard();
+draw();
 
-/* ================= PGN ================= */
+/* ================= BOOKS ================= */
 const books = {
   "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
   "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
   "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
 };
 
-const select = document.getElementById("bookSelect");
-const status = document.getElementById("status");
-
-let moves = [];
-let index = 0;
-
-/* книги */
+/* добавляем книги */
 for (let b in books) {
   let o = document.createElement("option");
   o.value = books[b];
@@ -107,28 +108,33 @@ for (let b in books) {
   select.appendChild(o);
 }
 
-/* загрузка PGN */
+/* ================= PGN ================= */
 async function loadPGN(url) {
-  status.innerText = "Загрузка...";
+  try {
+    status.innerText = "Загрузка...";
 
-  const res = await fetch(url);
-  const text = await res.text();
+    const res = await fetch(url);
+    const text = await res.text();
 
-  const game = text.split(/\n\n(?=\[Event)/)[0];
+    const game = text.split(/\n\n(?=\[Event)/)[0];
 
-  moves = game
-    .replace(/\[.*\]/g, "")
-    .replace(/\d+\./g, "")
-    .trim()
-    .split(/\s+/)
-    .filter(m => m);
+    moves = game
+      .replace(/\[.*\]/g, "")
+      .replace(/\d+\./g, "")
+      .trim()
+      .split(/\s+/)
+      .filter(m => m);
 
-  index = 0;
+    index = 0;
 
-  status.innerText = "Ходов: " + moves.length;
+    status.innerText = "Ходов: " + moves.length;
+
+  } catch (e) {
+    status.innerText = "Ошибка загрузки";
+  }
 }
 
-/* ================= MOVES ================= */
+/* ================= CONTROLS ================= */
 function nextMove() {
   if (index < moves.length) {
     status.innerText = "Ход: " + moves[index];
@@ -142,18 +148,18 @@ function prevMove() {
 }
 
 function resetGame() {
-  state = [...startPosition];
+  state = [...start];
   index = 0;
-  drawBoard();
+  draw();
   status.innerText = "Сброс";
 }
 
 /* ================= EVENTS ================= */
 select.onchange = () => loadPGN(select.value);
 
+/* init */
 loadPGN(select.value);
 
-/* expose */
 window.nextMove = nextMove;
 window.prevMove = prevMove;
 window.resetGame = resetGame;
