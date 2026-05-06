@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess PGN Stable PRO</title>
+<title>Stable Chess Viewer FIX</title>
 
 <style>
 body { font-family: Arial; padding: 20px; display: flex; gap: 20px; }
@@ -43,14 +43,14 @@ button, select { width: 100%; margin: 5px 0; }
 </div>
 
 <div class="panel">
-  <h3>📚 Книги</h3>
+  <h3>📚 Books</h3>
   <select id="bookSelect"></select>
 
   <button onclick="prevMove()">⏮ Prev</button>
   <button onclick="nextMove()">▶ Next</button>
   <button onclick="resetGame()">⟲ Reset</button>
 
-  <h3>📖 Moves</h3>
+  <h3>Moves</h3>
   <div id="moves"></div>
 
   <div id="status"></div>
@@ -71,13 +71,12 @@ let index = 0;
 
 /* BOOKS */
 const books = {
-  "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
-  "100 Endgame Studies": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_endgame_studies.pgn",
+  "Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
   "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
   "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
 };
 
-/* INIT BOOKS */
+/* INIT */
 for (let b in books) {
   let o = document.createElement("option");
   o.value = books[b];
@@ -85,7 +84,7 @@ for (let b in books) {
   select.appendChild(o);
 }
 
-/* DRAW BOARD */
+/* ===== RENDER FROM FEN (ВАЖНО!) ===== */
 function draw() {
   const b = game.board();
   boardEl.innerHTML = "";
@@ -97,15 +96,14 @@ function draw() {
       d.className = "cell " + ((r + c) % 2 ? "b" : "w");
 
       const p = b[r][c];
-      d.textContent = p ? unicode(p) : "";
+      d.textContent = p ? piece(p) : "";
 
       boardEl.appendChild(d);
     }
   }
 }
 
-/* PIECES */
-function unicode(p) {
+function piece(p) {
   const m = {
     wp:"♙", wr:"♖", wn:"♘", wb:"♗", wq:"♕", wk:"♔",
     bp:"♟", br:"♜", bn:"♞", bb:"♝", bq:"♛", bk:"♚"
@@ -113,7 +111,7 @@ function unicode(p) {
   return m[p.color + p.type];
 }
 
-/* LOAD PGN */
+/* ===== LOAD PGN ===== */
 async function loadPGN(url) {
   const res = await fetch(url);
   const text = await res.text();
@@ -124,28 +122,27 @@ async function loadPGN(url) {
   history = game.history();
   index = 0;
 
-  game = new Chess();
-
   renderMoves();
   rebuild(0);
 }
 
-/* REBUILD POSITION */
+/* ===== CRITICAL FIX: ALWAYS REBUILD FROM SCRATCH ===== */
 function rebuild(to) {
   game = new Chess();
 
   for (let i = 0; i < to; i++) {
-    game.move(history[i]);
+    const move = game.move(history[i]);
+    if (!move) break;
   }
 
   index = to;
 
   draw();
   highlight();
-  status.innerText = "Move " + index + "/" + history.length;
+  status.innerText = `${index}/${history.length}`;
 }
 
-/* MOVES LIST */
+/* ===== MOVES UI ===== */
 function renderMoves() {
   movesEl.innerHTML = "";
 
@@ -153,40 +150,33 @@ function renderMoves() {
     const div = document.createElement("div");
     div.className = "move";
     div.innerText = (i + 1) + ". " + m;
-
     div.onclick = () => rebuild(i + 1);
-
     movesEl.appendChild(div);
   });
 
   highlight();
 }
 
-/* HIGHLIGHT */
 function highlight() {
   document.querySelectorAll(".move").forEach((el, i) => {
     el.classList.toggle("active", i === index - 1);
   });
 }
 
-/* CONTROLS */
+/* ===== CONTROLS ===== */
 function nextMove() {
-  if (index < history.length) {
-    rebuild(index + 1);
-  }
+  if (index < history.length) rebuild(index + 1);
 }
 
 function prevMove() {
-  if (index > 0) {
-    rebuild(index - 1);
-  }
+  if (index > 0) rebuild(index - 1);
 }
 
 function resetGame() {
   rebuild(0);
 }
 
-/* EVENTS */
+/* ===== EVENTS ===== */
 select.onchange = () => loadPGN(select.value);
 
 loadPGN(select.value);
