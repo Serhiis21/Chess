@@ -1,52 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chess Viewer PRO+</title>
+
+<style>
+body { font-family: Arial; padding: 20px; display: flex; gap: 20px; }
+
+.board {
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border: 2px solid #222;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.w { background: #f0d9b5; }
+.b { background: #b58863; }
+
+.panel {
+  width: 220px;
+}
+
+.move {
+  cursor: pointer;
+  padding: 2px;
+}
+
+.move.active {
+  background: yellow;
+}
+
+button { margin: 5px 0; width: 100%; }
+select { width: 100%; margin-bottom: 10px; }
+</style>
+</head>
+
+<body>
+
+<div>
+  <div class="board" id="board"></div>
+</div>
+
+<div class="panel">
+  <h3>📚 Книги</h3>
+  <select id="bookSelect"></select>
+
+  <button onclick="prevMove()">⏮ Prev</button>
+  <button onclick="nextMove()">▶ Next</button>
+  <button onclick="toggleAuto()">⏯ Play/Pause</button>
+  <button onclick="resetGame()">⟲ Reset</button>
+
+  <h3>📖 Moves</h3>
+  <div id="moves"></div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
 
 <script>
 
 const boardEl = document.getElementById("board");
-const status = document.getElementById("status");
+const movesEl = document.getElementById("moves");
 const select = document.getElementById("bookSelect");
 
+let game = new Chess();
+let history = [];
+let index = 0;
+let timer = null;
+
+/* BOOKS */
 const books = {
   "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
   "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
   "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
 };
 
-let game = new Chess();
-let history = [];
-let index = 0;
+for (let b in books) {
+  let o = document.createElement("option");
+  o.value = books[b];
+  o.textContent = b;
+  select.appendChild(o);
+}
 
-/* ===== DRAW ===== */
+/* DRAW BOARD */
 function draw() {
-  const board = game.board();
+  const b = game.board();
   boardEl.innerHTML = "";
 
   for (let r = 0; r < 8; r++) {
     for (let c = 0; c < 8; c++) {
-      const cell = document.createElement("div");
-      const isDark = (r + c) % 2;
-      cell.className = "cell " + (isDark ? "b" : "w");
+      const d = document.createElement("div");
+      d.className = "cell " + ((r + c) % 2 ? "b" : "w");
 
-      const piece = board[r][c];
-      cell.textContent = piece ? unicode(piece) : "";
+      const p = b[r][c];
+      d.textContent = p ? piece(p) : "";
 
-      boardEl.appendChild(cell);
+      boardEl.appendChild(d);
     }
   }
 }
 
-function unicode(p) {
-  const map = {
+function piece(p) {
+  const m = {
     wp:"♙", wr:"♖", wn:"♘", wb:"♗", wq:"♕", wk:"♔",
     bp:"♟", br:"♜", bn:"♞", bb:"♝", bq:"♛", bk:"♚"
   };
-  return map[p.color + p.type];
+  return m[p.color + p.type];
 }
 
-/* ===== LOAD PGN ===== */
+/* LOAD PGN */
 async function loadPGN(url) {
-  status.innerText = "Загрузка...";
-
   const res = await fetch(url);
   const text = await res.text();
 
@@ -58,59 +130,88 @@ async function loadPGN(url) {
 
   game = new Chess();
 
-  status.innerText = "Ходов: " + history.length;
-
-  draw();
+  renderMoves();
+  rebuild(0);
 }
 
-/* ===== APPLY POSITION ===== */
-function rebuild(toIndex) {
+/* REBUILD POSITION */
+function rebuild(to) {
   game = new Chess();
 
-  for (let i = 0; i < toIndex; i++) {
+  for (let i = 0; i < to; i++) {
     game.move(history[i]);
   }
 
+  index = to;
   draw();
+  highlight();
 }
 
-/* ===== CONTROLS ===== */
+/* MOVES PANEL */
+function renderMoves() {
+  movesEl.innerHTML = "";
+
+  history.forEach((m, i) => {
+    const div = document.createElement("div");
+    div.className = "move";
+    div.innerText = (i+1) + ". " + m;
+
+    div.onclick = () => rebuild(i+1);
+
+    movesEl.appendChild(div);
+  });
+
+  highlight();
+}
+
+function highlight() {
+  document.querySelectorAll(".move").forEach((el, i) => {
+    el.classList.toggle("active", i === index - 1);
+  });
+}
+
+/* CONTROLS */
 function nextMove() {
   if (index < history.length) {
-    index++;
-    rebuild(index);
-    status.innerText = "Ход: " + history[index - 1];
+    rebuild(index + 1);
   }
 }
 
 function prevMove() {
   if (index > 0) {
-    index--;
-    rebuild(index);
-    status.innerText = "Назад: " + index;
+    rebuild(index - 1);
   }
 }
 
 function resetGame() {
-  index = 0;
   rebuild(0);
-  status.innerText = "Сброс";
 }
 
-/* ===== BOOKS ===== */
-for (let b in books) {
-  let o = document.createElement("option");
-  o.value = books[b];
-  o.textContent = b;
-  select.appendChild(o);
+/* AUTO PLAY */
+function toggleAuto() {
+  if (timer) {
+    clearInterval(timer);
+    timer = null;
+    return;
+  }
+
+  timer = setInterval(() => {
+    if (index < history.length) nextMove();
+    else clearInterval(timer);
+  }, 600);
 }
 
+/* EVENTS */
 select.onchange = () => loadPGN(select.value);
-
-loadPGN(select.value);
 
 window.nextMove = nextMove;
 window.prevMove = prevMove;
 window.resetGame = resetGame;
+window.toggleAuto = toggleAuto;
+
+loadPGN(select.value);
 
 </script>
+
+</body>
+</html>
