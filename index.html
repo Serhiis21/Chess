@@ -1,13 +1,21 @@
-<div style="font-family:Arial; font-weight:bold; margin-bottom:10px;">
-  ♟ Шахматная библиотека
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Шахматная библиотека</title>
+</head>
 
-<input id="search" placeholder="Поиск книги..." style="width:100%; padding:6px; margin-bottom:10px;">
+<body style="font-family:Arial; max-width:800px; margin:auto; padding:20px;">
+
+<h2>♟ Шахматная библиотека</h2>
+
+<input id="search" placeholder="Поиск книги..." style="width:100%; padding:8px; margin-bottom:10px;">
 
 <div id="books"></div>
 
 <script>
 
+// 📚 КНИГИ
 const books = [
   {
     name: "Сицилианская защита",
@@ -16,31 +24,39 @@ const books = [
   {
     name: "Испанская партия",
     url: "#"
+  },
+  {
+    name: "Французская защита",
+    url: "#"
   }
 ];
 
 const booksDiv = document.getElementById("books");
 const search = document.getElementById("search");
 
-// 📚 рендер списка
+// 📚 рендер
 function render(list) {
   booksDiv.innerHTML = "";
 
   list.forEach(b => {
     const div = document.createElement("div");
 
-    div.innerHTML = `
-      <div style="padding:8px; border:1px solid #ddd; margin-bottom:5px; cursor:pointer;">
-        📘 ${b.name}
-      </div>
+    div.style = `
+      padding:10px;
+      border:1px solid #ddd;
+      margin-bottom:6px;
+      cursor:pointer;
+      border-radius:6px;
     `;
+
+    div.innerHTML = "📘 " + b.name;
 
     div.onclick = () => {
       if (b.url === "#") {
-        alert("Файл не задан");
-        return;
+        alert("Файл пока не добавлен");
+      } else {
+        window.open(b.url, "_blank");
       }
-      window.open(b.url, "_blank");
     };
 
     booksDiv.appendChild(div);
@@ -57,3 +73,6 @@ search.oninput = () => {
 render(books);
 
 </script>
+
+</body>
+</html>
