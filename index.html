@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Viewer PRO MAX</title>
+<title>Chess PGN Library PRO</title>
 
 <style>
 body {
@@ -32,9 +32,7 @@ body {
 .w { background: #f0d9b5; }
 .b { background: #b58863; }
 
-.panel {
-  width: 280px;
-}
+.panel { width: 300px; }
 
 .move {
   cursor: pointer;
@@ -49,7 +47,7 @@ body {
   outline: 2px solid red;
 }
 
-button, select, input {
+input, select, button {
   width: 100%;
   margin: 5px 0;
 }
@@ -63,7 +61,11 @@ button, select, input {
 </div>
 
 <div class="panel">
-  <h3>📚 Books</h3>
+
+  <h3>🔎 Search Books</h3>
+  <input id="search" placeholder="filter books...">
+
+  <h3>📚 Library</h3>
   <select id="bookSelect"></select>
 
   <input type="range" id="slider" min="0" max="0" value="0">
@@ -77,6 +79,7 @@ button, select, input {
   <div id="moves"></div>
 
   <div id="status"></div>
+
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
@@ -86,6 +89,7 @@ button, select, input {
 const boardEl = document.getElementById("board");
 const movesEl = document.getElementById("moves");
 const select = document.getElementById("bookSelect");
+const search = document.getElementById("search");
 const status = document.getElementById("status");
 const slider = document.getElementById("slider");
 
@@ -95,22 +99,45 @@ let index = 0;
 let auto = null;
 let lastMove = null;
 
-/* BOOKS */
+/* ===== ALL BOOKS ===== */
 const books = {
   "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
-  "100 Endgames": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_endgame_studies.pgn",
+  "100 Endgame Studies": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_endgame_studies.pgn",
+  "200 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/200_minis_du_mont.pgn",
+  "600 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/600_minis.pgn",
+  "700 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/700_minis.pgn",
+  "1001 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/1001_minis.pgn",
+  "1002 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/1002_minis.pgn",
+  "Alekhine": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Alekhine.pgn",
   "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
-  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
+  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn",
+  "Fischer": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Fischer.pgn",
+  "Lasker": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Lasker.pgn",
+  "Morphy": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Morphy.pgn",
+  "Petrosian": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Petrosian.pgn",
+  "Tal": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Tal.pgn"
 };
 
-for (let b in books) {
-  let o = document.createElement("option");
-  o.value = books[b];
-  o.textContent = b;
-  select.appendChild(o);
+/* ===== CACHE (важно для скорости) ===== */
+const cache = {};
+
+/* ===== INIT LIST ===== */
+function renderBooks(filter = "") {
+  select.innerHTML = "";
+
+  Object.keys(books)
+    .filter(b => b.toLowerCase().includes(filter.toLowerCase()))
+    .forEach(b => {
+      const o = document.createElement("option");
+      o.value = books[b];
+      o.textContent = b;
+      select.appendChild(o);
+    });
 }
 
-/* DRAW BOARD */
+renderBooks();
+
+/* ===== BOARD ===== */
 function draw() {
   const b = game.board();
   boardEl.innerHTML = "";
@@ -140,10 +167,19 @@ function piece(p) {
   return m[p.color + p.type];
 }
 
-/* LOAD PGN */
+/* ===== LOAD PGN WITH CACHE ===== */
 async function loadPGN(url) {
-  const res = await fetch(url);
-  const text = await res.text();
+  status.innerText = "loading...";
+
+  let text;
+
+  if (cache[url]) {
+    text = cache[url];
+  } else {
+    const res = await fetch(url);
+    text = await res.text();
+    cache[url] = text;
+  }
 
   game = new Chess();
   game.load_pgn(text);
@@ -157,7 +193,7 @@ async function loadPGN(url) {
   rebuild(0);
 }
 
-/* REBUILD */
+/* ===== REBUILD SAFE ===== */
 function rebuild(to) {
   game = new Chess();
   lastMove = null;
@@ -176,29 +212,28 @@ function rebuild(to) {
   status.innerText = `${index}/${history.length}`;
 }
 
-/* MOVES LIST */
+/* ===== MOVES ===== */
 function renderMoves() {
   movesEl.innerHTML = "";
 
   history.forEach((m, i) => {
-    const div = document.createElement("div");
-    div.className = "move";
-    div.innerText = (i + 1) + ". " + m;
-    div.onclick = () => rebuild(i + 1);
-    movesEl.appendChild(div);
+    const d = document.createElement("div");
+    d.className = "move";
+    d.innerText = (i + 1) + ". " + m;
+    d.onclick = () => rebuild(i + 1);
+    movesEl.appendChild(d);
   });
 
   highlight();
 }
 
-/* HIGHLIGHT */
 function highlight() {
   document.querySelectorAll(".move").forEach((el, i) => {
     el.classList.toggle("active", i === index - 1);
   });
 }
 
-/* LAST MOVE */
+/* ===== LAST MOVE ===== */
 function drawLastMove() {
   if (!lastMove) return;
 
@@ -212,12 +247,10 @@ function drawLastMove() {
 }
 
 function sq(s) {
-  const file = s.charCodeAt(0) - 97;
-  const rank = 8 - parseInt(s[1]);
-  return rank * 8 + file;
+  return (8 - +s[1]) * 8 + (s.charCodeAt(0) - 97);
 }
 
-/* CONTROLS */
+/* ===== CONTROLS ===== */
 function nextMove() {
   if (index < history.length) rebuild(index + 1);
 }
@@ -230,7 +263,7 @@ function resetGame() {
   rebuild(0);
 }
 
-/* AUTO */
+/* ===== AUTO ===== */
 function toggleAuto() {
   if (auto) {
     clearInterval(auto);
@@ -241,15 +274,13 @@ function toggleAuto() {
   auto = setInterval(() => {
     if (index < history.length) nextMove();
     else clearInterval(auto);
-  }, 500);
+  }, 400);
 }
 
-/* SLIDER */
-slider.oninput = () => {
-  rebuild(parseInt(slider.value));
-};
+/* ===== SEARCH ===== */
+search.oninput = () => renderBooks(search.value);
 
-/* EVENTS */
+/* ===== EVENTS ===== */
 select.onchange = () => loadPGN(select.value);
 
 window.nextMove = nextMove;
