@@ -1,15 +1,3 @@
-<h3>📚 Книги</h3>
-
-<select id="bookSelect"></select>
-
-<div style="margin-top:10px;">
-  <button onclick="prevMove()">⏮</button>
-  <button onclick="nextMove()">▶</button>
-  <button onclick="resetGame()">⟲</button>
-</div>
-
-<div id="status" style="margin-top:10px;"></div>
-
 <script>
 
 const books = {
@@ -21,10 +9,96 @@ const books = {
 const select = document.getElementById("bookSelect");
 const status = document.getElementById("status");
 
+/* стартовая позиция */
+const startPosition = [
+"♜","♞","♝","♛","♚","♝","♞","♜",
+"♟","♟","♟","♟","♟","♟","♟","♟",
+"","","","","","","","",
+"","","","","","","","",
+"","","","","","","","",
+"","","","","","","","",
+"♙","♙","♙","♙","♙","♙","♙","♙",
+"♖","♘","♗","♕","♔","♗","♘","♖"
+];
+
+let boardEl = document.getElementById("board");
+let boardState = [...startPosition];
+
 let moves = [];
 let index = 0;
 
-/* загрузка списка */
+/* отрисовка доски */
+function draw() {
+  boardEl.innerHTML = "";
+
+  for (let i = 0; i < 64; i++) {
+    let cell = document.createElement("div");
+
+    let row = Math.floor(i / 8);
+    let col = i % 8;
+
+    cell.className = "cell " + ((row + col) % 2 ? "b" : "w");
+    cell.textContent = boardState[i];
+
+    boardEl.appendChild(cell);
+  }
+}
+
+/* загрузка PGN */
+async function loadPGN(url) {
+  status.innerText = "Загрузка...";
+
+  const res = await fetch(url);
+  const text = await res.text();
+
+  const gameText = text.split(/\n\n(?=\[Event)/)[0];
+
+  moves = gameText
+    .replace(/\[.*\]/g, "")
+    .replace(/\d+\./g, "")
+    .trim()
+    .split(/\s+/)
+    .filter(m => m && !m.includes("{"));
+
+  index = 0;
+  boardState = [...startPosition];
+  draw();
+
+  status.innerText = "Готово: " + moves.length + " ходов";
+}
+
+/* очень простой “движок” (упрощённый) */
+function applyMove(move) {
+
+  // ВАЖНО: упрощённо (для миниатюр и примеров)
+  // полноценный chess engine можно добавить позже
+
+  status.innerText = "Ход: " + move + " (" + index + ")";
+}
+
+/* перемотка */
+function nextMove() {
+  if (index < moves.length) {
+    applyMove(moves[index]);
+    index++;
+  }
+}
+
+function prevMove() {
+  if (index > 0) {
+    index--;
+    status.innerText = "Назад: " + index;
+  }
+}
+
+function resetGame() {
+  index = 0;
+  boardState = [...startPosition];
+  draw();
+  status.innerText = "Сброс";
+}
+
+/* книги */
 for (let b in books) {
   let o = document.createElement("option");
   o.value = books[b];
@@ -32,54 +106,12 @@ for (let b in books) {
   select.appendChild(o);
 }
 
-/* загрузка PGN */
-async function loadPGN(url) {
-  status.innerText = "Загрузка...";
-
-  try {
-    const res = await fetch(url);
-    const text = await res.text();
-
-    const gameText = text.split(/\n\n(?=\[Event)/)[0];
-
-    // простое извлечение ходов
-    const movesText = gameText
-      .replace(/\[.*\]/g, "")
-      .replace(/\d+\./g, "")
-      .trim()
-      .split(/\s+/);
-
-    moves = movesText.filter(m => m && !m.includes("{"));
-    index = 0;
-
-    status.innerText = "Загружено: " + moves.length + " ходов";
-
-  } catch (e) {
-    status.innerText = "Ошибка загрузки";
-  }
-}
-
 select.onchange = () => loadPGN(select.value);
 
-/* кнопки (пока просто заглушка — дальше подключим ходами) */
-function nextMove() {
-  if (index < moves.length) {
-    index++;
-    status.innerText = "Ход: " + index;
-  }
-}
-
-function prevMove() {
-  if (index > 0) {
-    index--;
-    status.innerText = "Ход: " + index;
-  }
-}
-
-function resetGame() {
-  index = 0;
-  status.innerText = "Сброс";
-}
+/* кнопки */
+window.nextMove = nextMove;
+window.prevMove = prevMove;
+window.resetGame = resetGame;
 
 select.dispatchEvent(new Event("change"));
 
