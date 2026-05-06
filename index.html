@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess PGN Viewer PRO</title>
+<title>Chess Viewer PRO MAX</title>
 
 <style>
 body {
@@ -33,7 +33,7 @@ body {
 .b { background: #b58863; }
 
 .panel {
-  width: 260px;
+  width: 280px;
 }
 
 .move {
@@ -49,7 +49,7 @@ body {
   outline: 2px solid red;
 }
 
-button, select {
+button, select, input {
   width: 100%;
   margin: 5px 0;
 }
@@ -65,6 +65,8 @@ button, select {
 <div class="panel">
   <h3>📚 Books</h3>
   <select id="bookSelect"></select>
+
+  <input type="range" id="slider" min="0" max="0" value="0">
 
   <button onclick="prevMove()">⏮ Prev</button>
   <button onclick="nextMove()">▶ Next</button>
@@ -85,6 +87,7 @@ const boardEl = document.getElementById("board");
 const movesEl = document.getElementById("moves");
 const select = document.getElementById("bookSelect");
 const status = document.getElementById("status");
+const slider = document.getElementById("slider");
 
 let game = new Chess();
 let history = [];
@@ -100,7 +103,6 @@ const books = {
   "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
 };
 
-/* INIT */
 for (let b in books) {
   let o = document.createElement("option");
   o.value = books[b];
@@ -108,7 +110,7 @@ for (let b in books) {
   select.appendChild(o);
 }
 
-/* BOARD RENDER */
+/* DRAW BOARD */
 function draw() {
   const b = game.board();
   boardEl.innerHTML = "";
@@ -149,11 +151,13 @@ async function loadPGN(url) {
   history = game.history();
   index = 0;
 
+  slider.max = history.length;
+
   renderMoves();
   rebuild(0);
 }
 
-/* REBUILD (100% SAFE) */
+/* REBUILD */
 function rebuild(to) {
   game = new Chess();
   lastMove = null;
@@ -164,6 +168,8 @@ function rebuild(to) {
   }
 
   index = to;
+
+  slider.value = index;
 
   draw();
   highlight();
@@ -185,14 +191,14 @@ function renderMoves() {
   highlight();
 }
 
-/* HIGHLIGHT MOVE */
+/* HIGHLIGHT */
 function highlight() {
   document.querySelectorAll(".move").forEach((el, i) => {
     el.classList.toggle("active", i === index - 1);
   });
 }
 
-/* LAST MOVE HIGHLIGHT */
+/* LAST MOVE */
 function drawLastMove() {
   if (!lastMove) return;
 
@@ -224,7 +230,7 @@ function resetGame() {
   rebuild(0);
 }
 
-/* AUTO PLAY */
+/* AUTO */
 function toggleAuto() {
   if (auto) {
     clearInterval(auto);
@@ -235,8 +241,13 @@ function toggleAuto() {
   auto = setInterval(() => {
     if (index < history.length) nextMove();
     else clearInterval(auto);
-  }, 600);
+  }, 500);
 }
+
+/* SLIDER */
+slider.oninput = () => {
+  rebuild(parseInt(slider.value));
+};
 
 /* EVENTS */
 select.onchange = () => loadPGN(select.value);
