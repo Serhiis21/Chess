@@ -1,75 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Chess Library</title>
+<meta charset="utf-8">
+<title>TEST CHESS</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/css/chessboard.min.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/js/chessboard.min.js"></script>
 
-<style>
-body { font-family: Arial; padding: 20px; }
-#board { width: 420px; margin-top: 20px; }
-</style>
 </head>
-
 <body>
 
-<h2>♟ Chess Library</h2>
-
-<select id="book"></select>
-
-<div id="board"></div>
-<div id="info"></div>
+<h2>TEST BOARD</h2>
+<div id="board" style="width:400px"></div>
 
 <script>
-
-const books = {
-  "1001 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/1001_minis.pgn",
-  "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
-  "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn"
-};
-
-let game = new Chess();
-let board = Chessboard('board', 'start');
-
-const select = document.getElementById("book");
-const info = document.getElementById("info");
-
-for (let b in books) {
-  let o = document.createElement("option");
-  o.value = books[b];
-  o.textContent = b;
-  select.appendChild(o);
-}
-
-async function loadPGN(url) {
-  try {
-    const res = await fetch(url);
-    const text = await res.text();
-
-    const firstGame = text.split(/\n\n(?=\[Event)/)[0];
-
-    game.reset();
-    game.load_pgn(firstGame);
-
-    board.position(game.fen());
-
-    info.innerText = "Loaded";
-
-  } catch (e) {
-    console.log(e);
-    info.innerText = "Load error";
-  }
-}
-
-select.onchange = () => loadPGN(select.value);
-
-loadPGN(select.value);
-
+var board = Chessboard('board', 'start');
 </script>
 
 </body>
