@@ -3,10 +3,9 @@
 </div>
 
 <div style="margin-bottom:10px;">
-  <b>Партии в книге:</b>
+  <b>Партии:</b>
+  <select id="gameSelect" style="width:100%;"></select>
 </div>
-
-<select id="gameSelect" style="width:100%; margin-bottom:10px;"></select>
 
 <div style="margin-bottom:10px;">
   <button onclick="prevMove()">◀</button>
@@ -33,18 +32,19 @@ const pgnText = `
 1. d4 d5 2. c4 e6 3. Nc3 Nf6
 `;
 
+// --- состояние ---
 let games = [];
 let moves = [];
 let index = 0;
 let position = {};
 
-// ♟ фигуры
+// --- фигуры ---
 const pieces = {
   wp:"♙", wn:"♘", wb:"♗", wr:"♖", wq:"♕", wk:"♔",
   bp:"♟", bn:"♞", bb:"♝", br:"♜", bq:"♛", bk:"♚"
 };
 
-// старт
+// --- старт ---
 function startPos() {
   return {
     a1:"wr", b1:"wn", c1:"wb", d1:"wq", e1:"wk", f1:"wb", g1:"wn", h1:"wr",
@@ -54,21 +54,22 @@ function startPos() {
   };
 }
 
-// парсер партий
+// --- разбиение книг ---
 function splitGames() {
   return pgnText.split(/\n\n(?=\[Event)/).filter(g => g.trim());
 }
 
-// парсер ходов
+// --- ходы ---
 function parseMoves(pgn) {
-  return pgn.replace(/\[.*?\]/g,"")
+  return pgn
+    .replace(/\[.*?\]/g,"")
     .replace(/\d+\./g,"")
     .trim()
     .split(/\s+/)
     .filter(x=>x);
 }
 
-// простое “движение” (пока упрощённо)
+// --- случайный “ход” (пока упрощённо, как у тебя было) ---
 function apply(move) {
   const files = ["a","b","c","d","e","f","g","h"];
 
@@ -79,7 +80,7 @@ function apply(move) {
   delete position[from];
 }
 
-// доска
+// --- доска ---
 function draw() {
   const files = ["a","b","c","d","e","f","g","h"];
   let html = "<table style='border-collapse:collapse;'>";
@@ -107,7 +108,7 @@ function draw() {
     moves.map((m,i)=> i===index ? "▶ "+m : m).join(" ");
 }
 
-// загрузка партии
+// --- загрузка партии ---
 function loadGame(i) {
   position = startPos();
   moves = parseMoves(games[i]);
@@ -115,7 +116,7 @@ function loadGame(i) {
   draw();
 }
 
-// следующий ход
+// --- следующий ход ---
 function nextMove() {
   if (index >= moves.length) return;
   apply(moves[index]);
@@ -123,7 +124,7 @@ function nextMove() {
   draw();
 }
 
-// назад
+// --- назад ---
 function prevMove() {
   position = startPos();
   index = 0;
@@ -135,7 +136,7 @@ function prevMove() {
   draw();
 }
 
-// инициализация
+// --- инициализация ---
 function init() {
   games = splitGames();
 
