@@ -2,11 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Viewer FIXED CLICK</title>
+<title>Chess Stable Scroll FIX</title>
 
 <style>
-body { font-family: Arial; display:flex; gap:20px; padding:20px; }
+body {
+  font-family: Arial;
+  display:flex;
+  gap:20px;
+  padding:20px;
+}
 
+/* BOARD */
 .board {
   width:400px;
   height:400px;
@@ -27,14 +33,21 @@ body { font-family: Arial; display:flex; gap:20px; padding:20px; }
 .w { background:#f0d9b5; }
 .b { background:#b58863; }
 
-.panel { width:360px; }
-
-.list {
-  max-height:240px;
-  overflow:auto;
-  border:1px solid #ccc;
+/* PANEL */
+.panel {
+  width:360px;
 }
 
+/* ✔ FIX SCROLL (КЛЮЧЕВОЙ БЛОК) */
+.list {
+  height: 320px;        /* фиксируем высоту */
+  overflow-y: auto;     /* включаем скролл */
+  overflow-x: hidden;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+/* ITEMS */
 .item {
   padding:6px;
   cursor:pointer;
@@ -62,7 +75,7 @@ button, input, select {
 <select id="bookSelect"></select>
 
 <h3>🔎 Search</h3>
-<input id="search">
+<input id="search" placeholder="player...">
 
 <h3>♟ Games</h3>
 <div id="gameList" class="list"></div>
@@ -139,13 +152,14 @@ async function loadBook(url){
   const res = await fetch(url);
   const text = await res.text();
 
+  // стабильное разделение
   games = text.split(/\n\n(?=\[)/).filter(x=>x.trim());
 
   renderList();
   loadGame(0);
 }
 
-/* LIST (БЕЗ onclick) */
+/* LIST (без onclick — только dataset) */
 function renderList(filter=""){
   gameList.innerHTML="";
 
@@ -165,7 +179,7 @@ function renderList(filter=""){
 
     if(i===currentGame) div.classList.add("active");
 
-    div.dataset.index = i;   // ✔ ключ
+    div.dataset.index = i;
 
     div.textContent = num + ". " + name;
 
@@ -175,16 +189,13 @@ function renderList(filter=""){
   });
 }
 
-/* ✔ ГЛАВНОЕ ИСПРАВЛЕНИЕ — ДЕЛЕГИРОВАНИЕ */
-gameList.addEventListener("click", function(e){
+/* ✔ ДЕЛЕГИРОВАНИЕ КЛИКОВ (САМЫЙ СТАБИЛЬНЫЙ ВАРИАНТ) */
+gameList.addEventListener("click", (e)=>{
   const item = e.target.closest(".item");
   if(!item) return;
 
   const i = parseInt(item.dataset.index);
-
-  if(!isNaN(i)){
-    loadGame(i);
-  }
+  if(!isNaN(i)) loadGame(i);
 });
 
 /* LOAD GAME */
