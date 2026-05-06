@@ -2,10 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Stable Chess Viewer FIX</title>
+<title>Chess PGN Viewer PRO</title>
 
 <style>
-body { font-family: Arial; padding: 20px; display: flex; gap: 20px; }
+body {
+  font-family: Arial;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
 
 .board {
   width: 400px;
@@ -27,12 +32,27 @@ body { font-family: Arial; padding: 20px; display: flex; gap: 20px; }
 .w { background: #f0d9b5; }
 .b { background: #b58863; }
 
-.panel { width: 240px; }
+.panel {
+  width: 260px;
+}
 
-.move { cursor: pointer; padding: 2px; }
-.move.active { background: yellow; }
+.move {
+  cursor: pointer;
+  padding: 2px;
+}
 
-button, select { width: 100%; margin: 5px 0; }
+.move.active {
+  background: yellow;
+}
+
+.last {
+  outline: 2px solid red;
+}
+
+button, select {
+  width: 100%;
+  margin: 5px 0;
+}
 </style>
 </head>
 
@@ -48,6 +68,7 @@ button, select { width: 100%; margin: 5px 0; }
 
   <button onclick="prevMove()">⏮ Prev</button>
   <button onclick="nextMove()">▶ Next</button>
+  <button onclick="toggleAuto()">⏯ Auto</button>
   <button onclick="resetGame()">⟲ Reset</button>
 
   <h3>Moves</h3>
@@ -68,10 +89,13 @@ const status = document.getElementById("status");
 let game = new Chess();
 let history = [];
 let index = 0;
+let auto = null;
+let lastMove = null;
 
 /* BOOKS */
 const books = {
-  "Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
+  "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
+  "100 Endgames": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_endgame_studies.pgn",
   "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
   "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
 };
@@ -84,7 +108,7 @@ for (let b in books) {
   select.appendChild(o);
 }
 
-/* ===== RENDER FROM FEN (ВАЖНО!) ===== */
+/* BOARD RENDER */
 function draw() {
   const b = game.board();
   boardEl.innerHTML = "";
@@ -101,8 +125,11 @@ function draw() {
       boardEl.appendChild(d);
     }
   }
+
+  drawLastMove();
 }
 
+/* PIECES */
 function piece(p) {
   const m = {
     wp:"♙", wr:"♖", wn:"♘", wb:"♗", wq:"♕", wk:"♔",
@@ -111,7 +138,7 @@ function piece(p) {
   return m[p.color + p.type];
 }
 
-/* ===== LOAD PGN ===== */
+/* LOAD PGN */
 async function loadPGN(url) {
   const res = await fetch(url);
   const text = await res.text();
@@ -126,13 +153,14 @@ async function loadPGN(url) {
   rebuild(0);
 }
 
-/* ===== CRITICAL FIX: ALWAYS REBUILD FROM SCRATCH ===== */
+/* REBUILD (100% SAFE) */
 function rebuild(to) {
   game = new Chess();
+  lastMove = null;
 
   for (let i = 0; i < to; i++) {
-    const move = game.move(history[i]);
-    if (!move) break;
+    const m = game.move(history[i]);
+    if (i === to - 1) lastMove = m;
   }
 
   index = to;
@@ -142,7 +170,7 @@ function rebuild(to) {
   status.innerText = `${index}/${history.length}`;
 }
 
-/* ===== MOVES UI ===== */
+/* MOVES LIST */
 function renderMoves() {
   movesEl.innerHTML = "";
 
@@ -157,13 +185,33 @@ function renderMoves() {
   highlight();
 }
 
+/* HIGHLIGHT MOVE */
 function highlight() {
   document.querySelectorAll(".move").forEach((el, i) => {
     el.classList.toggle("active", i === index - 1);
   });
 }
 
-/* ===== CONTROLS ===== */
+/* LAST MOVE HIGHLIGHT */
+function drawLastMove() {
+  if (!lastMove) return;
+
+  const cells = document.querySelectorAll(".cell");
+
+  const from = sq(lastMove.from);
+  const to = sq(lastMove.to);
+
+  if (cells[from]) cells[from].classList.add("last");
+  if (cells[to]) cells[to].classList.add("last");
+}
+
+function sq(s) {
+  const file = s.charCodeAt(0) - 97;
+  const rank = 8 - parseInt(s[1]);
+  return rank * 8 + file;
+}
+
+/* CONTROLS */
 function nextMove() {
   if (index < history.length) rebuild(index + 1);
 }
@@ -176,14 +224,29 @@ function resetGame() {
   rebuild(0);
 }
 
-/* ===== EVENTS ===== */
-select.onchange = () => loadPGN(select.value);
+/* AUTO PLAY */
+function toggleAuto() {
+  if (auto) {
+    clearInterval(auto);
+    auto = null;
+    return;
+  }
 
-loadPGN(select.value);
+  auto = setInterval(() => {
+    if (index < history.length) nextMove();
+    else clearInterval(auto);
+  }, 600);
+}
+
+/* EVENTS */
+select.onchange = () => loadPGN(select.value);
 
 window.nextMove = nextMove;
 window.prevMove = prevMove;
 window.resetGame = resetGame;
+window.toggleAuto = toggleAuto;
+
+loadPGN(select.value);
 
 </script>
 
