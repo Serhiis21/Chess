@@ -1,37 +1,44 @@
-<div>
-  <select id="bookSelect"></select>
-</div>
-
-<div id="board" style="width:420px;margin-top:20px;"></div>
-<div id="info"></div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chess Library</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/css/chessboard.min.css">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/js/chessboard.min.js"></script>
+
+<style>
+body { font-family: Arial; padding: 20px; }
+#board { width: 420px; margin-top: 20px; }
+</style>
+</head>
+
+<body>
+
+<h2>♟ Chess Library</h2>
+
+<select id="book"></select>
+
+<div id="board"></div>
+<div id="info"></div>
 
 <script>
 
 const books = {
   "1001 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/1001_minis.pgn",
-  "1002 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/1002_minis.pgn",
   "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
-  "100 Endgame Studies": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_endgame_studies.pgn",
-  "200 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/200_minis_du_mont.pgn",
-  "600 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/600_minis.pgn",
-  "700 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/700_minis.pgn",
-  "Alekhine": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Alekhine.pgn",
-  "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
-  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
+  "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn"
 };
-
-const select = document.getElementById("bookSelect");
-const info = document.getElementById("info");
 
 let game = new Chess();
 let board = Chessboard('board', 'start');
 
-/* ================= BOOKS ================= */
+const select = document.getElementById("book");
+const info = document.getElementById("info");
+
 for (let b in books) {
   let o = document.createElement("option");
   o.value = books[b];
@@ -39,38 +46,31 @@ for (let b in books) {
   select.appendChild(o);
 }
 
-/* ================= LOAD SAFE ================= */
-select.onchange = async () => {
-
-  info.innerText = "Загрузка...";
-
+async function loadPGN(url) {
   try {
-    const res = await fetch(select.value);
+    const res = await fetch(url);
     const text = await res.text();
 
-    const first = text.split(/\n\n(?=\[Event)/)[0];
+    const firstGame = text.split(/\n\n(?=\[Event)/)[0];
 
     game.reset();
-
-    const ok = game.load_pgn(first);
-
-    if (!ok) {
-      info.innerText = "Ошибка PGN (пропущено)";
-      board.position("start");
-      return;
-    }
+    game.load_pgn(firstGame);
 
     board.position(game.fen());
 
-    info.innerText = "OK";
+    info.innerText = "Loaded";
 
   } catch (e) {
     console.log(e);
-    info.innerText = "Ошибка загрузки файла";
-    board.position("start");
+    info.innerText = "Load error";
   }
-};
+}
 
-select.dispatchEvent(new Event("change"));
+select.onchange = () => loadPGN(select.value);
+
+loadPGN(select.value);
 
 </script>
+
+</body>
+</html>
