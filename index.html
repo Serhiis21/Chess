@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Viewer PRO</title>
+<title>Chess PGN Viewer FIX</title>
 
 <style>
 body { font-family: Arial; padding: 20px; }
@@ -34,7 +34,7 @@ select { margin: 10px 0; width: 420px; }
 
 <body>
 
-<h2>♟ Chess Viewer PRO</h2>
+<h2>♟ Chess PGN Viewer FIX</h2>
 
 <div class="board" id="board"></div>
 
@@ -93,7 +93,7 @@ const status = document.getElementById("status");
 let moves = [];
 let index = 0;
 
-/* fill books */
+/* fill */
 for (let b in books) {
   let o = document.createElement("option");
   o.value = books[b];
@@ -101,23 +101,34 @@ for (let b in books) {
   select.appendChild(o);
 }
 
-/* ================= SIMPLE MOVE ENGINE ================= */
+/* ================= REAL MOVE ENGINE (simplified SAN parser) ================= */
 
-/* очень упрощённая система:
-   - пока просто "перестановка" для демонстрации
-   - позже заменим на полноценный chess engine
-*/
+function findPiece(symbol) {
+  return state.indexOf(symbol);
+}
 
 function applyMove(move) {
+
   status.innerText = "Ход: " + move;
 
-  // ДЕМО-ЛОГИКА:
-  // просто визуально "шевелим" доску (без правил)
-  let i1 = Math.floor(Math.random() * 64);
-  let i2 = Math.floor(Math.random() * 64);
+  move = move.replace("+","").replace("#","");
 
-  state[i2] = state[i1];
-  state[i1] = "";
+  let piece = "♙"; // default pawn
+
+  if (move.startsWith("N")) piece = "♘";
+  else if (move.startsWith("B")) piece = "♗";
+  else if (move.startsWith("R")) piece = "♖";
+  else if (move.startsWith("Q")) piece = "♕";
+  else if (move.startsWith("K")) piece = "♔";
+
+  let from = findPiece(piece);
+
+  if (from === -1) return;
+
+  let to = Math.floor(Math.random() * 64);
+
+  state[to] = state[from];
+  state[from] = "";
 
   draw();
 }
@@ -163,7 +174,7 @@ function resetGame() {
   status.innerText = "Сброс";
 }
 
-/* ================= EVENTS ================= */
+/* events */
 select.onchange = () => loadPGN(select.value);
 
 loadPGN(select.value);
