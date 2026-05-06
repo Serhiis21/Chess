@@ -2,13 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Library Stable Full</title>
+<title>Chess Viewer PRO</title>
 
 <style>
-body {
-  font-family: Arial;
-  padding: 20px;
-}
+body { font-family: Arial; padding: 20px; }
 
 .board {
   width: 400px;
@@ -21,7 +18,7 @@ body {
 .cell {
   width: 50px;
   height: 50px;
-  font-size: 32px;
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +34,7 @@ select { margin: 10px 0; width: 420px; }
 
 <body>
 
-<h2>♟ Chess Library</h2>
+<h2>♟ Chess Viewer PRO</h2>
 
 <div class="board" id="board"></div>
 
@@ -55,7 +52,7 @@ select { margin: 10px 0; width: 420px; }
 <script>
 
 /* ================= BOARD ================= */
-const startPosition = [
+const start = [
 "♜","♞","♝","♛","♚","♝","♞","♜",
 "♟","♟","♟","♟","♟","♟","♟","♟",
 "","","","","","","","",
@@ -66,104 +63,90 @@ const startPosition = [
 "♖","♘","♗","♕","♔","♗","♘","♖"
 ];
 
-const boardEl = document.getElementById("board");
-const status = document.getElementById("status");
-const select = document.getElementById("bookSelect");
+let boardEl = document.getElementById("board");
+let state = [...start];
 
-let state = [...startPosition];
-let moves = [];
-let index = 0;
-
-/* рисуем доску */
-function drawBoard() {
+function draw() {
   boardEl.innerHTML = "";
-
   for (let i = 0; i < 64; i++) {
-    const cell = document.createElement("div");
-
+    const d = document.createElement("div");
     const r = Math.floor(i / 8);
     const c = i % 8;
-
-    cell.className = "cell " + ((r + c) % 2 ? "b" : "w");
-    cell.textContent = state[i];
-
-    boardEl.appendChild(cell);
+    d.className = "cell " + ((r + c) % 2 ? "b" : "w");
+    d.textContent = state[i];
+    boardEl.appendChild(d);
   }
 }
 
-drawBoard();
+draw();
 
 /* ================= BOOKS ================= */
 const books = {
   "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
-  "100 Endgame Studies": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_endgame_studies.pgn",
-  "1001 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/1001_minis.pgn",
-  "1002 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/1002_minis.pgn",
-  "200 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/200_minis_du_mont.pgn",
-  "600 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/600_minis.pgn",
-  "700 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/700_minis.pgn",
-  "Alekhine": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Alekhine.pgn",
   "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
-  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn",
-  "Fischer": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Fischer.pgn",
-  "Lasker": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Lasker.pgn",
-  "Morphy": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Morphy.pgn",
-  "Petrosian": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Petrosian.pgn",
-  "Tal": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Tal.pgn",
-  "Steinitz": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Steinitz.pgn",
-  "Steinitz Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Steinitz%20Best%20Games.pgn",
-  "Tactics": "https://raw.githubusercontent.com/Serhiis21/Chess/main/tactics.pgn",
-  "Modern Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/modern_minis.pgn"
+  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
 };
 
-/* ================= INIT SAFE ================= */
-window.addEventListener("DOMContentLoaded", () => {
+const select = document.getElementById("bookSelect");
+const status = document.getElementById("status");
 
-  // render books safely
-  select.innerHTML = "";
+let moves = [];
+let index = 0;
 
-  Object.entries(books).forEach(([name, url]) => {
-    const opt = document.createElement("option");
-    opt.value = url;
-    opt.textContent = name;
-    select.appendChild(opt);
-  });
+/* fill books */
+for (let b in books) {
+  let o = document.createElement("option");
+  o.value = books[b];
+  o.textContent = b;
+  select.appendChild(o);
+}
 
-  console.log("BOOK COUNT:", select.options.length);
+/* ================= SIMPLE MOVE ENGINE ================= */
 
-  loadPGN(select.value);
-});
+/* очень упрощённая система:
+   - пока просто "перестановка" для демонстрации
+   - позже заменим на полноценный chess engine
+*/
 
-/* ================= PGN ================= */
+function applyMove(move) {
+  status.innerText = "Ход: " + move;
+
+  // ДЕМО-ЛОГИКА:
+  // просто визуально "шевелим" доску (без правил)
+  let i1 = Math.floor(Math.random() * 64);
+  let i2 = Math.floor(Math.random() * 64);
+
+  state[i2] = state[i1];
+  state[i1] = "";
+
+  draw();
+}
+
+/* ================= LOAD PGN ================= */
 async function loadPGN(url) {
-  try {
-    status.innerText = "Загрузка...";
+  status.innerText = "Загрузка...";
 
-    const res = await fetch(url);
-    const text = await res.text();
+  const res = await fetch(url);
+  const text = await res.text();
 
-    const game = text.split(/\n\n(?=\[Event)/)[0];
+  const game = text.split(/\n\n(?=\[Event)/)[0];
 
-    moves = game
-      .replace(/\[.*\]/g, "")
-      .replace(/\d+\./g, "")
-      .trim()
-      .split(/\s+/)
-      .filter(m => m);
+  moves = game
+    .replace(/\[.*\]/g, "")
+    .replace(/\d+\./g, "")
+    .trim()
+    .split(/\s+/)
+    .filter(m => m);
 
-    index = 0;
+  index = 0;
 
-    status.innerText = "Ходов: " + moves.length;
-
-  } catch (e) {
-    status.innerText = "Ошибка загрузки";
-  }
+  status.innerText = "Ходов: " + moves.length;
 }
 
 /* ================= CONTROLS ================= */
 function nextMove() {
   if (index < moves.length) {
-    status.innerText = "Ход: " + moves[index];
+    applyMove(moves[index]);
     index++;
   }
 }
@@ -174,14 +157,16 @@ function prevMove() {
 }
 
 function resetGame() {
-  state = [...startPosition];
+  state = [...start];
   index = 0;
-  drawBoard();
+  draw();
   status.innerText = "Сброс";
 }
 
-/* events */
+/* ================= EVENTS ================= */
 select.onchange = () => loadPGN(select.value);
+
+loadPGN(select.value);
 
 window.nextMove = nextMove;
 window.prevMove = prevMove;
