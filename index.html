@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Chess Library</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lichess-pgn-viewer@latest/dist/index.css">
+<script src="https://cdn.jsdelivr.net/npm/lichess-pgn-viewer@latest/dist/index.min.js"></script>
+
+<style>
+body {
+  font-family: Arial;
+  padding: 20px;
+}
+select {
+  padding: 8px;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>📚 Шахматная библиотека</h2>
+
+<select id="book"></select>
+
+<div id="viewer" style="margin-top:20px;"></div>
+
+<script>
+
+const books = {
+  "1001 Minis": "1001_minis.pgn",
+  "1002 Minis": "1002_minis.pgn",
+  "100 Best Games": "100_best_games.pgn",
+  "100 Endgame Studies": "100_endgame_studies.pgn",
+  "200 Miniatures": "200_minis_du_mont.pgn",
+  "600 Minis": "600_minis.pgn",
+  "700 Minis": "700_minis.pgn",
+  "Alekhine": "Alekhine.pgn",
+  "Capablanca": "Capablanca.pgn",
+  "Chigorin": "Chigorin.pgn"
+};
+
+const select = document.getElementById("book");
+const viewer = document.getElementById("viewer");
+
+for (let name in books) {
+  let o = document.createElement("option");
+  o.value = books[name];
+  o.textContent = name;
+  select.appendChild(o);
+}
+
+select.onchange = () => {
+  viewer.innerHTML = "";
+  LichessPgnViewer(viewer, {
+    pgnUrl: books[select.value] || select.value
+  });
+};
+
+select.dispatchEvent(new Event("change"));
+
+</script>
+
+</body>
+</html>
