@@ -2,10 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess FIX</title>
+<title>Chess Library</title>
 
 <style>
 body { font-family: Arial; padding: 20px; }
+
+h2 { margin-bottom: 10px; }
 
 .board {
   width: 400px;
@@ -26,19 +28,33 @@ body { font-family: Arial; padding: 20px; }
 
 .w { background: #f0d9b5; }
 .b { background: #b58863; }
-</style>
 
+button { margin: 5px; }
+select { margin-top: 10px; }
+</style>
 </head>
 
 <body>
 
-<h2>♟ Chess Board RESTORE</h2>
+<h2>♟ Chess Library</h2>
 
 <div class="board" id="board"></div>
 
+<h3>📚 Книги</h3>
+<select id="bookSelect"></select>
+
+<div>
+  <button onclick="prevMove()">⏮</button>
+  <button onclick="nextMove()">▶</button>
+  <button onclick="resetGame()">⟲</button>
+</div>
+
+<div id="status"></div>
+
 <script>
 
-const start = [
+/* ================= BOARD ================= */
+const startPosition = [
 "♜","♞","♝","♛","♚","♝","♞","♜",
 "♟","♟","♟","♟","♟","♟","♟","♟",
 "","","","","","","","",
@@ -49,10 +65,11 @@ const start = [
 "♖","♘","♗","♕","♔","♗","♘","♖"
 ];
 
-const board = document.getElementById("board");
+let boardEl = document.getElementById("board");
+let state = [...startPosition];
 
-function draw() {
-  board.innerHTML = "";
+function drawBoard() {
+  boardEl.innerHTML = "";
 
   for (let i = 0; i < 64; i++) {
     const cell = document.createElement("div");
@@ -61,13 +78,85 @@ function draw() {
     const col = i % 8;
 
     cell.className = "cell " + ((row + col) % 2 ? "b" : "w");
-    cell.textContent = start[i];
+    cell.textContent = state[i];
 
-    board.appendChild(cell);
+    boardEl.appendChild(cell);
   }
 }
 
-draw();
+drawBoard();
+
+/* ================= PGN ================= */
+const books = {
+  "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
+  "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
+  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
+};
+
+const select = document.getElementById("bookSelect");
+const status = document.getElementById("status");
+
+let moves = [];
+let index = 0;
+
+/* книги */
+for (let b in books) {
+  let o = document.createElement("option");
+  o.value = books[b];
+  o.textContent = b;
+  select.appendChild(o);
+}
+
+/* загрузка PGN */
+async function loadPGN(url) {
+  status.innerText = "Загрузка...";
+
+  const res = await fetch(url);
+  const text = await res.text();
+
+  const game = text.split(/\n\n(?=\[Event)/)[0];
+
+  moves = game
+    .replace(/\[.*\]/g, "")
+    .replace(/\d+\./g, "")
+    .trim()
+    .split(/\s+/)
+    .filter(m => m);
+
+  index = 0;
+
+  status.innerText = "Ходов: " + moves.length;
+}
+
+/* ================= MOVES ================= */
+function nextMove() {
+  if (index < moves.length) {
+    status.innerText = "Ход: " + moves[index];
+    index++;
+  }
+}
+
+function prevMove() {
+  if (index > 0) index--;
+  status.innerText = "Назад: " + index;
+}
+
+function resetGame() {
+  state = [...startPosition];
+  index = 0;
+  drawBoard();
+  status.innerText = "Сброс";
+}
+
+/* ================= EVENTS ================= */
+select.onchange = () => loadPGN(select.value);
+
+loadPGN(select.value);
+
+/* expose */
+window.nextMove = nextMove;
+window.prevMove = prevMove;
+window.resetGame = resetGame;
 
 </script>
 
