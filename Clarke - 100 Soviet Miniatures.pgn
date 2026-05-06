@@ -1,0 +1,1566 @@
+[Event "Minsk"]
+[Site "?"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Yukhtman"]
+[Black "Roizman"]
+[Result "1-0"]
+[ECO "B21"]
+[PlyCount "43"]
+
+1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 d6 5. Nf3 Nc6 6. Bc4 e6 7. O-O Be7 8.
+Bf4 e5 $2 9. Be3 Nf6 10. Ng5 $1 O-O 11. Qb3 d5 12. Nxd5 $1 Nxd5 13. Nxf7 $1
+Rxf7 14. Bxd5 Qe8 15. f4 Bf6 16. fxe5 Nxe5 17. Bd4 $1 Kh8 18. Bxf7 Nxf7 19.
+Rxf6 $1 Qxe4 20. Qxf7 $1 Qxd4+ 21. Kh1 h6 22. Qe8+ 1-0
+
+[Event "LAT-ch"]
+[Site "Soviet Union"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Klovans, Janis"]
+[Black "Pukudruva"]
+[Result "1-0"]
+[ECO "B80"]
+[PlyCount "49"]
+[EventDate "1955.??.??"]
+[EventType "tourn"]
+[EventRounds "14"]
+[EventCountry "URS"]
+[Source "ChessBase"]
+[SourceDate "1998.11.10"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. g3 Qc7 7. Bg2 e6 8. O-O
+Be7 9. Be3 O-O 10. Qe2 Bd7 11. Rad1 Nc6 12. Nb3 b5 13. a3 Rab8 14. f4 Rfd8 15.
+g4 b4 16. axb4 Nxb4 17. g5 Ne8 18. f5 Nxc2 19. Qxc2 Ba4 20. fxe6 Bxb3 21. exf7+
+Bxf7 22. Rxf7 Kxf7 23. Rf1+ Kg8 24. Nd5 Qb7 25. Qf2 1-0
+
+[Event "Moscow"]
+[Site "?"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Kozlov"]
+[Black "Gorshkov"]
+[Result "1-0"]
+[ECO "C35"]
+[PlyCount "49"]
+
+1. e4 e5 2. f4 exf4 3. Nf3 Be7 4. Bc4 Nf6 5. Nc3 Nxe4 6. Ne5 Nd6 7. Bb3 Nc6 8.
+d4 O-O 9. O-O Nxe5 $2 10. dxe5 Ne8 11. Bxf4 d6 12. Qh5 dxe5 13. Bxe5 Be6 14.
+Rad1 Qc8 15. Nd5 $1 Bc5+ 16. Kh1 Bg4 17. Rxf7 $3 Be6 18. Rdf1 $1 c6 19. Rxf8+
+Bxf8 20. Bxg7 $1 cxd5 21. Bxf8 Qc7 22. Bxd5 Bxd5 23. Qxd5+ Kh8 24. Bh6 Nd6 25.
+Bf4 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Ullianov"]
+[Black "Konstantinov"]
+[Result "1-0"]
+[ECO "A07"]
+[PlyCount "49"]
+
+1. Nf3 Nf6 2. g3 d5 3. Bg2 Nc6 4. d3 e5 5. O-O Bc5 6. Nc3 O-O 7. Nxe5 $1 Bxf2+
+8. Rxf2 Nxe5 9. d4 $1 Neg4 10. Rf1 Re8 11. Qd3 c5 12. h3 cxd4 13. Qxd4 Ne5 14.
+Bg5 Nc6 15. Qh4 Qb6+ 16. Kh1 Ne4 17. Nxe4 dxe4 18. Rxf7 $3 Ne5 19. Bxe4 $3 h6
+20. Rf6 $1 gxf6 21. Qxh6 f5 22. Bf6 Qxf6 23. Qxf6 fxe4 24. Rf1 Kh7 25. Rf4 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Shestoperov"]
+[Black "Serzhanov"]
+[Result "1-0"]
+[ECO "D60"]
+[PlyCount "41"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 Be7 6. e3 Nbd7 7. Bd3 O-O 8. O-O
+a6 9. Qe2 dxc4 10. Bxc4 b5 11. Bd3 c5 12. Rad1 Qc7 13. Bf4 Qa7 14. Ne5 Bb7 15.
+Bb1 Nb6 16. dxc5 $1 Bxc5 17. Bg5 Nbd5 18. Nxd5 Nxd5 19. Nd7 Rfc8 20. Rxd5 $3
+Bxd5 21. Nf6+ $1 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Rubenchik"]
+[Black "Kanayan"]
+[Result "1-0"]
+[ECO "B77"]
+[PlyCount "47"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2
+Nc6 9. Bc4 Na5 10. Bb3 Bd7 11. Bh6 Rc8 12. h4 Nc4 13. Bxc4 Rxc4 14. Bxg7 Kxg7
+15. h5 $1 e5 16. Nde2 Nxh5 17. g4 Nf6 18. Qh6+ Kg8 19. g5 Nh5 20. Rxh5 gxh5 21.
+Nd5 f5 22. g6 hxg6 23. Qxg6+ Kh8 24. O-O-O 1-0
+
+[Event "Molotov"]
+[Site "?"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Valeev"]
+[Black "Stephanov"]
+[Result "1-0"]
+[ECO "C13"]
+[PlyCount "45"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. e5 Nfd7 6. h4 f6 7. Qh5+ g6 8. exf6
+Nxf6 9. Qe2 c5 10. dxc5 Na6 11. O-O-O O-O 12. Bh6 Re8 13. h5 gxh5 14. Rxh5 Nxh5
+15. Qxh5 Bf8 16. Bg5 Be7 17. Nf3 Rf8 18. Bd3 Rf7 19. Rh1 Bxg5+ 20. Nxg5 Rg7 21.
+Nxh7 Nxc5 22. Nf6+ $1 Qxf6 23. Qe8+ 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1958.??.??"]
+[Round "?"]
+[White "Sokolsky"]
+[Black "Strugatch"]
+[Result "1-0"]
+[ECO "A00"]
+[PlyCount "33"]
+
+1. b4 e5 2. Bb2 f6 3. e4 Bxb4 4. Bc4 Nc6 5. f4 $1 exf4 $2 6. Nh3 Nge7 7. Nxf4
+Na5 $2 8. Bxf6 $1 Rf8 9. Nh5 $1 Nxc4 10. Nxg7+ Kf7 11. O-O Kg8 12. Qh5 Rxf6 13.
+Rxf6 Ng6 14. Rxg6 hxg6 15. Qxg6 Kh8 16. Ne8 $1 Qe7 17. Nf6 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Kolos"]
+[Black "Anoshin"]
+[Result "1-0"]
+[ECO "C46"]
+[PlyCount "49"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 g6 4. Bc4 Bg7 5. d3 Nge7 6. Bg5 h6 7. Be3 d6 8. Qd2
+f5 $1 9. Qe2 f4 10. Bd2 Bg4 11. h3 Bh5 $2 12. g4 $1 fxg3 13. fxg3 Nd4 14. Nxd4
+$1 Bxe2 15. Ne6 Qb8 16. Nxg7+ Kd7 17. Kxe2 c6 18. Raf1 Rf8 19. Be6+ Kc7 20. Bf7
+Rh8 21. Bb3 $1 Kb6 22. Rf7 Qd8 23. Ne6 Qe8 24. Na4+ Ka6 25. Nc7# 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Gratvol"]
+[Black "Guskov"]
+[Result "0-1"]
+[ECO "E87"]
+[PlyCount "48"]
+
+1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Be3 e5 7. d5 Nh5 8. Qd2 Na6
+9. O-O-O Nc5 10. Kb1 f5 11. Bxc5 $2 dxc5 12. d6 Be6 13. dxc7 Qxc7 14. Qd6 Qf7
+15. Qxc5 Rac8 16. Qxa7 fxe4 17. fxe4 Qxf1 18. Rxf1 Rxf1+ 19. Kc2 Bh6 20. b3 Nf4
+21. h4 Nxg2 22. h5 Ne1+ 23. Kb2 Nd3+ 24. Ka3 Rff8 $1 0-1
+
+[Event "Estonia"]
+[Site "?"]
+[Date "1958.??.??"]
+[Round "?"]
+[White "Kiarner"]
+[Black "Rozhdestvensky"]
+[Result "1-0"]
+[ECO "D93"]
+[PlyCount "47"]
+
+1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. Bf4 c6 6. e3 O-O 7. h3 Qb6 8. Qd2
+Ne4 9. Nxe4 dxe4 10. Ng5 c5 11. O-O-O Nc6 12. dxc5 Qa6 $1 13. a3 Bf5 14. g4
+Rad8 15. Qc2 Rxd1+ 16. Qxd1 Rd8 17. Qc2 Qa5 18. Be2 Nb4 19. Bc7 $1 Qa6 $1 20.
+Rd1 $5 Nxc2 21. Rxd8+ Bf8 22. gxf5 Qc6 23. Bf4 Ne1 $2 24. Ne6 $1 1-0
+
+[Event "Kirgisia"]
+[Site "?"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Miroshnichenko"]
+[Black "Anokhin"]
+[Result "1-0"]
+[ECO "D32"]
+[PlyCount "49"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. Nf3 c5 5. cxd5 exd5 6. Bg5 Be6 7. e3 Be7 8.
+Bb5+ Nfd7 9. Bxe7 Qxe7 10. dxc5 Qxc5 11. O-O O-O 12. Rc1 Nc6 13. Bxc6 Qxc6 14.
+Nd4 Qd6 15. Ncb5 Qe5 16. Qb3 $1 Nb6 17. f4 Qf6 18. Nc7 Rad8 19. Qa3 a6 20. f5
+$1 Bc8 21. Nde6 $1 Nc4 22. Nxd5 $1 Qe5 23. Ne7+ Kh8 24. Nxd8 $1 Nxa3 25. Nxf7+
+1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1958.??.??"]
+[Round "?"]
+[White "Zvorykina"]
+[Black "Gladkov"]
+[Result "1-0"]
+[ECO "C85"]
+[PlyCount "49"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Bxc6 dxc6 7. Qe1 Nd7 8.
+d4 exd4 9. Nxd4 O-O 10. Nc3 Nb6 11. Be3 Nc4 12. Rd1 Qe8 13. Bc1 c5 14. Nde2 b5
+15. Nd5 Bd8 16. Ng3 Nb6 17. Ne3 $1 Bf6 18. Kh1 g6 19. f4 Bh4 20. f5 Bb7 21. Ng4
+h5 22. Nxh5 $3 Bxe1 23. Nhf6+ Kh8 24. Rd3 $1 gxf5 25. Rh3+ 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Villup"]
+[Black "Pitksaar"]
+[Result "0-1"]
+[ECO "C71"]
+[PlyCount "50"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 d6 5. d4 Bd7 6. dxe5 dxe5 7. O-O Bd6 8. c3
+Nge7 9. Nbd2 b5 10. Bc2 Ng6 11. Nb3 O-O 12. Be3 Qe7 13. Qd5 Nf4 14. Bxf4 exf4
+15. Rfe1 Ne5 16. Nxe5 Bxe5 17. Nc5 c6 18. Qxd7 Qxc5 19. Bb3 $2 Rad8 $1 20.
+Bxf7+ Kh8 21. Qe6 Rd2 22. Rf1 Rxb2 23. Rad1 Bxc3 24. Rd3 Bf6 25. Rh3 Qxf2+ 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Lepikhin"]
+[Black "Alekseev"]
+[Result "1-0"]
+[ECO "B92"]
+[PlyCount "37"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be2 e5 7. Nb3 Be7 8. Be3
+Nbd7 9. g4 h6 10. h4 b5 11. a4 b4 12. Nd5 $1 Nxd5 13. Qxd5 Rb8 14. Bc4 O-O 15.
+g5 hxg5 16. hxg5 Nb6 $2 17. Bxb6 Qxb6 18. g6 $1 Be6 19. Qxe6 $1 (19. Qxe6 fxe6
+20. Bxe6+ Rf7 21. Bxf7+ Kf8 22. Rh8#) 1-0
+
+[Event "Armenia"]
+[Site "?"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Goldin"]
+[Black "Ambarian"]
+[Result "1-0"]
+[ECO "B94"]
+[PlyCount "37"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 Nbd7 7. Bc4 Qc7 8.
+Bb3 b5 9. O-O Bb7 10. Re1 Nb6 11. Bxf6 exf6 12. a4 b4 13. a5 bxc3 14. axb6 Qc5
+15. Ba4+ Kd8 16. Qg4 $1 Qc8 17. Qh5 g6 18. Qd5 $3 Bxd5 19. exd5 1-0
+
+[Event "Moscow"]
+[Site "?"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Gufeld"]
+[Black "Klovan"]
+[Result "1-0"]
+[ECO "C79"]
+[PlyCount "35"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O d6 6. c3 Bd7 7. Re1 Be7 8. a3
+O-O 9. h3 Qc8 10. d4 exd4 11. cxd4 d5 12. Nc3 dxe4 13. d5 Rd8 $2 14. dxc6 Bxh3
+15. cxb7 $1 Qg4 16. Nh4 $1 Qxh4 17. bxa8=Q Rxa8 18. g3 1-0
+
+[Event "?"]
+[Site "Leningrad"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Karakhan"]
+[Black "Kakabadze"]
+[Result "1-0"]
+[ECO "B01"]
+[PlyCount "47"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Bd3 Nc6 6. Nge2 e5 7. dxe5 Ng4 8.
+O-O Ncxe5 9. Bb5+ $2 c6 10. Ba4 Be6 11. h3 h5 12. Bf4 Rd8 13. Qe1 Be7 14. Bb3
+g5 15. Bd2 Nf3+ $2 16. gxf3 Ne5 17. Kg2 Bxh3+ 18. Kxh3 Nxf3 19. Nd5 $1 g4+ 20.
+Kg3 Bh4+ 21. Kg2 Nxe1+ 22. Bxe1 Qc5 23. Bb4 Qb5 24. Nc7+ 1-0
+
+[Event "LTU-ch"]
+[Site "Lithuania"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Barsauskas, V."]
+[Black "Cesnauskas, Algimantas"]
+[Result "1-0"]
+[ECO "A18"]
+[PlyCount "45"]
+[EventDate "1955.??.??"]
+[EventType "tourn"]
+[EventRounds "11"]
+[EventCountry "LTU"]
+[Source "ChessBase"]
+[SourceDate "1998.11.10"]
+
+1. c4 Nf6 2. Nc3 e6 3. e4 d5 4. e5 Nfd7 5. d4 dxc4 6. Bxc4 Nb6 7. Bb3 c5 8. Nf3
+Nc6 9. Be3 cxd4 10. Nxd4 Nxe5 11. Qh5 $1 Qf6 12. Ne4 Nd3+ 13. Kd2 Qe5 14. Ng5
+g6 15. Qf3 f6 16. Kxd3 fxg5 17. Rhe1 Bc5 18. Nxe6 $2 Bxe6 19. Bxe6 Rd8+ 20. Kc2
+Rf8 21. Bf7+ $1 Kd7 22. Qxb7+ Qc7 23. Be6+ 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Ullianov"]
+[Black "Zubikov"]
+[Result "1-0"]
+[ECO "C41"]
+[PlyCount "45"]
+
+1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. dxe5 Nxe4 5. Qd5 Nc5 6. Bg5 f6 7. exf6 gxf6 8.
+Bb5+ $2 c6 9. O-O Be6 10. Re1 $2 Kd7 $2 11. Rxe6 $1 Nxe6 $2 12. Bh4 Qa5 13.
+Bxf6 Rg8 14. Nc3 Rxg2+ 15. Kh1 Nd8 16. Kxg2 Qxb5 17. Ne5+ Kc8 18. Qe4 $1 Qxb2
+19. Qf5+ Kc7 20. Bxd8+ Kxd8 21. Qxf8+ Kc7 22. Qe7+ Kc8 23. Nf7 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1954.??.??"]
+[Round "?"]
+[White "Shaposhnikov"]
+[Black "Bastrikov"]
+[Result "0-1"]
+[ECO "A57"]
+[PlyCount "46"]
+
+1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 e6 5. Nc3 exd5 6. Nxd5 Bb7 7. e4 Nxe4 8.
+Bf4 $1 Qa5+ 9. b4 cxb4 10. Bc4 $1 b3+ 11. Kf1 b2 12. Rb1 Bd6 $1 13. Qd4 O-O 14.
+Qxe4 Bxf4 15. Ne7+ Kh8 16. Qxf4 $2 Qc3 $1 17. Nf3 Re8 18. Qxf7 Na6 $1 19. bxa6
+Be4 $1 20. Ke2 Bg6 21. Ng5 Rxe7+ 22. Qxe7 Qxc4+ 23. Kf3 Bh5+ 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Novikov"]
+[Black "Veresov"]
+[Result "0-1"]
+[ECO "B22"]
+[PlyCount "48"]
+
+1. e4 c5 2. c3 Nf6 3. e5 Nd5 4. d4 Nc6 5. dxc5 e6 6. Nf3 Bxc5 7. Nbd2 Qc7 $1 8.
+Nc4 O-O 9. Bd3 b5 10. Bxh7+ Kxh7 11. Ng5+ Kg6 12. Qd3+ f5 13. Qg3 f4 $1 14.
+Bxf4 Bxf2+ $1 15. Kxf2 Rxf4+ 16. Ke1 Kh6 17. Qh3+ Kxg5 18. Qh7 Nxe5 19. Qxg7+
+Ng6 20. h4+ Rxh4 21. Rxh4 Qg3+ 22. Ke2 Qxh4 23. Nd2 Ndf4+ 24. Kd1 Bb7 0-1
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Rudensky"]
+[Black "Gribin"]
+[Result "0-1"]
+[ECO "C47"]
+[PlyCount "40"]
+
+1. e4 e5 2. Nc3 Nf6 3. Nf3 Nc6 4. d4 exd4 5. Nd5 h6 6. Nxd4 Bc5 7. Nb5 O-O $1
+8. Nbxc7 Nxe4 $1 9. Qh5 Bxf2+ 10. Kd1 Bd4 11. Bxh6 $6 d6 12. Bg5 Nxg5 13. Bd3
+Ne5 14. Kc1 Bg4 15. Qh4 Rc8 $1 16. Ne7+ Qxe7 17. Bh7+ Nxh7 18. Qxe7 Bf5 $1 19.
+c3 Be3+ 20. Kd1 Bg5 0-1
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Zaitsev"]
+[Black "Timchenko"]
+[Result "0-1"]
+[ECO "C61"]
+[PlyCount "42"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nd4 4. Bc4 b5 $6 5. Bxf7+ $1 Kxf7 6. Nxd4 Qh4 $1 7.
+Qf3+ Nf6 8. Nxb5 Bc5 9. N5c3 Rf8 10. d3 Ke8 11. Qg3 Qh5 12. O-O Ng4 13. Nd1 $2
+Nxf2 $1 14. Be3 Nh3+ 15. gxh3 Rxf1+ 16. Kxf1 Qxd1+ 17. Kg2 Bxe3 18. Qxe3 d6 19.
+Qd2 Bxh3+ $1 20. Kxh3 Qf3+ 21. Kh4 h6 0-1
+
+[Event "?"]
+[Site "Kiev"]
+[Date "1954.??.??"]
+[Round "?"]
+[White "Kutsenok"]
+[Black "Akimov"]
+[Result "0-1"]
+[ECO "C35"]
+[PlyCount "30"]
+
+1. e4 e5 2. f4 exf4 3. Nf3 Be7 4. Bc4 Nf6 $1 5. e5 Ng4 6. O-O d5 7. Bb3 $2 Nc6
+8. d4 g5 9. h3 $2 h5 $1 10. hxg4 hxg4 11. Nh2 g3 12. Ng4 Rh4 13. Nf6+ Bxf6 14.
+exf6 Qxf6 15. Re1+ Kf8 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Khavsky"]
+[Black "Knyshenko"]
+[Result "0-1"]
+[ECO "C31"]
+[PlyCount "30"]
+
+1. e4 e5 2. f4 d5 3. exd5 e4 4. Nc3 Nf6 5. Qe2 Be7 6. d3 exd3 7. Qxd3 Na6 $1 8.
+a3 Nc5 9. Qd4 O-O 10. b4 $2 Re8 11. Nf3 Nce4 $1 12. Nxe4 Bxb4+ 13. axb4 Rxe4+
+14. Qxe4 Nxe4 15. Be3 Qe7 0-1
+
+[Event "?"]
+[Site "Leningrad"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Artsukevitch"]
+[Black "Klaman"]
+[Result "1-0"]
+[ECO "C31"]
+[PlyCount "29"]
+
+1. e4 e5 2. f4 d5 3. Nf3 dxe4 4. Nxe5 Nd7 $1 5. Qe2 Nxe5 6. fxe5 Qd4 7. Nc3
+Qxe5 8. d4 $1 Qxd4 9. Be3 Qe5 10. O-O-O Bd7 11. Nd5 $1 O-O-O 12. Bf4 Qe6 13.
+Bxc7 Re8 14. Qe3 Nf6 15. Qxa7 1-0
+
+[Event "URS-ch24"]
+[Site "URS"]
+[Date "1957.??.??"]
+[Round "20"]
+[White "Tolush, Alexander V"]
+[Black "Aronson, Lev Abramovich"]
+[Result "1-0"]
+[ECO "D07"]
+[PlyCount "19"]
+[EventDate "1957.??.??"]
+[EventType "tourn"]
+[EventRounds "21"]
+[EventCountry "URS"]
+
+1. d4 d5 2. c4 Nc6 3. cxd5 Qxd5 4. Nf3 Bg4 $2 5. Nc3 Qa5 6. d5 O-O-O 7. Bd2
+Bxf3 8. exf3 Nb4 9. a3 Nxd5 10. Na4 $1 1-0
+
+[Event "Poltava"]
+[Site "Poltava"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Korchnoi, Viktor"]
+[Black "Gusev, Yuri S"]
+[Result "1-0"]
+[ECO "D06"]
+[PlyCount "29"]
+[EventDate "1956.??.??"]
+[EventType "tourn"]
+[EventRounds "9"]
+[EventCountry "URS"]
+[Source "ChessBase"]
+[SourceDate "2001.11.25"]
+
+1. d4 d5 2. c4 c5 3. cxd5 Nf6 4. dxc5 Qxd5 5. Qxd5 Nxd5 6. e4 Nb4 7. Na3 e6 8.
+Be3 N8a6 9. Bb5+ Bd7 10. Bxd7+ Kxd7 11. O-O-O+ Kc6 12. Nf3 Bxc5 13. Ne5+ Kb6
+14. Rd6+ Nc6 15. Nd7+ 1-0
+
+[Event "?"]
+[Site "Erevan"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Tolush"]
+[Black "Gurgenidze"]
+[Result "1-0"]
+[ECO "B94"]
+[PlyCount "29"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 Nbd7 7. f4 Qc7 8.
+Be2 e6 9. Bh5 Nxh5 $2 10. Qxh5 Nf6 11. Bxf6 gxf6 12. O-O-O Qc5 13. e5 $1 f5 14.
+Rhe1 Bg7 15. Nxf5 (15. Nxf5 exf5 16. exd6+ Kf8 17. d7) 1-0
+
+[Event "URS-ch sf"]
+[Site "Kharkov"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Klavins, Janis"]
+[Black "Makarov, Andrei"]
+[Result "1-0"]
+[ECO "C10"]
+[PlyCount "29"]
+[EventDate "1956.??.??"]
+[EventType "tourn"]
+[EventRounds "19"]
+[EventCountry "URS"]
+[Source "ChessBase"]
+[SourceDate "2001.11.25"]
+
+1. e4 e6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 b6 5. Qf3 c6 6. Bg5 Be7 7. Bxe7 Nxe7 8.
+O-O-O Qc7 9. Bd3 Nd5 10. Nh3 Nb4 11. Nhg5 Nxd3+ 12. Rxd3 O-O 13. Nf6+ gxf6 14.
+Nxh7 f5 15. Qh5 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1958.??.??"]
+[Round "?"]
+[White "Kunin"]
+[Black "Oxengott"]
+[Result "1-0"]
+[ECO "C15"]
+[PlyCount "21"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. Bd2 dxe4 5. Qg4 Qxd4 6. O-O-O f5 7. Bg5 $5 Qe5
+$2 8. Rd8+ Kf7 9. Nf3 $1 Qa5 $2 10. Bb5 $3 Nc6 11. Ne5+ 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Kurkletis"]
+[Black "Vasukov"]
+[Result "0-1"]
+[ECO "A32"]
+[PlyCount "22"]
+
+1. d4 Nf6 2. c4 c5 3. Nf3 cxd4 4. Nxd4 e6 5. Nc3 Bb4 6. a3 $2 Bxc3+ 7. bxc3 Qa5
+8. Qb3 Nc6 9. Nxc6 bxc6 10. Rb1 Ne4 11. f3 $2 Rb8 $1 0-1
+
+[Event "?"]
+[Site "Tallin"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Ekstein"]
+[Black "Laes"]
+[Result "0-1"]
+[ECO "A85"]
+[PlyCount "28"]
+
+1. d4 f5 2. c4 Nf6 3. Nc3 e6 4. Nf3 Bb4 5. Qc2 c5 6. e3 b6 7. Bd2 Bb7 8. Be2
+O-O 9. a3 Bxc3 10. Bxc3 Ne4 11. O-O Rf6 12. Nd2 Rh6 13. g3 $2 Nxd2 14. Qxd2 Qh4
+$3 0-1
+
+[Event "?"]
+[Site "Leningrad"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Klachko"]
+[Black "Chembrovsky"]
+[Result "1-0"]
+[ECO "B21"]
+[PlyCount "47"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. d4 cxd4 3. Nf3 e5 4. c3 $1 dxc3 5. Nxc3 Nc6 6. Bc4 Bb4 7. O-O Bxc3
+$2 8. bxc3 h6 9. Ba3 Qf6 10. Ne1 $1 g5 11. Nc2 Nge7 12. Ne3 h5 13. Qe2 a6 14.
+Rad1 b5 15. Bb3 b4 16. cxb4 Nd4 17. Rxd4 $1 exd4 18. Nd5 Nxd5 19. exd5+ Kd8 20.
+Bb2 Re8 21. Qd3 d6 22. Bxd4 Qf5 23. Qc3 Rb8 24. Bf6+ 1-0
+
+[Event "Odessa"]
+[Site "?"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Levin"]
+[Black "Makarov"]
+[Result "1-0"]
+[ECO "B43"]
+[PlyCount "39"]
+[EventDate "1957.??.??"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. Nc3 Qc7 6. g3 b5 7. Bg2 Bb7 8. O-O
+b4 9. Na4 Nf6 10. Re1 Be7 11. e5 Nd5 12. Nf5 exf5 13. Bxd5 a5 14. Bf4 g5 15. e6
+gxf4 16. exf7+ Kd8 17. Qd4 Rf8 18. Rxe7 Bxd5 19. Re8+ Rxe8 20. Qf6+ 1-0
+
+[Event "?"]
+[Site "Leningrad"]
+[Date "1953.??.??"]
+[Round "?"]
+[White "Krogius"]
+[Black "Borisenko"]
+[Result "1-0"]
+[ECO "B94"]
+[PlyCount "39"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 Nbd7 7. Qf3 Qa5 8.
+Bd2 Qc7 9. O-O-O g6 10. h4 Bg7 $2 11. h5 $1 Nxh5 12. Nd5 Qd8 13. Nf5 $1 gxf5
+14. Rxh5 fxe4 15. Qxe4 Nc5 16. Qh4 Be6 17. Ba5 $1 b6 18. Bxb6 Bxb2+ $1 19. Kb1
+Rb8 20. Bb5+ $1 1-0
+
+[Event "?"]
+[Site "Leningrad"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Knyshenko"]
+[Black "Zurakhov"]
+[Result "1-0"]
+[ECO "B95"]
+[PlyCount "41"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. Qd2 h6 8. Bxf6
+Qxf6 9. f4 g5 10. f5 $1 Nc6 11. Nxc6 bxc6 12. O-O-O Rb8 13. Bc4 d5 $2 14. fxe6
+fxe6 15. Rhf1 Qg7 16. exd5 cxd5 17. Bxd5 $1 exd5 18. Qxd5 Bd7 19. Rfe1+ Kd8 20.
+Rd4 Rb6 21. Qa8+ 1-0
+
+[Event "?"]
+[Site "Leningrad"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Kalatozishbili"]
+[Black "Blagidze"]
+[Result "1-0"]
+[ECO "B98"]
+[PlyCount "45"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. Nf3 a6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bg5 e6 7. f4 Be7 8. Qf3
+Nbd7 9. Bc4 h6 10. Bxf6 Nxf6 11. O-O-O Qc7 12. Bb3 b5 13. e5 Bb7 14. Qe2 dxe5
+15. fxe5 Nd7 $2 16. Nxe6 $1 fxe6 17. Qh5+ Kf8 18. Rhf1+ Nf6 19. Bxe6 Bd8 20.
+Rd7 Qxd7 21. Bxd7 Ke7 22. Qf5 Kf7 23. exf6 1-0
+
+[Event "?"]
+[Site "Kiev"]
+[Date "1956.05.29"]
+[Round "?"]
+[White "Akimov"]
+[Black "Polyak"]
+[Result "1-0"]
+[ECO "B94"]
+[PlyCount "47"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 Nbd7 7. Bc4 g6 8.
+Qe2 Bg7 9. f4 h6 10. Bxf7+ $5 Kxf7 11. Qc4+ d5 12. Nxd5 b5 13. Qc6 Nb6 14. Bxf6
+Bxf6 15. O-O-O Nxd5 16. Qxa8 Nb6 17. Qc6 Bxd4 18. f5 $1 gxf5 19. exf5 Nc4 20.
+Rhe1 $2 Nxb2 $2 21. Qg6+ $1 Kf8 22. f6 Rg8 23. Qxh6+ Kf7 24. Rxd4 $1 1-0
+
+[Event "?"]
+[Site "Kiev"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Yaroshevsky"]
+[Black "Bobolovitch"]
+[Result "1-0"]
+[ECO "B21"]
+[PlyCount "45"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. f4 Nc6 3. Bb5 Nd4 4. Bc4 b5 5. Bd5 Nc6 6. c4 bxc4 7. Nc3 Qb6 8. Nf3
+Nf6 9. Bxc4 e6 10. O-O Nxe4 11. Nxe4 d5 12. d3 Be7 13. f5 dxc4 $2 14. f6 $1
+gxf6 15. dxc4 Ne5 $2 16. Nxe5 fxe5 17. Rxf7 $3 Bb7 18. Rxe7+ Kxe7 19. Bg5+ Ke8
+20. Nf6+ Kf7 21. Qh5+ Kg7 22. Rf1 h6 23. Ne8+ 1-0
+
+[Event "?"]
+[Site "Karaganda"]
+[Date "1958.05.30"]
+[Round "?"]
+[White "Raush"]
+[Black "Muratov"]
+[Result "1-0"]
+[ECO "B34"]
+[PlyCount "45"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nc3 Bg7 6. Be3 Nf6 7. Nxc6 bxc6 8.
+e5 Ng8 9. Bd4 f6 10. f4 Qa5 11. e6 $1 d6 12. Qf3 Bb7 13. Bd3 Rb8 14. b4 $1 Qxb4
+$2 15. Rb1 $1 Qxd4 16. Qxc6+ $1 Kf8 17. Rxb7 Rd8 18. Qc7 Re8 19. Rb8 Qe3+ 20.
+Kd1 Qxe6 21. Rxe8+ Kxe8 22. Bb5+ Kf8 23. Qb8+ 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Kanayan"]
+[Black "Zelinsky"]
+[Result "1-0"]
+[ECO "B72"]
+[PlyCount "45"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. Nf3 Nc6 3. Be2 Nf6 4. Nc3 g6 5. d4 cxd4 6. Nxd4 d6 7. Be3 Bg7 8.
+Qd2 O-O 9. O-O-O Ng4 10. Bxg4 Bxg4 11. f3 Bd7 12. h4 Ne5 13. Qe2 Rc8 14. h5 Nc4
+15. hxg6 hxg6 16. Bh6 Nxb2 $2 17. Bxg7 $1 Nxd1 18. Qd2 $1 Kxg7 19. Qh6+ Kf6 20.
+Nd5+ Ke5 21. Rxd1 Rxc2+ 22. Kxc2 Ba4+ 23. Kd3 1-0
+
+[Event "?"]
+[Site "Tallinn"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Ney"]
+[Black "Koblentz"]
+[Result "1-0"]
+[ECO "B21"]
+[PlyCount "35"]
+
+1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 d6 6. Bc4 e6 7. O-O Nge7 8.
+Bg5 h6 $2 9. Nb5 $1 d5 10. exd5 hxg5 11. dxe6 $1 Ng6 12. exf7+ Ke7 13. Qe1+ Kf6
+14. Qe3 Nf4 15. h4 Be6 16. hxg5+ Kf5 17. Bxe6+ Nxe6 18. g4+ (18. g4+ Kxg4 19.
+Qxe6+ Kxf3 20. Qf5+ Ke2 21. Nc3+ Kd2 22. Rad1#) 1-0
+
+[Event "?"]
+[Site "Kharkhov"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Remeniuk"]
+[Black "Stein"]
+[Result "1-0"]
+[ECO "B80"]
+[PlyCount "37"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6 6. Bg5 h6 7. Be3 a6 8. Qf3
+Qc7 9. O-O-O b5 10. Bxb5+ $6 axb5 11. Ndxb5 Qc6 $2 12. e5 $1 Nd5 13. Rxd5 $1
+exd5 14. Nxd5 Bb7 15. Nbc7+ Kd8 16. Qxf7 Na6 17. Ne6+ Kc8 18. Nb6+ Kb8 19. Nd7+
+1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Cheremisin"]
+[Black "Artiushikin"]
+[Result "1-0"]
+[ECO "C34"]
+[PlyCount "39"]
+
+1. e4 e5 2. f4 exf4 3. Nf3 Nf6 4. e5 Nh5 5. g4 $5 fxg3 6. d4 d5 7. Ng5 g6 8.
+hxg3 $2 Be7 $2 9. Rxh5 $1 gxh5 10. Qxh5 Bxg5 11. Bxg5 Qd7 12. Nc3 c6 13. Qh6 $1
+Qe6 14. Qg7 Rf8 15. Bd3 f5 16. Be2 $1 Nd7 17. Bh5+ Rf7 18. Ne2 Nf8 19. Nf4 Qd7
+20. Qg8 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1955.??.??"]
+[Round "?"]
+[White "Khachaturov"]
+[Black "Bykhovsky"]
+[Result "1-0"]
+[ECO "C52"]
+[PlyCount "49"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 d6 7. Qb3 Qd7 8. dxe5
+dxe5 9. Ba3 Bb6 10. Nbd2 Na5 11. Qb4 c5 12. Qb2 Nxc4 13. Nxc4 Qd3 $2 14. Nfxe5
+Qxe4+ 15. Kf1 Qd5 16. Qb3 $1 Qe6 17. Re1 Ne7 18. Nxf7 $1 Kxf7 19. Nd6+ Kf6 20.
+Rxe6+ Bxe6 21. Ne4+ Ke5 22. f4+ Kf5 23. g4+ Kxe4 24. Qxe6+ Kf3 25. Qe2+ 1-0
+
+[Event "?"]
+[Site "Rostov-on-Don"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Bebchuk"]
+[Black "Zubikov"]
+[Result "1/2-1/2"]
+[ECO "C47"]
+[PlyCount "49"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4 exd4 5. Nxd4 Bb4 6. Nxc6 bxc6 7. Bd3 d5 8.
+e5 Ng4 9. Bf4 d4 10. Qf3 dxc3 11. O-O-O Qd5 $1 12. Be4 Qxa2 13. Bxc6+ Kf8 14.
+Rd8+ Ke7 15. Bg5+ f6 16. exf6+ gxf6 17. Re1+ Be6 18. Rd7+ Kf8 19. Bh6+ Nxh6 20.
+Qxf6+ Nf7 21. Rxf7+ Bxf7 22. Qxh8+ Bg8 23. Qf6+ Bf7 24. Qh8+ Bg8 25. Qf6+
+1/2-1/2
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Khachaturov"]
+[Black "Muchnik"]
+[Result "0-1"]
+[ECO "D01"]
+[PlyCount "44"]
+
+1. d4 Nf6 2. Nc3 d5 3. Bg5 Bf5 4. f3 c6 5. Qd2 h6 6. Bxf6 gxf6 7. e4 Bg6 8.
+O-O-O e6 9. Re1 h5 $1 10. f4 $2 dxe4 11. Nxe4 Bxe4 12. Rxe4 Qd5 13. Bd3 Qxa2
+14. c4 Na6 15. Ne2 O-O-O 16. Re3 Bb4 17. Nc3 Qa1+ 18. Bb1 Nc5 19. Kc2 Na4 20.
+Kb3 Rxd4 $1 21. Qf2 Nxc3 22. Kxb4 Qa4+ 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Borisenko"]
+[Black "Starodvorsky"]
+[Result "1-0"]
+[ECO "D31"]
+[PlyCount "47"]
+
+1. d4 d5 2. c4 c6 3. Nc3 e6 4. e4 dxe4 5. Nxe4 Bb4+ 6. Bd2 Qxd4 7. Bxb4 Qxe4+
+8. Be2 Na6 9. Bc3 Ne7 10. Bxg7 Rg8 11. Bf6 $1 Rg6 12. Bc3 Nd5 $2 13. cxd5 Qxg2
+14. Qd4 $1 Qxh1 15. Qh8+ Ke7 16. Bf6+ $1 Rxf6 17. d6+ Kxd6 18. O-O-O+ Kc5 19.
+Qxf6 Qe4 20. Bd3 Qa4 21. Bxa6 bxa6 22. Qc3+ Kb6 23. Rd4 Qxa2 24. Qb4+ 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Khodko"]
+[Black "Zaslavsky"]
+[Result "1-0"]
+[ECO "C70"]
+[PlyCount "41"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 b5 5. Bb3 Na5 6. O-O Nxb3 7. axb3 d6 8. d4
+Bb7 9. Nc3 Nf6 10. Qe2 exd4 11. Nxd4 Be7 12. Rd1 b4 $2 13. e5 $1 Nd7 ({not} 
+13... dxe5 $2 14. Nf5 {with a quick win}) 14. exd6 cxd6 15. Nf5 $1 bxc3 16.
+Nxg7+ Kf8 17. Bh6 Kg8 18. Ne6 $1 Bf3 19. gxf3 Qc8 20. Kh1 f6 21. Nd8 $1 (21.
+Nd8 Ne5 22. Qxe5) 1-0
+
+[Event "?"]
+[Site "Roston-on-Don"]
+[Date "1958.??.??"]
+[Round "?"]
+[White "Dubinin"]
+[Black "Arseniev"]
+[Result "1-0"]
+[ECO "C70"]
+[PlyCount "49"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 f5 5. Nc3 b5 6. Bb3 b4 7. Nd5 ({not} 7.
+Nb1 fxe4 8. Nxe5 Qg5 $1 (8... Nxe5 9. Qh5+ Ng6 10. Qd5)) 7... fxe4 8. Ng1 Nf6
+9. d3 exd3 10. Qxd3 Nd4 11. Bg5 Be7 12. Bxf6 $1 Bxf6 13. Nf3 Nxb3 14. Qxb3 d6
+15. O-O-O a5 16. Rhe1 Kf8 17. Qc4 Ra7 $2 18. Nxe5 $1 Ba6 19. Qc6 Bb7 20. Nd7+
+Kf7 21. Qc4 Bg5+ 22. Nf4+ d5 23. Rxd5 Bxf4+ 24. Qxf4+ Kg8 25. Rf5 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Koifman"]
+[Black "Chernov"]
+[Result "1-0"]
+[ECO "C63"]
+[PlyCount "41"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 f5 4. d4 fxe4 5. Nxe5 Nxe5 6. dxe5 c6 7. Nc3 $5 cxb5
+8. Nxe4 d5 9. exd6 Nf6 10. Qd4 $1 Nxe4 11. Qxe4+ Kf7 12. Qd5+ Be6 13. Qxb7+ Kg6
+14. h4 $1 Qe8 $2 15. h5+ Kf6 16. Be3 Bxd6 17. O-O-O Rd8 18. Bg5+ $1 Kf5 19. g4+
+Kxg4 20. Rhg1+ Kxh5 21. Qf3+ 1-0
+
+[Event "?"]
+[Site "Magnitogorsk"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Serebriansky"]
+[Black "Ivanov"]
+[Result "1-0"]
+[ECO "C15"]
+[PlyCount "43"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. Bd2 dxe4 5. Qg4 Qxd4 6. O-O-O f5 7. Bg5 $5 Qxf2
+8. Qh3 Bd6 $2 9. Bb5+ Bd7 10. Nxe4 $1 Bf4+ $2 11. Kb1 Qe3 12. Nf3 $1 Qb6 13.
+Bxf4 Bxb5 14. Bxc7 Qxc7 15. Nd6+ Kf8 16. Nxb5 Qe7 17. Rhe1 Nc6 18. Nbd4 Nd8 19.
+Nxf5 Qc5 20. Ne5 Nf6 21. Nd6 Kg8 (21... Rg8 22. Qxh7 Nxh7 23. Ng6#) 22. Nxb7
+1-0
+
+[Event "URS-ch sf"]
+[Site "Vilnius"]
+[Date "1960.??.??"]
+[Round "2"]
+[White "Osnos, Viatcheslav"]
+[Black "Ustinov, Georgy I"]
+[Result "1-0"]
+[ECO "D16"]
+[PlyCount "43"]
+[EventDate "1960.??.??"]
+[EventType "tourn"]
+[EventRounds "17"]
+[EventCountry "URS"]
+[Source "ChessBase"]
+[SourceDate "2001.11.25"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 e6 6. e3 Bd6 7. Bxc4 Nbd7 8. e4
+Bb4 9. O-O Bxc3 10. bxc3 Nxe4 11. Ba3 Nxc3 12. Qb3 Nd5 13. Bxd5 cxd5 14. Rae1
+Nb8 15. Ne5 f6 16. Qb5+ Nd7 17. Nc4 dxc4 18. Rxe6+ Kf7 19. Qxc4 Kg6 20. Re7 Kh6
+21. g4 Nb6 22. Qf7 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Shamkovich"]
+[Black "Zheliandinov"]
+[Result "1-0"]
+[ECO "A66"]
+[PlyCount "39"]
+
+1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4 Qe7 $2 8. Nf3
+Nbd7 9. e5 $1 dxe5 10. fxe5 Nxe5 11. Bb5+ $1 Ned7+ 12. Kf2 $1 Ng4+ 13. Kg3 $1
+Nge5 14. Nxe5 Qxe5+ 15. Bf4 Qf6 16. Qe2+ Be7 17. d6 g5 18. Be5 Bxd6 19. Bxd6+
+Kd8 20. Bc7+ 1-0
+
+[Event "?"]
+[Site "Baku"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Bykhovsky"]
+[Black "Antoshin"]
+[Result "0-1"]
+[ECO "B20"]
+[PlyCount "48"]
+
+1. e4 c5 2. c4 Nc6 3. Nc3 e6 4. g3 Nf6 5. Bg2 d5 $1 6. exd5 exd5 7. Nxd5 Nxd5
+8. cxd5 Nb4 9. a3 $2 Nd3+ 10. Kf1 Be7 11. Be4 $2 O-O $1 12. Kg2 c4 13. Ne2 $2
+Bh3+ $1 14. Kg1 Bg5 15. Nc3 f5 16. Bxd3 cxd3 17. b4 Bf6 18. Qf3 Re8 19. Bb2 Qe7
+20. Qe3 Bd4 21. Qxe7 Rxe7 22. d6 Re6 23. Na4 Rae8 24. Rf1 Re1 0-1
+
+[Event "?"]
+[Site "Kislovodsk"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Shishkin"]
+[Black "Belov"]
+[Result "1-0"]
+[ECO "B94"]
+[PlyCount "47"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 Nbd7 7. Bc4 Qa5 8.
+Qd2 e6 9. O-O h6 10. Bh4 b5 11. Bd5 $1 exd5 12. exd5 g5 $2 13. Rae1+ Ne5 14. f4
+$1 Nfd7 15. fxe5 dxe5 16. Bg3 f6 17. Kh1 Bb4 18. Nc6 Bxc3 19. Qd3 $3 Bxe1 20.
+Qg6+ Kf8 21. Rxf6+ Nxf6 22. Qxf6+ Kg8 23. Ne7+ Kh7 24. Qg6# 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Lepeshkin"]
+[Black "Terpugov"]
+[Result "0-1"]
+[ECO "C41"]
+[PlyCount "44"]
+
+1. e4 e5 2. Nf3 d6 3. c3 f5 4. exf5 Bxf5 5. Qb3 Nf6 6. Ng5 $2 d5 7. Qxb7 $2
+Nbd7 8. Qc6 Bd6 9. Nf3 O-O 10. d3 Nb6 11. Qb5 Bd7 12. Qa5 e4 13. dxe4 dxe4 14.
+Nd4 Ng4 15. Bg5 Qe8 16. Be2 Nxf2 17. O-O c5 18. Rxf2 Qe5 $1 19. Bf3 Qxh2+ 20.
+Kf1 Qh1+ 21. Ke2 exf3+ 22. Nxf3 Rae8+ (22... Rae8+ 23. Kd3 Bf5+ 24. Kd2 Nc4#)
+0-1
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Simagin"]
+[Black "Muratov"]
+[Result "1-0"]
+[ECO "C63"]
+[PlyCount "49"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 f5 4. d3 d6 5. O-O Bd7 6. exf5 Qf6 7. Nc3 Nge7 $2 8.
+g4 $1 h5 $2 9. Ne4 Qf7 10. Neg5 Qd5 11. Bc4 Qa5 12. b4 $1 Nxb4 13. Bf7+ Kd8 14.
+a3 Na6 15. Bd2 Qb6 16. Rb1 Qc6 17. Bc4 Kc8 18. Bb5 Qd5 19. c4 $1 Qxd3 20. Bxd7+
+Kxd7 21. Qa4+ Nc6 22. Rxb7 Be7 23. Qxa6 Bxg5 24. Nxg5 Qxd2 25. Rxc7+ $3 1-0
+
+[Event "?"]
+[Site "Estonia"]
+[Date "1956.??.??"]
+[Round "?"]
+[White "Kheuer"]
+[Black "Rosenfeld"]
+[Result "0-1"]
+[ECO "C58"]
+[PlyCount "48"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5 6. Bb5+ c6 7. dxc6 bxc6 8.
+Qf3 cxb5 9. Qxa8 Nb7 10. b4 Bxb4 11. Ba3 Nd5 12. Ne4 O-O 13. Qxa7 f5 14. Nec3
+Bxa3 15. Qxa3 Nf4 16. Qb3+ Kh8 17. g3 Nc5 18. Qxb5 Nfe6 19. Na3 Ba6 20. Qb4 Qa8
+21. O-O-O Rb8 22. Qa5 Qb7 $1 23. Rde1 Qb2+ 24. Kd1 Qa1+ 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Galimov"]
+[Black "Ephashkin"]
+[Result "1-0"]
+[ECO "B32"]
+[PlyCount "45"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Qc7 5. c4 Qe5 6. Nb5 Qxe4+ 7. Be2 Qe5 8.
+N1c3 a6 $2 9. Nd5 $1 axb5 10. Bf4 Qxb2 11. Nc7+ Kd8 12. Nxa8 Qc3+ 13. Kf1 e5
+14. cxb5 exf4 15. bxc6 Qa5 16. c7+ $1 Ke8 17. Bc4 Qxa8 18. Qd5 Nh6 19. Re1+ Be7
+20. Qe5 Qa3 21. Qxg7 Rg8 22. Qxh6 d5 $2 23. Bb5+ 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Lutikov"]
+[Black "Tylevitch"]
+[Result "1-0"]
+[ECO "B44"]
+[PlyCount "47"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e6 5. Nb5 Nf6 6. Bf4 e5 7. Bg5 d6 8. Bc4
+Qa5+ 9. b4 Qxb4+ 10. Nd2 $1 Qa5 11. O-O Bg4 12. Qb1 $1 Be6 13. Bxe6 fxe6 14.
+Nc4 Qd8 15. Rd1 Nd4 16. Nxd4 exd4 17. Rxd4 Qc7 18. Qb5+ Qd7 19. Qb3 Qc7 20.
+Rad1 Rc8 21. Qh3 $1 Qf7 22. e5 d5 23. exf6 gxf6 24. Rf4 (24. Rf4 Rxc4 25. Rxf6)
+1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1958.??.??"]
+[Round "?"]
+[White "Strekalovsky"]
+[Black "Bastrikov"]
+[Result "0-1"]
+[ECO "B28"]
+[PlyCount "46"]
+
+1. e4 c5 2. Nf3 a6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Nf3 Bb4 7. Bc4 Qc7 8.
+Qd3 b5 9. Bb3 Bb7 10. Bd2 Bxc3 11. Bxc3 d6 12. Nd2 Nbd7 13. f3 O-O 14. O-O-O
+Nc5 15. Qe2 a5 $1 16. Qxb5 a4 17. Bc4 Rfb8 18. Qb4 a3 $1 19. Nb3 Bc6 20. Nxc5
+Rxb4 21. Na6 axb2+ 22. Kb1 Rxa6 23. Bxb4 Bxe4 $1 0-1
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Artishikhin"]
+[Black "Koifman"]
+[Result "0-1"]
+[ECO "B40"]
+[PlyCount "34"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Bb4 6. e5 $1 Ne4 7. Qg4 Qa5 8.
+Qxe4 Bxc3+ 9. bxc3 Qxc3+ 10. Kd1 Qxa1 11. Nb5 $1 d5 $1 12. exd6 $2 Na6 13. d7+
+Bxd7 14. Qxb7 O-O $1 15. Qxa6 Rab8 16. a4 Rfd8 17. Bd3 Rb6 $1 0-1
+
+[Event "?"]
+[Site "Kemerovo"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Nikashkin"]
+[Black "Isakov"]
+[Result "1-0"]
+[ECO "D24"]
+[PlyCount "45"]
+
+1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 c5 5. d5 e6 6. e4 a6 7. Bg5 exd5 8. e5 $1
+h6 9. Bh4 g5 10. Nxg5 hxg5 11. Bxg5 Be7 12. exf6 Bxf6 13. Bxf6 Qxf6 14. Nxd5
+Qxb2 15. f4 $1 O-O 16. Bxc4 Qxg2 17. Nf6+ Kg7 18. Qh5 $3 Qg6 19. O-O-O $1 Qxh5
+20. Nxh5+ Kg6 21. Rd5 f5 22. Rd6+ $1 Kh7 23. Rg1 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Bagirov"]
+[Black "Movshovitch"]
+[Result "1-0"]
+[ECO "B81"]
+[PlyCount "29"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6 6. g4 e5 $2 7. Nf5 h5 8.
+Bg5 Be6 9. gxh5 $1 Bxf5 10. exf5 Be7 11. h6 $1 gxh6 12. Bxf6 Bxf6 13. Ne4 d5
+14. Qxd5 $1 O-O $2 15. Qxb7 1-0
+
+[Event "?"]
+[Site "Leningrad"]
+[Date "1957.??.??"]
+[Round "?"]
+[White "Furman"]
+[Black "Kondratiev"]
+[Result "1-0"]
+[ECO "E41"]
+[PlyCount "29"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 c5 5. Bd3 b6 6. Nge2 Bb7 7. O-O cxd4 8.
+exd4 h6 9. a3 Bxc3 10. Nxc3 d5 11. cxd5 $1 Nxd5 12. Qg4 Nf6 13. Qg3 $1 a6 14.
+d5 $1 exd5 15. Qxg7 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Grechkin"]
+[Black "Matokhin"]
+[Result "0-1"]
+[ECO "D01"]
+[PlyCount "26"]
+
+1. d4 Nf6 2. Nc3 d5 3. Bg5 c5 4. Bxf6 gxf6 5. e4 $1 dxe4 6. dxc5 Qa5 7. Qd5 e6
+8. Bb5+ $2 Qxb5 $1 9. Nxb5 exd5 10. Nc7+ Kd7 11. Nxa8 Bxc5 12. O-O-O Kc6 13.
+Ne2 Be6 0-1
+
+[Event "?"]
+[Site "Turkmenia"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Liashkov"]
+[Black "Khanov"]
+[Result "1-0"]
+[ECO "D15"]
+[PlyCount "27"]
+
+1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 c6 5. e3 b5 6. a4 Nd5 7. Ne5 $1 Nxc3 8.
+bxc3 Qd5 9. Be2 Bf5 10. axb5 cxb5 11. Ra5 Qb7 $2 12. Bf3 Be4 13. Rxb5 $1 Bxf3
+14. Qa4 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Shmatkov"]
+[Black "Eidlin"]
+[Result "1-0"]
+[ECO "D20"]
+[PlyCount "25"]
+
+1. d4 d5 2. c4 dxc4 3. e3 e5 4. Bxc4 exd4 5. exd4 Nf6 6. Nc3 Be7 7. Nf3 Nbd7 $4
+8. Bxf7+ $1 Kxf7 9. Ng5+ Kg6 10. Qd3+ Kh5 11. Qh3+ Kg6 12. Qd3+ Kh5 13. Ne6 1-0
+
+[Event "?"]
+[Site "Perm"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Rekka"]
+[Black "Bobrinsky"]
+[Result "1-0"]
+[ECO "B32"]
+[PlyCount "27"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb3 Nf6 6. Bg5 Be7 7. Nc3 Nxe4 $2
+8. Nxe4 Bxg5 9. Nd6+ Ke7 10. Bc4 Rf8 11. Nf5+ Kf6 12. Qd6+ Kxf5 13. Bd3+ e4 14.
+Bxe4+ (14. Bxe4+ Kxe4 15. f3+ Ke3 16. Qd2#) 1-0
+
+[Event "?"]
+[Site "Rostov-on-Don"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Boleslavsky"]
+[Black "Gurgenidze"]
+[Result "1-0"]
+[ECO "B32"]
+[PlyCount "25"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 d5 $2 4. exd5 Qxd5 5. Nc3 Qe6+ 6. Be3 cxd4 7. Nxd4
+Qd7 8. Ndb5 $1 Rb8 9. Qe2 f6 10. Rd1 Qg4 11. f3 Qh5 12. Bxa7 Nxa7 13. Nd6+ $1 (
+13. Nd6+ Kd7 14. Nxc8+ Kxc8 15. Qe6+ Kc7 16. Rd7+) 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Yurkov"]
+[Black "Salov"]
+[Result "1-0"]
+[ECO "B23"]
+[PlyCount "27"]
+
+1. e4 c5 2. Nc3 Nc6 3. Nge2 e5 4. Ng3 g6 5. Bc4 Bg7 6. d3 Nge7 7. h4 Nd4 8. Nd5
+b5 9. Bg5 $1 Qa5+ 10. b4 $1 cxb4 11. Bxe7 bxc4 12. Bxb4 Qd8 $2 13. Qd2 $1 a5
+14. Be7 1-0
+
+[Event "?"]
+[Site "Frunze"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Katalymov"]
+[Black "Ilivitsky"]
+[Result "1-0"]
+[ECO "A00"]
+[PlyCount "21"]
+
+1. b4 e5 2. Bb2 f6 3. e4 Bxb4 4. Bc4 Ne7 5. Qh5+ Ng6 6. f4 $1 exf4 7. a3 d5 $1
+8. Bxd5 c6 9. Bb3 Qa5 $2 10. e5 $3 Be7 $2 11. Bf7+ 1-0
+
+[Event "?"]
+[Site "Odessa"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Vasiukov"]
+[Black "Giterman"]
+[Result "1-0"]
+[ECO "C64"]
+[PlyCount "15"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Bc5 4. c3 f5 5. d4 fxe4 6. Ng5 Be7 7. dxe5 $1 Nxe5
+$4 8. Ne6 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1958.??.??"]
+[Round "?"]
+[White "Liublinsky"]
+[Black "Kirillov"]
+[Result "1-0"]
+[ECO "C67"]
+[PlyCount "47"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6 6. Nxe5 Nxe5 7. Rxe5+ Be7
+8. Bd3 O-O 9. Qf3 Bf6 10. Re3 Re8 11. Nc3 g6 12. b3 Bd4 $2 13. Ba3 $1 Bxe3 $2
+14. fxe3 f5 15. Rf1 Nf7 16. Bxf5 $1 gxf5 17. Qxf5 Nh6 18. Qh5 Re6 19. Nd5 d6
+20. Bb2 $1 Bd7 21. Nf6+ Rxf6 22. Rxf6 Qxf6 23. Bxf6 Nf7 24. Qf3 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Muchnik"]
+[Black "Lashmanov"]
+[Result "1-0"]
+[ECO "C82"]
+[PlyCount "49"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4 6. d4 b5 7. Bb3 d5 8. dxe5
+Be6 9. c3 Bc5 10. Nbd2 Nxd2 11. Bxd2 O-O 12. Bg5 Qd7 13. Qd3 Be7 14. Rad1 Rfd8
+15. Rfe1 Na5 16. Bc2 g6 17. Qd4 Bg4 $2 18. Bxe7 Bxf3 19. Bf6 $1 Bxd1 20. Rxd1
+Qe8 21. Qh4 Nc4 22. Rd3 $1 Rd6 23. Qxh7+ Kxh7 24. Rh3+ Kg8 25. Rh8# 1-0
+
+[Event "UKR-ch"]
+[Site "Kiev"]
+[Date "1960.06.02"]
+[Round "13"]
+[White "Stein, Leonid"]
+[Black "Lentschiner, I."]
+[Result "1-0"]
+[ECO "B98"]
+[PlyCount "47"]
+[EventDate "1960.05.??"]
+[EventType "tourn"]
+[EventRounds "17"]
+[EventCountry "UKR"]
+[Source "ChessBase"]
+[SourceDate "2003.11.25"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4 Be7 8. Qf3
+Qc7 9. Bd3 Nbd7 10. f5 Ne5 11. Qh3 Qb6 12. O-O-O Nfg4 13. Bxe7 Nf2 14. Qe3 Nxd1
+15. Rxd1 Nc6 16. Bxd6 Nxd4 17. Qg3 Rg8 18. Bc4 Bd7 19. Be5 Nb5 20. f6 g6 21.
+Na4 Qa5 22. Bxb5 axb5 23. Qd3 O-O-O 24. Qd6 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Yudovitch"]
+[Black "Strom"]
+[Result "1-0"]
+[ECO "B40"]
+[Annotator "Clayton,David"]
+[PlyCount "49"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Bb4 6. e5 $1 Ne4 7. Qg4 Qa5 8.
+Qxe4 Bxc3+ 9. bxc3 Qxc3+ 10. Kd1 Qxa1 11. Nb5 $1 d5 $1 12. exd6 $2 Na6 13. d7+
+Kxd7 $2 14. Bc4 Rd8 15. Ke2 Ke8 16. Re1 Qf6 17. Qxh7 b6 18. Ba3 Bb7 19. Nd6+
+Rxd6 20. Bxd6 Qg5 21. Qd3 Nc5 22. Bb5+ Nd7 23. c4 (23. Bxd7+ Kxd7 24. Bf4+ Qd5)
+23... Qxg2 24. Bc7 Bc6 25. Rg1 $1 (25. Rg1 Qxg1 (25... Qe4+ 26. Qxe4 Bxe4 {
+loses to} 27. Rd1) 26. Bxc6 {wins}) 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Burlaev"]
+[Black "Smirnov"]
+[Result "1-0"]
+[ECO "A04"]
+[Annotator "Clayton,David"]
+[PlyCount "37"]
+[EventDate "2005.05.28"]
+
+1. Nf3 g6 2. g3 Bg7 3. Bg2 e5 4. d3 d6 5. O-O Nc6 6. e4 f5 7. exf5 $1 Bxf5 8.
+Re1 Nge7 9. Bg5 Bg4 10. h3 Bxf3 11. Qxf3 Nd4 $2 12. Qxb7 $1 Nxc2 13. Rc1 $1 Rb8
+14. Qxa7 Nxa1 15. Rxc7 Bf8 16. Rxe7+ $1 Bxe7 17. Bc6+ Kf7 18. Bd5+ Kg7 19. Bxe7
+1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1961.06.01"]
+[Round "?"]
+[White "Lepeshkin"]
+[Black "Grishanin"]
+[Result "1-0"]
+[ECO "B22"]
+[Annotator "Clayton,David"]
+[PlyCount "37"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. c3 g6 3. Nf3 Bg7 4. d4 cxd4 5. cxd4 d6 6. Nc3 Nf6 7. Bb5+ Nfd7 8.
+h4 a6 9. Bc4 Nf6 $2 10. h5 Nxh5 11. e5 $1 dxe5 12. Rxh5 $1 gxh5 13. Ng5 Qxd4
+14. Bxf7+ Kf8 15. Qb3 Qd6 16. Nce4 Qc7 17. Bxh5 e6 18. Qa3+ $1 Qe7 19. Qf3+ (
+19. Qf3+ Kg8 20. Bf7+ Kf8 21. Nxe6+ Bxe6 22. Bxe6+ Ke8 23. Nd6+ $1) 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1960.06.01"]
+[Round "?"]
+[White "Chistiakov"]
+[Black "Shashin"]
+[Result "1-0"]
+[ECO "D50"]
+[Annotator "Clayton,David"]
+[PlyCount "49"]
+[EventDate "2005.05.28"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 c5 4. Nf3 d5 5. Bg5 cxd4 6. Qxd4 Nc6 7. Bxf6 gxf6 8.
+Qh4 Bb4 9. cxd5 exd5 10. e3 Be6 11. Be2 Qe7 12. O-O O-O-O 13. Rac1 Kb8 14. Nb5
+a6 15. Qf4+ Ka8 16. Nc7+ Ka7 17. Rxc6 $1 bxc6 18. Nxa6 Bd6 19. Qa4 Kb7 20. Nd4
+Bd7 21. Rc1 c5 22. Qb3+ Ka7 23. Qa3 $1 Kb6 24. Nxc5 Bxc5 25. Qa6+ 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1960.06.01"]
+[Round "?"]
+[White "Slastenin"]
+[Black "Selivanovsky"]
+[Result "1-0"]
+[ECO "C47"]
+[Annotator "Clayton,David"]
+[PlyCount "49"]
+[EventDate "2005.05.28"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4 exd4 5. Nd5 Nxe4 6. Qe2 f5 7. Ng5 d3 $1 8.
+cxd3 Nd4 9. Qh5+ g6 10. Qh4 c6 11. dxe4 cxd5 12. exd5 Qa5+ 13. Kd1 Qxd5 14. Bc4
+$1 Qxc4 15. Re1+ Be7 16. Rxe7+ $1 Kxe7 17. Ne4+ Ke6 18. Qf6+ Kd5 19. Nc3+ Kc5
+20. b4+ Kxb4 21. Qd6+ Kxc3 $2 22. Qa3+ Nb3 23. Qb2+ $1 Kd3 24. axb3 Qd5 25. Ra4
+1-0
+
+[Event "?"]
+[Site "?"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Timofeev"]
+[Black "Kapellko"]
+[Result "1/2-1/2"]
+[ECO "D41"]
+[Annotator "Clayton,David"]
+[PlyCount "45"]
+[EventDate "2005.05.28"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. Nf3 c5 5. cxd5 cxd4 6. Qa4+ Bd7 7. Qxd4 exd5 8.
+Nxd5 Qa5+ 9. Nc3 Nc6 10. Qd1 Ne4 11. Qd5 Nc5 12. Ne5 O-O-O 13. Nxc6 Bxc6 14.
+Qc4 b5 15. b4 $1 Qc7 16. Nxb5 Bxb5 17. Qxb5 Qe5 18. Qc4 $1 Qxa1 19. bxc5 Qd4
+20. Qa6+ Kb8 21. Qb5+ Kc7 22. Qa5+ Kc8 23. Qa6+ 1/2-1/2
+
+[Event "?"]
+[Site "Latvia"]
+[Date "1962.??.??"]
+[Round "?"]
+[White "Zhuravlev"]
+[Black "Klovan"]
+[Result "1/2-1/2"]
+[ECO "C72"]
+[Annotator "Clayton,David"]
+[PlyCount "48"]
+[EventDate "2005.05.28"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 d6 5. O-O Bg4 6. h3 h5 $1 7. d4 $1 Qf6 8.
+Bxc6+ bxc6 9. dxe5 dxe5 10. hxg4 hxg4 11. Bg5 Qe6 12. Nh2 g3 $1 13. Ng4 Qg6 $1
+14. Be3 Rd8 15. Qf3 Rh4 16. Qxg3 Rxg4 17. Qxe5+ Be7 18. g3 Rxe4 19. Qxc7 Rxe3
+$1 20. fxe3 Bc5 21. Qf4 Bd6 22. Qf3 Bxg3 23. Nc3 $1 Bf4+ 24. Kf2 Bg3+ 1/2-1/2
+
+[Event "?"]
+[Site "Kazakhstan"]
+[Date "1957.06.02"]
+[Round "?"]
+[White "Konovalov"]
+[Black "Mordkovitch"]
+[Result "1/2-1/2"]
+[ECO "C41"]
+[Annotator "Clayton,David"]
+[PlyCount "36"]
+[EventDate "2005.05.28"]
+
+1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7 5. Bc4 Be7 6. dxe5 dxe5 7. Bxf7+ Kxf7
+8. Ng5+ Kg8 ({The critical line begins with} 8... Kg6 {Then} 9. Ne6 Qg8 10.
+Nxc7 Rb8 {etc. That being so, White's only course seems to be a straight
+attack on the enemy king.}) 9. Ne6 Qe8 10. Nxc7 Qg6 11. Nxa8 Qxg2 12. Rf1 Nc5
+13. f3 Ng4 $1 14. Qe2 Bh4+ 15. Kd2 Nf2 16. Nc7 Bh3 $1 17. Rxf2 Bxf2 18. Nd1
+Be1+ $1 1/2-1/2
+
+[Event "?"]
+[Site "Leningrad"]
+[Date "1960.??.??"]
+[Round "?"]
+[White "Strogovitch"]
+[Black "Solonkovitch"]
+[Result "1/2-1/2"]
+[ECO "C33"]
+[Annotator "Clayton,David"]
+[PlyCount "33"]
+[EventDate "2005.05.28"]
+
+1. e4 e5 2. f4 exf4 3. Nc3 Qh4+ 4. Ke2 d5 $1 5. Nxd5 Bg4+ 6. Nf3 Nc6 $1 7. d4
+f5 8. Nxc7+ Kd7 9. Nxa8 fxe4 10. c3 Nh6 (10... Bd6 $1) 11. Bxf4 exf3+ 12. gxf3
+Bxf3+ 13. Kxf3 Qg4+ 14. Ke3 Nf5+ 15. Ke4 Nd6+ 16. Ke3 Nf5+ 17. Ke4 1/2-1/2
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1959.??.??"]
+[Round "?"]
+[White "Terpugov"]
+[Black "Brazilsky"]
+[Result "1/2-1/2"]
+[ECO "C33"]
+[Annotator "Clayton,David"]
+[PlyCount "50"]
+[EventDate "2005.05.28"]
+
+1. e4 e5 2. f4 exf4 3. d4 d5 4. exd5 Qh4+ 5. Kd2 Bd6 6. Qe2+ Ne7 7. c4 c5 8.
+Nf3 Qh6 9. dxc5 Bxc5 10. Nc3 Bf5 11. Nb5 $1 Na6 12. Qe5 O-O 13. Kc3 $1 Rac8 14.
+Bxf4 Nxd5+ 15. Qxd5 Qxf4 16. Qe5 Bb4+ 17. Kb3 Rxc4 $1 18. Qxf4 Rxf4 19. Nbd4
+Rc8 $2 20. Bxa6 Bc5 $1 21. Nxf5 bxa6 22. Ng3 Rb4+ 23. Kc3 Be7+ 24. Kd3 Rd8+ 25.
+Kc2 Rc8+ 1/2-1/2
+
+[Event "?"]
+[Site "?"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Gaspariantz"]
+[Black "Eidlin"]
+[Result "1/2-1/2"]
+[ECO "B98"]
+[Annotator "Clayton,David"]
+[PlyCount "49"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4 Be7 8. Qf3
+h6 9. Bh4 g5 10. fxg5 Nfd7 11. Nxe6 $1 fxe6 12. Qh5+ Kf8 13. Bb5 $1 Rh7 $1 14.
+O-O+ Kg8 15. g6 Rg7 16. Qxh6 Bxh4 17. Rf7 Qf6 18. Rxf6 Bxf6 19. Be2 Ne5 20. Bh5
+Bd7 21. Rf1 Be7 22. Rf7 $1 Nxf7 23. gxf7+ Rxf7 24. Bxf7+ Kxf7 25. Qh5+ 1/2-1/2
+
+[Event "?"]
+[Site "Riga"]
+[Date "1961.06.03"]
+[Round "?"]
+[White "Vorema"]
+[Black "Schmidt"]
+[Result "1/2-1/2"]
+[ECO "B97"]
+[Annotator "Clayton,David"]
+[PlyCount "35"]
+[EventDate "2005.05.28"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bg5 a6 7. f4 Qb6 8. Qd2
+Qxb2 9. Rb1 Qa3 10. e5 h6 11. Bxf6 gxf6 12. Ne4 fxe5 13. fxe5 dxe5 14. Nf6+ $1
+Ke7 15. Nf5+ $1 exf5 16. Nd5+ Ke8 17. Nc7+ Ke7 18. Nd5+ 1/2-1/2
+
+[Event "?"]
+[Site "?"]
+[Date "1958.??.??"]
+[Round "?"]
+[White "Berezin"]
+[Black "Zhuravlev"]
+[Result "1/2-1/2"]
+[ECO "D07"]
+[Annotator "Clayton,David"]
+[PlyCount "43"]
+[EventDate "2005.05.28"]
+
+1. Nf3 Nc6 2. d4 d5 3. c4 Bg4 4. cxd5 Bxf3 5. gxf3 Qxd5 6. e3 e6 7. Nc3 Qh5 8.
+f4 Qh4 9. Bg2 Nge7 10. Bd2 O-O-O 11. Rc1 g5 $1 12. fxg5 Qxg5 13. Bf3 Rg8 14.
+Ne4 Qg6 15. Nc5 Nd5 16. Qb3 Qg1+ $3 17. Rxg1 Rxg1+ 18. Ke2 Nf4+ $1 19. exf4
+Nxd4+ 20. Ke3 Nf5+ 21. Ke2 Nd4+ 22. Ke3 1/2-1/2
+
+[Event "?"]
+[Site "Lipetsk"]
+[Date "1962.??.??"]
+[Round "?"]
+[White "Belokurov"]
+[Black "Sanakoev"]
+[Result "1-0"]
+[ECO "C13"]
+[Annotator "Clayton,David"]
+[PlyCount "35"]
+[EventDate "2005.05.28"]
+
+1. e4 e6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6 5. Bg5 Be7 6. Bxf6 Bxf6 7. Nf3 Be7 8.
+Bd3 b6 9. Qe2 Bb7 10. O-O-O Nd7 11. Kb1 Nf6 $2 12. Nxf6+ $1 gxf6 13. d5 $1 exd5
+14. Nd4 c5 15. Nf5 Bc8 16. Bb5+ Kf8 17. Rxd5 Qc7 18. Rd7 $1 (18. Rd7 Bxd7 19.
+Qxe7+ Kg8 20. Bxd7 Rd8 21. Qxf6) 1-0
+
+[Event "?"]
+[Site "Voronozh"]
+[Date "1962.??.??"]
+[Round "?"]
+[White "Ullianov"]
+[Black "Krutiansky"]
+[Result "1-0"]
+[ECO "B11"]
+[Annotator "Clayton,David"]
+[PlyCount "47"]
+[EventDate "2005.05.28"]
+
+1. e4 c6 2. Nc3 d5 3. Nf3 Bg4 4. d4 dxe4 5. Nxe4 Bxf3 6. Qxf3 Qxd4 7. Be3 Qxb2
+$2 8. Bc4 $1 Qb4+ 9. Nd2 e6 10. Rb1 Qe7 11. Ne4 b6 12. O-O Nd7 13. Bf4 e5 14.
+Ng5 $1 Qf6 15. Bxf7+ Ke7 16. Rfe1 Nh6 17. Bc4 Re8 18. Ne6 Nf7 19. Rbd1 Rc8 20.
+Qa3+ Ke8 21. Qxa7 Bd6 22. Nxg7+ Qxg7 23. Bxf7+ Qxf7 24. Rxd6 (24. Rxd6 Rf8 25.
+Rxd7 Qxd7 26. Rxe5+ Kd8 27. Bg5+ Rf6 28. Bxf6+ Qe7 29. Qxe7#) 1-0
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1962.??.??"]
+[Round "?"]
+[White "Zakharov"]
+[Black "Yudovitch"]
+[Result "0-1"]
+[ECO "D01"]
+[Annotator "Clayton,David"]
+[PlyCount "46"]
+[EventDate "2005.05.28"]
+
+1. d4 Nf6 2. Nc3 d5 3. Bg5 c5 4. dxc5 d4 5. Bxf6 gxf6 6. Ne4 Qd5 7. Qd3 $6 Bf5
+8. Nc3 Qe5 9. Qb5+ Bd7 10. Qxb7 dxc3 11. b4 Bh6 12. e3 O-O 13. Qxa8 Bxe3 {!?!}
+14. Nf3 $2 Bd2+ 15. Kd1 Qf4 16. Qd5 Bc6 17. Qd3 Be4 18. Qe2 Rd8 19. Ne1 Nc6 20.
+a3 Bxe1+ 21. Kxe1 Nd4 22. Rd1 Nxc2+ 23. Qxc2 Rxd1+ $1 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "1962.??.??"]
+[Round "?"]
+[White "Lazarov"]
+[Black "Goldstein"]
+[Result "1-0"]
+[ECO "D47"]
+[Annotator "Clayton,David"]
+[PlyCount "49"]
+[EventDate "2005.05.28"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. e3 Nbd7 6. Bd3 dxc4 7. Bxc4 b5 8. Be2
+Bb7 9. e4 b4 10. e5 bxc3 11. exf6 cxb2 12. fxg7 bxa1=Q 13. gxh8=Q Qa5+ 14. Nd2
+Q5c3 15. O-O Qxd4 16. Qxh7 Qxa2 17. Bc4 Qa5 18. Bxe6 $1 O-O-O 19. Qxf7 Qg7 20.
+Qxg7 Bxg7 21. Nc4 Qc7 22. Qg4 Be5 23. Bxd7+ Rxd7 24. Qg8+ Rd8 25. Qe6+ 1-0
+
+[Event "?"]
+[Site "Novosibirsk"]
+[Date "1962.??.??"]
+[Round "?"]
+[White "Konstantinov"]
+[Black "Seredenko"]
+[Result "0-1"]
+[ECO "C57"]
+[Annotator "Clayton,David"]
+[PlyCount "48"]
+[EventDate "2005.05.28"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 Bc5 $5 5. Bxf7+ Ke7 6. Bd5 Rf8 7. O-O d6
+8. c3 Bg4 9. Qa4 h6 10. d4 Bb6 11. Nf3 Bxf3 12. Bxc6 bxc6 13. gxf3 Qd7 14. dxe5
+Qh3 $1 15. exd6+ cxd6 16. e5 Qxf3 $1 17. exd6+ Kd7 18. Nd2 Qh3 19. Qf4 Ng4 20.
+Qg3 Rxf2 $1 21. Qxh3 Rxh2+ 22. Rf2 Bxf2+ 23. Kf1 Rxh3 24. Ne4 Rf8 0-1
+
+[Event "?"]
+[Site "Novosibirsk"]
+[Date "1962.??.??"]
+[Round "?"]
+[White "Konstantinov"]
+[Black "Seredenko"]
+[Result "0-1"]
+[ECO "C57"]
+[PlyCount "48"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 Bc5 $5 5. Bxf7+ Ke7 6. Bd5 Rf8 7. O-O d6
+8. c3 Bg4 9. Qa4 h6 10. d4 Bb6 11. Nf3 Bxf3 12. Bxc6 bxc6 13. gxf3 Qd7 14. dxe5
+Qh3 $1 15. exd6+ cxd6 16. e5 Qxf3 $1 17. exd6+ Kd7 18. Nd2 Qh3 19. Qf4 Ng4 20.
+Qg3 Rxf2 $1 21. Qxh3 Rxh2+ 22. Rf2 Bxf2+ 23. Kf1 Rxh3 24. Ne4 Rf8 0-1
+
+[Event "?"]
+[Site "Moscow"]
+[Date "1961.??.??"]
+[Round "?"]
+[White "Zelevinsky"]
+[Black "Ravinsky"]
+[Result "1-0"]
+[ECO "C30"]
+[PlyCount "35"]
+
+1. e4 e5 2. f4 Bc5 3. Nf3 d5 $5 4. Nxe5 dxe4 5. Qh5 Qe7 6. Bc4 g6 7. Qe2 Nh6 8.
+Nc3 Nd7 9. Nd5 Qd6 10. Qxe4 O-O 11. b4 $1 c6 12. bxc5 Nxc5 13. Nxf7 $3 Nxf7 14.
+Ne7+ Kg7 15. Bb2+ Kh6 16. Qe3 $1 Na4 17. f5+ g5 18. Qh3# 1-0
+
+[Event "Trud"]
+[Site "?"]
+[Date "1962.??.??"]
+[Round "?"]
+[White "Troinov"]
+[Black "Popov"]
+[Result "1-0"]
+[ECO "B88"]
+[PlyCount "39"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bc4 e6 7. O-O Be7 8.
+Be3 O-O 9. Bb3 a6 10. f4 d5 11. e5 Nd7 12. Qh5 Re8 $2 13. Nxd5 $3 exd5 14.
+Qxf7+ $3 Kxf7 15. Bxd5+ Kg6 16. f5+ Kh5 17. Bf3+ Kh4 18. g3+ Kh3 19. Bg2+ Kg4
+20. Rf4+ 1-0
+
