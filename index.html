@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Viewer FINAL</title>
+<title>Chess Stable FIX</title>
 
 <style>
-body { font-family: Arial; padding:20px; display:flex; gap:20px; }
+body { font-family: Arial; display:flex; gap:20px; padding:20px; }
 
 .board {
   width:400px; height:400px;
@@ -16,16 +16,23 @@ body { font-family: Arial; padding:20px; display:flex; gap:20px; }
 
 .cell {
   width:50px; height:50px;
-  font-size:30px;
   display:flex;
   align-items:center;
   justify-content:center;
+  font-size:30px;
 }
 
 .w { background:#f0d9b5; }
 .b { background:#b58863; }
 
-.panel { width:360px; }
+.panel { width:350px; }
+
+.item {
+  padding:6px;
+  cursor:pointer;
+}
+.item:hover { background:#eee; }
+.active { background:#cce5ff; }
 
 .list {
   max-height:220px;
@@ -33,22 +40,7 @@ body { font-family: Arial; padding:20px; display:flex; gap:20px; }
   border:1px solid #ccc;
 }
 
-.item {
-  padding:6px;
-  cursor:pointer;
-}
-
-.item:hover { background:#eee; }
-.active { background:#cce5ff; }
-
-.move-line { padding:3px; }
-.move-line span { cursor:pointer; margin-left:6px; }
-
-.move-active { background:yellow; }
-
-.last { outline:2px solid red; }
-
-input, button, select {
+button, input {
   width:100%;
   margin:5px 0;
 }
@@ -67,22 +59,15 @@ input, button, select {
 <select id="bookSelect"></select>
 
 <h3>🔎 Search</h3>
-<input id="search" placeholder="player name...">
+<input id="search">
 
 <h3>♟ Games</h3>
 <div id="gameList" class="list"></div>
 
-<input type="range" id="slider" min="0" max="0" value="0">
-
 <button onclick="prevMove()">⏮ Prev</button>
 <button onclick="nextMove()">▶ Next</button>
-<button id="autoBtn" onclick="toggleAuto()">▶ Play</button>
+<button onclick="toggleAuto()" id="autoBtn">▶ Play</button>
 <button onclick="resetGame()">⟲ Reset</button>
-
-<h3>Moves</h3>
-<div id="moves"></div>
-
-<div id="status"></div>
 
 </div>
 
@@ -91,42 +76,38 @@ input, button, select {
 <script>
 
 const boardEl = document.getElementById("board");
-const movesEl = document.getElementById("moves");
 const gameList = document.getElementById("gameList");
 const bookSelect = document.getElementById("bookSelect");
 const search = document.getElementById("search");
-const slider = document.getElementById("slider");
-const status = document.getElementById("status");
-
-let game = new Chess();
-let history = [];
-let index = 0;
-let lastMove = null;
 
 let games = [];
 let currentGame = 0;
 
+let game = new Chess();
+let history = [];
+let index = 0;
+
 let auto = null;
-let isPlaying = false;
+let playing = false;
 
 /* BOOKS */
 const books = {
-  "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
+  "Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
   "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
   "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
 };
 
-for (let b in books) {
-  const o = document.createElement("option");
-  o.value = books[b];
-  o.textContent = b;
+for(let b in books){
+  let o=document.createElement("option");
+  o.value=books[b];
+  o.textContent=b;
   bookSelect.appendChild(o);
 }
 
-/* DRAW BOARD */
+/* BOARD (СТАБИЛЬНО) */
 function draw(){
   const b = game.board();
-  boardEl.innerHTML = "";
+  boardEl.innerHTML="";
 
   for(let r=0;r<8;r++){
     for(let c=0;c<8;c++){
@@ -134,13 +115,11 @@ function draw(){
       d.className="cell "+((r+c)%2?"b":"w");
 
       const p=b[r][c];
-      d.textContent=p?piece(p):"";
+      d.textContent=p ? piece(p) : "";
 
       boardEl.appendChild(d);
     }
   }
-
-  drawLast();
 }
 
 function piece(p){
@@ -153,44 +132,38 @@ function piece(p){
 
 /* LOAD BOOK */
 async function loadBook(url){
-  stopAuto();
-
   const res = await fetch(url);
   const text = await res.text();
 
-  games = text.split(/\n(?=\[Event)/).filter(g => g.trim());
+  games = text.split(/\n(?=\[Event)/).filter(x=>x.trim());
 
-  renderGameList();
+  renderList();
   loadGame(0);
 }
 
-/* GAME LIST — ИСПРАВЛЕНО */
-function renderGameList(filter=""){
-  gameList.innerHTML = "";
+/* GAME LIST (ИСПРАВЛЕННАЯ НУМЕРАЦИЯ) */
+function renderList(filter=""){
+  gameList.innerHTML="";
 
-  let num = 1;
+  let num=1;
 
   games.forEach((g,i)=>{
 
-    const w = g.match(/\[White "(.+)"\]/);
-    const b = g.match(/\[Black "(.+)"\]/);
+    const w=g.match(/\[White "(.+)"\]/);
+    const b=g.match(/\[Black "(.+)"\]/);
 
-    const name = w && b ? `${w[1]} vs ${b[1]}` : `Game ${num}`;
+    const name = w&&b ? `${w[1]} vs ${b[1]}` : `Game ${num}`;
 
     if(!name.toLowerCase().includes(filter.toLowerCase())) return;
 
-    const div = document.createElement("div");
-    div.className = "item";
+    const div=document.createElement("div");
+    div.className="item";
 
-    if(i === currentGame) div.classList.add("active");
+    if(i===currentGame) div.classList.add("active");
 
-    div.textContent = `${num}. ${name}`;
+    div.textContent = num + ". " + name;
 
-    div.onclick = ()=>{
-      currentGame = i;
-      loadGame(i);
-      renderGameList(search.value);
-    };
+    div.onclick=()=>loadGame(i);
 
     gameList.appendChild(div);
 
@@ -198,144 +171,81 @@ function renderGameList(filter=""){
   });
 }
 
-/* LOAD GAME */
+/* LOAD GAME (БЕЗ ЛОМАНИЯ ДОСКИ) */
 function loadGame(i){
-  stopAuto();
+  currentGame=i;
 
-  currentGame = i;
+  let temp=new Chess();
+  temp.load_pgn(games[i]);
 
-  const pgn = games[i].trim();
+  history=temp.history({verbose:true});
 
-  let temp = new Chess();
-  const ok = temp.load_pgn(pgn);
+  game=new Chess();
+  index=0;
 
-  if(!ok){
-    alert("Ошибка PGN в партии #" + (i+1));
-    return;
-  }
-
-  history = temp.history({ verbose:true });
-
-  game = new Chess();
-  index = 0;
-  slider.max = history.length;
-
-  renderMoves();
   rebuild(0);
 }
 
-/* REBUILD */
-function rebuild(to){
-  game = new Chess();
-  lastMove = null;
+/* REBUILD (ЕДИНСТВЕННЫЙ ИСТОЧНИК ПРАВДЫ) */
+function rebuild(i){
+  game=new Chess();
 
-  for(let i=0;i<to;i++){
-    const m = game.move(history[i].san);
-    if(i===to-1) lastMove = history[i];
+  for(let k=0;k<i;k++){
+    game.move(history[k].san);
   }
 
-  index = to;
-  slider.value = index;
+  index=i;
 
   draw();
-  highlight();
-  status.innerText = index + "/" + history.length;
-}
-
-/* MOVES */
-function renderMoves(){
-  movesEl.innerHTML = "";
-
-  for(let i=0;i<history.length;i+=2){
-    const moveNum = (i/2)+1;
-
-    const div = document.createElement("div");
-
-    div.innerHTML = `
-      <b>${moveNum}.</b>
-      <span onclick="goMove(${i+1})">${history[i]?.san || ""}</span>
-      <span onclick="goMove(${i+2})">${history[i+1]?.san || ""}</span>
-    `;
-
-    movesEl.appendChild(div);
-  }
-}
-
-function goMove(i){
-  stopAuto();
-  rebuild(i);
-}
-
-/* HIGHLIGHT */
-function highlight(){
-  document.querySelectorAll(".move-line span").forEach((el,i)=>{
-    el.classList.toggle("move-active", i===index-1);
-  });
-}
-
-/* LAST MOVE */
-function drawLast(){
-  if(!lastMove) return;
-
-  const cells=document.querySelectorAll(".cell");
-
-  const from=sq(lastMove.from);
-  const to=sq(lastMove.to);
-
-  if(cells[from]) cells[from].classList.add("last");
-  if(cells[to]) cells[to].classList.add("last");
-}
-
-function sq(s){
-  return (8-+s[1])*8+(s.charCodeAt(0)-97);
 }
 
 /* CONTROLS */
-function nextMove(){ stopAuto(); if(index<history.length) rebuild(index+1); }
-function prevMove(){ stopAuto(); if(index>0) rebuild(index-1); }
-function resetGame(){ stopAuto(); rebuild(0); }
+function nextMove(){
+  if(index<history.length) rebuild(index+1);
+}
+
+function prevMove(){
+  if(index>0) rebuild(index-1);
+}
+
+function resetGame(){
+  rebuild(0);
+}
 
 /* AUTO */
 function toggleAuto(){
-  const btn = document.getElementById("autoBtn");
+  const btn=document.getElementById("autoBtn");
 
-  if(!isPlaying){
-    isPlaying = true;
-    btn.innerText = "⏸ Pause";
+  if(!playing){
+    playing=true;
+    btn.textContent="⏸ Pause";
 
-    auto = setInterval(()=>{
-      if(index < history.length){
+    auto=setInterval(()=>{
+      if(index<history.length){
         rebuild(index+1);
-      } else {
-        stopAuto();
-      }
-    }, 500);
+      } else stopAuto();
+    },500);
 
-  } else {
-    stopAuto();
-  }
+  } else stopAuto();
 }
 
 function stopAuto(){
   clearInterval(auto);
-  auto = null;
-  isPlaying = false;
-  document.getElementById("autoBtn").innerText = "▶ Play";
+  playing=false;
+  document.getElementById("autoBtn").textContent="▶ Play";
 }
 
 /* EVENTS */
-bookSelect.onchange = ()=>loadBook(bookSelect.value);
-search.oninput = ()=>renderGameList(search.value);
-slider.oninput = ()=>{ stopAuto(); rebuild(+slider.value); };
-
-window.nextMove = nextMove;
-window.prevMove = prevMove;
-window.resetGame = resetGame;
-window.toggleAuto = toggleAuto;
-window.goMove = goMove;
+bookSelect.onchange=()=>loadBook(bookSelect.value);
+search.oninput=()=>renderList(search.value);
 
 /* INIT */
 loadBook(bookSelect.value);
+
+window.nextMove=nextMove;
+window.prevMove=prevMove;
+window.resetGame=resetGame;
+window.toggleAuto=toggleAuto;
 
 </script>
 
