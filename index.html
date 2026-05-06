@@ -1,69 +1,86 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Chess Stable</title>
+<h3>📚 Книги</h3>
 
-<style>
-body { font-family: Arial; padding: 20px; }
+<select id="bookSelect"></select>
 
-.board {
-  width: 400px;
-  height: 400px;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  border: 2px solid #222;
-}
+<div style="margin-top:10px;">
+  <button onclick="prevMove()">⏮</button>
+  <button onclick="nextMove()">▶</button>
+  <button onclick="resetGame()">⟲</button>
+</div>
 
-.cell {
-  width: 50px;
-  height: 50px;
-  font-size: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.w { background: #f0d9b5; }
-.b { background: #b58863; }
-</style>
-
-</head>
-
-<body>
-
-<h2>♟ Chess Board (Stable Version)</h2>
-
-<div class="board" id="board"></div>
+<div id="status" style="margin-top:10px;"></div>
 
 <script>
 
-const start = [
-"♜","♞","♝","♛","♚","♝","♞","♜",
-"♟","♟","♟","♟","♟","♟","♟","♟",
-"","","","","","","","",
-"","","","","","","","",
-"","","","","","","","",
-"","","","","","","","",
-"♙","♙","♙","♙","♙","♙","♙","♙",
-"♖","♘","♗","♕","♔","♗","♘","♖"
-];
+const books = {
+  "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
+  "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
+  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
+};
 
-const board = document.getElementById("board");
+const select = document.getElementById("bookSelect");
+const status = document.getElementById("status");
 
-for (let i = 0; i < 64; i++) {
-  const cell = document.createElement("div");
+let moves = [];
+let index = 0;
 
-  const row = Math.floor(i / 8);
-  const col = i % 8;
-
-  cell.className = "cell " + ((row + col) % 2 ? "b" : "w");
-  cell.textContent = start[i];
-
-  board.appendChild(cell);
+/* загрузка списка */
+for (let b in books) {
+  let o = document.createElement("option");
+  o.value = books[b];
+  o.textContent = b;
+  select.appendChild(o);
 }
 
-</script>
+/* загрузка PGN */
+async function loadPGN(url) {
+  status.innerText = "Загрузка...";
 
-</body>
-</html>
+  try {
+    const res = await fetch(url);
+    const text = await res.text();
+
+    const gameText = text.split(/\n\n(?=\[Event)/)[0];
+
+    // простое извлечение ходов
+    const movesText = gameText
+      .replace(/\[.*\]/g, "")
+      .replace(/\d+\./g, "")
+      .trim()
+      .split(/\s+/);
+
+    moves = movesText.filter(m => m && !m.includes("{"));
+    index = 0;
+
+    status.innerText = "Загружено: " + moves.length + " ходов";
+
+  } catch (e) {
+    status.innerText = "Ошибка загрузки";
+  }
+}
+
+select.onchange = () => loadPGN(select.value);
+
+/* кнопки (пока просто заглушка — дальше подключим ходами) */
+function nextMove() {
+  if (index < moves.length) {
+    index++;
+    status.innerText = "Ход: " + index;
+  }
+}
+
+function prevMove() {
+  if (index > 0) {
+    index--;
+    status.innerText = "Ход: " + index;
+  }
+}
+
+function resetGame() {
+  index = 0;
+  status.innerText = "Сброс";
+}
+
+select.dispatchEvent(new Event("change"));
+
+</script>
