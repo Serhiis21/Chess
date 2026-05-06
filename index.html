@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Viewer STABLE FINAL</title>
+<title>Chess Viewer FINAL</title>
 
 <style>
 body { font-family: Arial; padding:20px; display:flex; gap:20px; }
@@ -158,31 +158,33 @@ async function loadBook(url){
   const res = await fetch(url);
   const text = await res.text();
 
-  // надежное разбиение
   games = text.split(/\n(?=\[Event)/).filter(g => g.trim());
 
   renderGameList();
   loadGame(0);
 }
 
-/* GAME LIST */
+/* GAME LIST — ИСПРАВЛЕНО */
 function renderGameList(filter=""){
   gameList.innerHTML = "";
+
+  let num = 1;
 
   games.forEach((g,i)=>{
 
     const w = g.match(/\[White "(.+)"\]/);
     const b = g.match(/\[Black "(.+)"\]/);
 
-    const name = w && b ? `${w[1]} vs ${b[1]}` : `Game ${i+1}`;
+    const name = w && b ? `${w[1]} vs ${b[1]}` : `Game ${num}`;
 
     if(!name.toLowerCase().includes(filter.toLowerCase())) return;
 
     const div = document.createElement("div");
     div.className = "item";
+
     if(i === currentGame) div.classList.add("active");
 
-    div.textContent = name;
+    div.textContent = `${num}. ${name}`;
 
     div.onclick = ()=>{
       currentGame = i;
@@ -191,10 +193,12 @@ function renderGameList(filter=""){
     };
 
     gameList.appendChild(div);
+
+    num++;
   });
 }
 
-/* LOAD GAME — СТАБИЛЬНО */
+/* LOAD GAME */
 function loadGame(i){
   stopAuto();
 
