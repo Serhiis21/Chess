@@ -2,48 +2,44 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess PGN Viewer FINAL</title>
+<title>Chess PGN Viewer FINAL FIX</title>
 
 <style>
-body {
-  font-family: Arial;
-  padding: 20px;
-  display: flex;
-  gap: 20px;
-}
+body { font-family: Arial; padding:20px; display:flex; gap:20px; }
 
 .board {
-  width: 400px;
-  height: 400px;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  border: 2px solid #222;
+  width:400px; height:400px;
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  border:2px solid #222;
 }
 
 .cell {
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width:50px; height:50px;
+  font-size:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.w { background: #f0d9b5; }
-.b { background: #b58863; }
+.w { background:#f0d9b5; }
+.b { background:#b58863; }
 
-.panel { width: 320px; }
+.panel { width:320px; }
 
-.move-line { padding: 3px; }
-.move-line span { cursor: pointer; margin-left: 6px; }
+.move-line { padding:3px; }
+.move-line span {
+  cursor:pointer;
+  margin-left:6px;
+}
 
-.move-active { background: yellow; }
+.move-active { background:yellow; }
 
-.last { outline: 2px solid red; }
+.last { outline:2px solid red; }
 
 input, select, button {
-  width: 100%;
-  margin: 5px 0;
+  width:100%;
+  margin:5px 0;
 }
 </style>
 </head>
@@ -56,23 +52,19 @@ input, select, button {
 
 <div class="panel">
 
-  <h3>🔎 Search</h3>
-  <input id="search" placeholder="filter books...">
+<h3>📚 Books</h3>
+<select id="bookSelect"></select>
 
-  <h3>📚 Library</h3>
-  <select id="bookSelect"></select>
+<input type="range" id="slider" min="0" max="0" value="0">
 
-  <input type="range" id="slider" min="0" max="0" value="0">
+<button onclick="prevMove()">⏮ Prev</button>
+<button onclick="nextMove()">▶ Next</button>
+<button onclick="resetGame()">⟲ Reset</button>
 
-  <button onclick="prevMove()">⏮ Prev</button>
-  <button onclick="nextMove()">▶ Next</button>
-  <button onclick="toggleAuto()">⏯ Auto</button>
-  <button onclick="resetGame()">⟲ Reset</button>
+<h3>Moves</h3>
+<div id="moves"></div>
 
-  <h3>Moves</h3>
-  <div id="moves"></div>
-
-  <div id="status"></div>
+<div id="status"></div>
 
 </div>
 
@@ -83,58 +75,35 @@ input, select, button {
 const boardEl = document.getElementById("board");
 const movesEl = document.getElementById("moves");
 const select = document.getElementById("bookSelect");
-const search = document.getElementById("search");
-const status = document.getElementById("status");
 const slider = document.getElementById("slider");
+const status = document.getElementById("status");
 
 let game = new Chess();
 let history = [];
 let index = 0;
-let auto = null;
 let lastMove = null;
 
+/* BOOKS */
 const books = {
   "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
-  "100 Endgame Studies": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_endgame_studies.pgn",
-  "200 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/200_minis_du_mont.pgn",
-  "600 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/600_minis.pgn",
-  "700 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/700_minis.pgn",
-  "1001 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/1001_minis.pgn",
-  "1002 Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/1002_minis.pgn",
-  "Alekhine": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Alekhine.pgn",
   "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
-  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn",
-  "Fischer": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Fischer.pgn",
-  "Lasker": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Lasker.pgn",
-  "Morphy": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Morphy.pgn",
-  "Petrosian": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Petrosian.pgn",
-  "Tal": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Tal.pgn"
+  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
 };
 
-const cache = {};
-
-/* BOOK LIST */
-function renderBooks(filter="") {
-  select.innerHTML = "";
-  Object.keys(books)
-    .filter(b => b.toLowerCase().includes(filter.toLowerCase()))
-    .forEach(b => {
-      const o = document.createElement("option");
-      o.value = books[b];
-      o.textContent = b;
-      select.appendChild(o);
-    });
+for (let b in books) {
+  const o = document.createElement("option");
+  o.value = books[b];
+  o.textContent = b;
+  select.appendChild(o);
 }
 
-renderBooks();
-
-/* BOARD */
-function draw() {
+/* DRAW */
+function draw(){
   const b = game.board();
   boardEl.innerHTML = "";
 
-  for (let r=0;r<8;r++){
-    for (let c=0;c<8;c++){
+  for(let r=0;r<8;r++){
+    for(let c=0;c<8;c++){
       const d=document.createElement("div");
       d.className="cell "+((r+c)%2?"b":"w");
 
@@ -145,7 +114,7 @@ function draw() {
     }
   }
 
-  drawLastMove();
+  drawLast();
 }
 
 function piece(p){
@@ -158,22 +127,16 @@ function piece(p){
 
 /* LOAD */
 async function loadPGN(url){
-  let text;
+  const res = await fetch(url);
+  const text = await res.text();
 
-  if(cache[url]) text=cache[url];
-  else{
-    const res=await fetch(url);
-    text=await res.text();
-    cache[url]=text;
-  }
-
-  game=new Chess();
+  game = new Chess();
   game.load_pgn(text);
 
-  history=game.history();
-  index=0;
+  history = game.history({ verbose:true });
+  index = 0;
 
-  slider.max=history.length;
+  slider.max = history.length;
 
   renderMoves();
   rebuild(0);
@@ -181,39 +144,40 @@ async function loadPGN(url){
 
 /* REBUILD */
 function rebuild(to){
-  game=new Chess();
-  lastMove=null;
+  game = new Chess();
+  lastMove = null;
 
   for(let i=0;i<to;i++){
-    const m=game.move(history[i]);
-    if(i===to-1) lastMove=m;
+    const m = game.move(history[i].san);
+    if(i===to-1) lastMove = history[i];
   }
 
-  index=to;
-  slider.value=index;
+  index = to;
+  slider.value = index;
 
   draw();
   highlight();
-  status.innerText=index+"/"+history.length;
+  status.innerText = index + "/" + history.length;
 }
 
 /* MOVES — ПРАВИЛЬНЫЙ ФОРМАТ */
 function renderMoves(){
-  movesEl.innerHTML="";
+  movesEl.innerHTML = "";
 
   for(let i=0;i<history.length;i+=2){
-    const moveNum=(i/2)+1;
 
-    const white=history[i];
-    const black=history[i+1];
+    const moveNum = (i/2)+1;
 
-    const div=document.createElement("div");
-    div.className="move-line";
+    const white = history[i];
+    const black = history[i+1];
 
-    div.innerHTML=`
+    const div = document.createElement("div");
+    div.className = "move-line";
+
+    div.innerHTML = `
       <b>${moveNum}.</b>
-      <span onclick="rebuild(${i+1})">${white||""}</span>
-      <span onclick="rebuild(${i+2})">${black||""}</span>
+      <span data-i="${i}" onclick="goMove(${i+1})">${white ? white.san : ""}</span>
+      <span data-i="${i+1}" onclick="goMove(${i+2})">${black ? black.san : ""}</span>
     `;
 
     movesEl.appendChild(div);
@@ -222,14 +186,20 @@ function renderMoves(){
   highlight();
 }
 
+function goMove(i){
+  rebuild(i);
+}
+
+/* HIGHLIGHT */
 function highlight(){
-  document.querySelectorAll(".move-line span").forEach((el,i)=>{
-    el.classList.toggle("move-active", i===index-1);
+  document.querySelectorAll(".move-line span").forEach(el=>{
+    const i = parseInt(el.dataset.i);
+    el.classList.toggle("move-active", i === index-1);
   });
 }
 
 /* LAST MOVE */
-function drawLastMove(){
+function drawLast(){
   if(!lastMove) return;
 
   const cells=document.querySelectorAll(".cell");
@@ -250,24 +220,14 @@ function nextMove(){ if(index<history.length) rebuild(index+1); }
 function prevMove(){ if(index>0) rebuild(index-1); }
 function resetGame(){ rebuild(0); }
 
-function toggleAuto(){
-  if(auto){ clearInterval(auto); auto=null; return; }
-
-  auto=setInterval(()=>{
-    if(index<history.length) nextMove();
-    else clearInterval(auto);
-  },400);
-}
-
-/* EVENTS */
-search.oninput=()=>renderBooks(search.value);
-select.onchange=()=>loadPGN(select.value);
 slider.oninput=()=>rebuild(+slider.value);
+
+select.onchange=()=>loadPGN(select.value);
 
 window.nextMove=nextMove;
 window.prevMove=prevMove;
 window.resetGame=resetGame;
-window.toggleAuto=toggleAuto;
+window.goMove=goMove;
 
 loadPGN(select.value);
 
