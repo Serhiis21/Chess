@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess SAFE</title>
+<title>Chess PGN Stable PRO</title>
 
 <style>
-body { font-family: Arial; padding: 20px; }
+body { font-family: Arial; padding: 20px; display: flex; gap: 20px; }
 
 .board {
   width: 400px;
@@ -27,65 +27,57 @@ body { font-family: Arial; padding: 20px; }
 .w { background: #f0d9b5; }
 .b { background: #b58863; }
 
-button, select { margin: 5px 0; width: 420px; }
+.panel { width: 240px; }
+
+.move { cursor: pointer; padding: 2px; }
+.move.active { background: yellow; }
+
+button, select { width: 100%; margin: 5px 0; }
 </style>
 </head>
 
 <body>
 
-<h2>♟ Chess SAFE MODE</h2>
+<div>
+  <div class="board" id="board"></div>
+</div>
 
-<div class="board" id="board"></div>
+<div class="panel">
+  <h3>📚 Книги</h3>
+  <select id="bookSelect"></select>
 
-<h3>📚 Книги</h3>
-<select id="bookSelect"></select>
+  <button onclick="prevMove()">⏮ Prev</button>
+  <button onclick="nextMove()">▶ Next</button>
+  <button onclick="resetGame()">⟲ Reset</button>
 
-<button onclick="nextMove()">▶ Next (demo)</button>
+  <h3>📖 Moves</h3>
+  <div id="moves"></div>
 
-<div id="status"></div>
+  <div id="status"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
 
 <script>
 
-/* ===== BOARD ===== */
 const boardEl = document.getElementById("board");
+const movesEl = document.getElementById("moves");
+const select = document.getElementById("bookSelect");
 const status = document.getElementById("status");
 
-const start = [
-"♜","♞","♝","♛","♚","♝","♞","♜",
-"♟","♟","♟","♟","♟","♟","♟","♟",
-"","","","","","","","",
-"","","","","","","","",
-"","","","","","","","",
-"","","","","","","","",
-"♙","♙","♙","♙","♙","♙","♙","♙",
-"♖","♘","♗","♕","♔","♗","♘","♖"
-];
+let game = new Chess();
+let history = [];
+let index = 0;
 
-let state = [...start];
-
-function draw() {
-  boardEl.innerHTML = "";
-  for (let i = 0; i < 64; i++) {
-    const d = document.createElement("div");
-    const r = Math.floor(i / 8);
-    const c = i % 8;
-    d.className = "cell " + ((r + c) % 2 ? "b" : "w");
-    d.textContent = state[i];
-    boardEl.appendChild(d);
-  }
-}
-
-draw();
-
-/* ===== BOOKS (SAFE) ===== */
+/* BOOKS */
 const books = {
   "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
+  "100 Endgame Studies": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_endgame_studies.pgn",
   "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
   "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
 };
 
-const select = document.getElementById("bookSelect");
-
+/* INIT BOOKS */
 for (let b in books) {
   let o = document.createElement("option");
   o.value = books[b];
@@ -93,19 +85,115 @@ for (let b in books) {
   select.appendChild(o);
 }
 
-/* ===== DEMO MOVE ===== */
-function nextMove() {
-  // просто проверка что всё живо
-  let i1 = Math.floor(Math.random() * 64);
-  let i2 = Math.floor(Math.random() * 64);
+/* DRAW BOARD */
+function draw() {
+  const b = game.board();
+  boardEl.innerHTML = "";
 
-  state[i2] = state[i1];
-  state[i1] = "";
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+
+      const d = document.createElement("div");
+      d.className = "cell " + ((r + c) % 2 ? "b" : "w");
+
+      const p = b[r][c];
+      d.textContent = p ? unicode(p) : "";
+
+      boardEl.appendChild(d);
+    }
+  }
+}
+
+/* PIECES */
+function unicode(p) {
+  const m = {
+    wp:"♙", wr:"♖", wn:"♘", wb:"♗", wq:"♕", wk:"♔",
+    bp:"♟", br:"♜", bn:"♞", bb:"♝", bq:"♛", bk:"♚"
+  };
+  return m[p.color + p.type];
+}
+
+/* LOAD PGN */
+async function loadPGN(url) {
+  const res = await fetch(url);
+  const text = await res.text();
+
+  game = new Chess();
+  game.load_pgn(text);
+
+  history = game.history();
+  index = 0;
+
+  game = new Chess();
+
+  renderMoves();
+  rebuild(0);
+}
+
+/* REBUILD POSITION */
+function rebuild(to) {
+  game = new Chess();
+
+  for (let i = 0; i < to; i++) {
+    game.move(history[i]);
+  }
+
+  index = to;
 
   draw();
-
-  status.innerText = "demo move OK";
+  highlight();
+  status.innerText = "Move " + index + "/" + history.length;
 }
+
+/* MOVES LIST */
+function renderMoves() {
+  movesEl.innerHTML = "";
+
+  history.forEach((m, i) => {
+    const div = document.createElement("div");
+    div.className = "move";
+    div.innerText = (i + 1) + ". " + m;
+
+    div.onclick = () => rebuild(i + 1);
+
+    movesEl.appendChild(div);
+  });
+
+  highlight();
+}
+
+/* HIGHLIGHT */
+function highlight() {
+  document.querySelectorAll(".move").forEach((el, i) => {
+    el.classList.toggle("active", i === index - 1);
+  });
+}
+
+/* CONTROLS */
+function nextMove() {
+  if (index < history.length) {
+    rebuild(index + 1);
+  }
+}
+
+function prevMove() {
+  if (index > 0) {
+    rebuild(index - 1);
+  }
+}
+
+function resetGame() {
+  rebuild(0);
+}
+
+/* EVENTS */
+select.onchange = () => loadPGN(select.value);
+
+loadPGN(select.value);
+
+window.nextMove = nextMove;
+window.prevMove = prevMove;
+window.resetGame = resetGame;
 
 </script>
 
