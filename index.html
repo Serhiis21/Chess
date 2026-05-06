@@ -2,15 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Library Full</title>
+<title>Chess Library Stable Full</title>
 
 <style>
 body {
   font-family: Arial;
   padding: 20px;
 }
-
-h2 { margin-bottom: 10px; }
 
 .board {
   width: 400px;
@@ -68,9 +66,15 @@ const startPosition = [
 "♖","♘","♗","♕","♔","♗","♘","♖"
 ];
 
-let boardEl = document.getElementById("board");
-let state = [...startPosition];
+const boardEl = document.getElementById("board");
+const status = document.getElementById("status");
+const select = document.getElementById("bookSelect");
 
+let state = [...startPosition];
+let moves = [];
+let index = 0;
+
+/* рисуем доску */
 function drawBoard() {
   boardEl.innerHTML = "";
 
@@ -112,21 +116,25 @@ const books = {
   "Modern Minis": "https://raw.githubusercontent.com/Serhiis21/Chess/main/modern_minis.pgn"
 };
 
-const select = document.getElementById("bookSelect");
-const status = document.getElementById("status");
+/* ================= INIT SAFE ================= */
+window.addEventListener("DOMContentLoaded", () => {
 
-let moves = [];
-let index = 0;
+  // render books safely
+  select.innerHTML = "";
 
-/* заполнение меню */
-for (let b in books) {
-  let o = document.createElement("option");
-  o.value = books[b];
-  o.textContent = b;
-  select.appendChild(o);
-}
+  Object.entries(books).forEach(([name, url]) => {
+    const opt = document.createElement("option");
+    opt.value = url;
+    opt.textContent = name;
+    select.appendChild(opt);
+  });
 
-/* загрузка PGN */
+  console.log("BOOK COUNT:", select.options.length);
+
+  loadPGN(select.value);
+});
+
+/* ================= PGN ================= */
 async function loadPGN(url) {
   try {
     status.innerText = "Загрузка...";
@@ -152,7 +160,7 @@ async function loadPGN(url) {
   }
 }
 
-/* кнопки */
+/* ================= CONTROLS ================= */
 function nextMove() {
   if (index < moves.length) {
     status.innerText = "Ход: " + moves[index];
@@ -172,10 +180,8 @@ function resetGame() {
   status.innerText = "Сброс";
 }
 
-/* события */
+/* events */
 select.onchange = () => loadPGN(select.value);
-
-loadPGN(select.value);
 
 window.nextMove = nextMove;
 window.prevMove = prevMove;
