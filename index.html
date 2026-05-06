@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Library Stable</title>
+<title>Chess FIX</title>
 
 <style>
 body { font-family: Arial; padding: 20px; }
@@ -26,38 +26,18 @@ body { font-family: Arial; padding: 20px; }
 
 .w { background: #f0d9b5; }
 .b { background: #b58863; }
-
-button { margin: 5px; }
 </style>
 
 </head>
 
 <body>
 
-<h2>♟ Chess Library</h2>
-
-<select id="bookSelect"></select>
+<h2>♟ Chess Board RESTORE</h2>
 
 <div class="board" id="board"></div>
 
-<div>
-  <button onclick="prevMove()">⏮</button>
-  <button onclick="nextMove()">▶</button>
-  <button onclick="resetGame()">⟲</button>
-</div>
-
-<div id="status"></div>
-
 <script>
 
-/* ================= BOOKS ================= */
-const books = {
-  "100 Best Games": "https://raw.githubusercontent.com/Serhiis21/Chess/main/100_best_games.pgn",
-  "Capablanca": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Capablanca.pgn",
-  "Chigorin": "https://raw.githubusercontent.com/Serhiis21/Chess/main/Chigorin.pgn"
-};
-
-/* ================= BOARD ================= */
 const start = [
 "♜","♞","♝","♛","♚","♝","♞","♜",
 "♟","♟","♟","♟","♟","♟","♟","♟",
@@ -69,96 +49,25 @@ const start = [
 "♖","♘","♗","♕","♔","♗","♘","♖"
 ];
 
-let boardEl = document.getElementById("board");
-let status = document.getElementById("status");
+const board = document.getElementById("board");
 
-let state = [...start];
-let moves = [];
-let index = 0;
-
-/* ================= DRAW ================= */
 function draw() {
-  boardEl.innerHTML = "";
+  board.innerHTML = "";
 
   for (let i = 0; i < 64; i++) {
-    let cell = document.createElement("div");
+    const cell = document.createElement("div");
 
-    let row = Math.floor(i / 8);
-    let col = i % 8;
+    const row = Math.floor(i / 8);
+    const col = i % 8;
 
     cell.className = "cell " + ((row + col) % 2 ? "b" : "w");
-    cell.textContent = state[i];
+    cell.textContent = start[i];
 
-    boardEl.appendChild(cell);
+    board.appendChild(cell);
   }
 }
 
 draw();
-
-/* ================= BOOKS ================= */
-const select = document.getElementById("bookSelect");
-
-for (let b in books) {
-  let o = document.createElement("option");
-  o.value = books[b];
-  o.textContent = b;
-  select.appendChild(o);
-}
-
-/* ================= LOAD ================= */
-async function load(url) {
-
-  status.innerText = "Загрузка...";
-
-  try {
-    const res = await fetch(url);
-    const text = await res.text();
-
-    const game = text.split(/\n\n(?=\[Event)/)[0];
-
-    moves = game
-      .replace(/\[.*\]/g, "")
-      .replace(/\d+\./g, "")
-      .trim()
-      .split(/\s+/)
-      .filter(m => m);
-
-    index = 0;
-    state = [...start];
-
-    draw();
-
-    status.innerText = "Ходов: " + moves.length;
-
-  } catch (e) {
-    status.innerText = "Ошибка загрузки";
-  }
-}
-
-/* ================= MOVES (пока заглушка) ================= */
-function nextMove() {
-  if (index < moves.length) {
-    status.innerText = "Ход: " + moves[index];
-    index++;
-  }
-}
-
-function prevMove() {
-  if (index > 0) index--;
-  status.innerText = "Назад: " + index;
-}
-
-function resetGame() {
-  state = [...start];
-  index = 0;
-  draw();
-  status.innerText = "Сброс";
-}
-
-/* ================= EVENTS ================= */
-select.onchange = () => load(select.value);
-
-load(select.value);
 
 </script>
 
