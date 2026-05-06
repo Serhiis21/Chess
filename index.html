@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess Viewer FINAL</title>
+<title>Chess PGN Viewer FINAL</title>
 
 <style>
 body { font-family: Arial; padding:20px; display:flex; gap:20px; }
@@ -55,6 +55,9 @@ input, select, button {
 <h3>📚 Books</h3>
 <select id="bookSelect"></select>
 
+<h3>♟ Games</h3>
+<select id="gameSelect"></select>
+
 <input type="range" id="slider" min="0" max="0" value="0">
 
 <button onclick="prevMove()">⏮ Prev</button>
@@ -75,7 +78,8 @@ input, select, button {
 
 const boardEl = document.getElementById("board");
 const movesEl = document.getElementById("moves");
-const select = document.getElementById("bookSelect");
+const bookSelect = document.getElementById("bookSelect");
+const gameSelect = document.getElementById("gameSelect");
 const slider = document.getElementById("slider");
 const status = document.getElementById("status");
 
@@ -84,9 +88,10 @@ let history = [];
 let index = 0;
 let lastMove = null;
 
-/* AUTO */
 let auto = null;
 let isPlaying = false;
+
+let games = [];
 
 /* BOOKS */
 const books = {
@@ -99,7 +104,7 @@ for (let b in books) {
   const o = document.createElement("option");
   o.value = books[b];
   o.textContent = b;
-  select.appendChild(o);
+  bookSelect.appendChild(o);
 }
 
 /* DRAW */
@@ -130,15 +135,37 @@ function piece(p){
   return m[p.color+p.type];
 }
 
-/* LOAD */
-async function loadPGN(url){
+/* LOAD BOOK */
+async function loadBook(url){
   stopAuto();
 
   const res = await fetch(url);
   const text = await res.text();
 
+  /* SPLIT GAMES */
+  games = text.split(/\n\n(?=\[Event)/);
+
+  gameSelect.innerHTML = "";
+
+  games.forEach((g,i)=>{
+    const opt = document.createElement("option");
+    opt.value = i;
+
+    const match = g.match(/\[White "(.+)"\].*\[Black "(.+)"\]/s);
+    opt.textContent = match ? `${match[1]} vs ${match[2]}` : `Game ${i+1}`;
+
+    gameSelect.appendChild(opt);
+  });
+
+  loadGame(0);
+}
+
+/* LOAD GAME */
+function loadGame(i){
+  stopAuto();
+
   game = new Chess();
-  game.load_pgn(text);
+  game.load_pgn(games[i]);
 
   history = game.history({ verbose:true });
   index = 0;
@@ -224,24 +251,12 @@ function sq(s){
 }
 
 /* CONTROLS */
-function nextMove(){
-  stopAuto();
-  if(index<history.length) rebuild(index+1);
-}
+function nextMove(){ stopAuto(); if(index<history.length) rebuild(index+1); }
+function prevMove(){ stopAuto(); if(index>0) rebuild(index-1); }
+function resetGame(){ stopAuto(); rebuild(0); }
 
-function prevMove(){
-  stopAuto();
-  if(index>0) rebuild(index-1);
-}
-
-function resetGame(){
-  stopAuto();
-  rebuild(0);
-}
-
-/* AUTO PLAY */
+/* AUTO */
 function toggleAuto(){
-
   const btn = document.getElementById("autoBtn");
 
   if(!isPlaying){
@@ -250,7 +265,7 @@ function toggleAuto(){
 
     auto = setInterval(()=>{
       if(index < history.length){
-        rebuild(index + 1);
+        rebuild(index+1);
       } else {
         stopAuto();
       }
@@ -269,12 +284,9 @@ function stopAuto(){
 }
 
 /* EVENTS */
-slider.oninput = ()=>{
-  stopAuto();
-  rebuild(+slider.value);
-};
-
-select.onchange = ()=>loadPGN(select.value);
+bookSelect.onchange = ()=>loadBook(bookSelect.value);
+gameSelect.onchange = ()=>loadGame(gameSelect.value);
+slider.oninput = ()=>{ stopAuto(); rebuild(+slider.value); };
 
 window.nextMove = nextMove;
 window.prevMove = prevMove;
@@ -282,7 +294,8 @@ window.resetGame = resetGame;
 window.toggleAuto = toggleAuto;
 window.goMove = goMove;
 
-loadPGN(select.value);
+/* INIT */
+loadBook(bookSelect.value);
 
 </script>
 
