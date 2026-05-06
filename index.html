@@ -1,55 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Chess PGN REAL</title>
-
-<style>
-body { font-family: Arial; padding: 20px; }
-
-.board {
-  width: 400px;
-  height: 400px;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  border: 2px solid #222;
-}
-
-.cell {
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.w { background: #f0d9b5; }
-.b { background: #b58863; }
-
-button { margin: 5px; }
-select { margin: 10px 0; width: 420px; }
-</style>
-</head>
-
-<body>
-
-<h2>♟ REAL PGN Viewer</h2>
-
-<div class="board" id="board"></div>
-
-<h3>📚 Книги</h3>
-<select id="bookSelect"></select>
-
-<div>
-  <button onclick="prevMove()">⏮</button>
-  <button onclick="nextMove()">▶</button>
-  <button onclick="resetGame()">⟲</button>
-</div>
-
-<div id="status"></div>
-
-<!-- 🔥 НАСТОЯЩИЙ ДВИЖОК -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
 
 <script>
@@ -68,84 +16,88 @@ let game = new Chess();
 let history = [];
 let index = 0;
 
-/* draw board */
+/* ===== DRAW ===== */
 function draw() {
   const board = game.board();
   boardEl.innerHTML = "";
 
   for (let r = 0; r < 8; r++) {
     for (let c = 0; c < 8; c++) {
-
       const cell = document.createElement("div");
-
-      const isBlack = (r + c) % 2;
-      cell.className = "cell " + (isBlack ? "b" : "w");
+      const isDark = (r + c) % 2;
+      cell.className = "cell " + (isDark ? "b" : "w");
 
       const piece = board[r][c];
-      cell.textContent = piece ? getSymbol(piece) : "";
+      cell.textContent = piece ? unicode(piece) : "";
 
       boardEl.appendChild(cell);
     }
   }
 }
 
-function getSymbol(p) {
+function unicode(p) {
   const map = {
-    p:"♟", r:"♜", n:"♞", b:"♝", q:"♛", k:"♚"
+    wp:"♙", wr:"♖", wn:"♘", wb:"♗", wq:"♕", wk:"♔",
+    bp:"♟", br:"♜", bn:"♞", bb:"♝", bq:"♛", bk:"♚"
   };
-
-  return p.color === "w"
-    ? map[p.type].replace("♟","♙").replace("♜","♖").replace("♞","♘").replace("♝","♗").replace("♛","♕").replace("♚","♔")
-    : map[p.type];
+  return map[p.color + p.type];
 }
 
-/* load PGN */
+/* ===== LOAD PGN ===== */
 async function loadPGN(url) {
   status.innerText = "Загрузка...";
 
   const res = await fetch(url);
   const text = await res.text();
 
-  game.reset();
+  game = new Chess();
   game.load_pgn(text);
 
   history = game.history();
   index = 0;
 
-  game.reset();
+  game = new Chess();
 
   status.innerText = "Ходов: " + history.length;
+
   draw();
 }
 
-/* controls */
-function nextMove() {
-  if (index < history.length) {
-    game.move(history[index]);
-    index++;
-    draw();
-    status.innerText = "Ход: " + history[index-1];
-  }
-}
+/* ===== APPLY POSITION ===== */
+function rebuild(toIndex) {
+  game = new Chess();
 
-function prevMove() {
-  game.reset();
-  index = 0;
-
-  for (let i = 0; i < Math.max(0, index - 1); i++) {
+  for (let i = 0; i < toIndex; i++) {
     game.move(history[i]);
   }
 
   draw();
 }
 
-function resetGame() {
-  game.reset();
-  index = 0;
-  draw();
+/* ===== CONTROLS ===== */
+function nextMove() {
+  if (index < history.length) {
+    index++;
+    rebuild(index);
+    status.innerText = "Ход: " + history[index - 1];
+  }
 }
 
-/* books */
+function prevMove() {
+  if (index > 0) {
+    index--;
+    rebuild(index);
+    status.innerText = "Назад: " + index;
+  }
+}
+
+function resetGame() {
+  index = 0;
+  rebuild(0);
+  status.innerText = "Сброс";
+}
+
+/* ===== BOOKS ===== */
 for (let b in books) {
   let o = document.createElement("option");
   o.value = books[b];
@@ -162,6 +114,3 @@ window.prevMove = prevMove;
 window.resetGame = resetGame;
 
 </script>
-
-</body>
-</html>
